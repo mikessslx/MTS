@@ -1,0 +1,218 @@
+\section{Notes 8 - 11.07}
+
+\subsection{The Subspace Topology}
+
+\begin{definition}[Subspace Topology]
+Let \(X\) be a topological space with topology \(\mathcal{T}\). Let \(Y \subset X\) be an arbitrary subset.
+Define the \textbf{subspace topology} \(\mathcal{T}_Y = \{ U \cap Y \mid U \in \mathcal{T} \}\).
+\end{definition}
+
+\begin{proposition}
+\(\mathcal{T}_Y\) is a topology on \(Y\).
+\end{proposition}
+
+\begin{lemma}
+If \(\mathcal{B}\) is a basis of \(\mathcal{T}\), then \(\mathcal{B}_Y = \{ B \cap Y \mid B \in \mathcal{B} \}\) is a basis of \(\mathcal{T}_Y\).
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(U \subset Y\) be open. Then \(U = U' \cap Y\) for some \(U'\) open in \(X\).
+
+% Since \(\mathcal{B}\) is a basis of \(X\), \(U' = \bigcup B_\alpha\) with \(B_\alpha \in \mathcal{B}\).
+
+% Then \(U = (\bigcup B_\alpha) \cap Y = \bigcup (B_\alpha \cap Y)\).
+
+% These \(B_\alpha \cap Y\) are elements of \(\mathcal{B}_Y\). Thus \(\mathcal{B}_Y\) is a basis of \(Y\).
+% \end{proof}
+
+\begin{remark}[Warning]
+Open in \(Y \nRightarrow\) open in \(X\).
+\end{remark}
+
+\begin{proposition}
+If \(Y\) is \textbf{open} in \(X\), and \(U \subset Y\) is open in \(Y \implies U\) open in \(X\).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Since \(U \subset Y\) is open, we have \(U = Y \cap V\), where \(V\) is open in \(X\).
+
+% \(Y\) is open in \(X\) \(\implies U\) is open in \(X\) (intersection of two open sets).
+% \end{proof}
+
+\begin{theorem}[Product of Subspaces]
+Let \(A \subset X, B \subset Y\) be subsets. \(A \times B \subset X \times Y\). Then the product of subspace topologies on \(A\) and \(B\) is the subspace topology on \(A \times B \subset X \times Y\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(U \subset X, V \subset Y\) be open.
+
+% The products \(U \times V\) form a basis of the product topology on \(X \times Y\).
+
+% \((U \times V) \cap (A \times B)\) form a basis of subspace topology on \(A \times B\).
+
+% But \((U \times V) \cap (A \times B) = (U \cap A) \times (V \cap B)\).
+
+% So basis elements for both topologies are the same.
+% \end{proof}
+
+\subsection{Order Topology on Subsets}
+
+\begin{example}
+Let \(\mathbb{R} = X\) with standard order \(<\). Let \(Y = [0, 1) \cup \{2\}\).
+Basis of topology on \(Y\) inherited from \(\mathbb{R}\) (subspace): \(\{(a, b) \cap Y\}\).
+\begin{itemize}
+    \item \(\{2\}\) is open in subspace topology: \(\{2\} = Y \cap (1.9, 2.1)\).
+    \item \(\{2\}\) is \textbf{not} open in the order topology on \(Y\).
+\end{itemize}
+
+\textbf{Exercise}: Show that for the order topology, \([0, 1) \cup \{2\}\) is connected.
+\end{example}
+
+\begin{remark}[Warning]
+Let \(Y \subset X\) subset; \(<\) same relation.
+It may happen that the order topology on \((Y, <)\) is \textbf{different} from the subspace topology of the \((X, <)\) order topology!
+\end{remark}
+
+\begin{example}
+\(X = Y = \mathbb{R}\), \(<\) order topology.
+The product of order topology is the \textbf{standard topology} on \(\mathbb{R}^2\).
+\(X \times Y = \{(x, y)\}\). Take the \textbf{lexicographic order}:
+\((x, y) < (x', y')\) if
+\begin{itemize}
+    \item either \(x < x'\);
+    \item or \(x = x', y < y'\).
+\end{itemize}
+Order topology on \((X \times Y, <)\)?
+
+\(I \times I = [0, 1] \times [0, 1] \subset X \times Y\).
+The order topology on \([0, 1] \times [0, 1]\) is \textbf{not} the subspace topology of the order topology on \(\mathbb{R} \times \mathbb{R}\)!
+Example: \(\{\frac{1}{2}\} \times (\frac{1}{2}, 1]\) is \textbf{not} open in ord. top. on \(I \times I\), but is open in subspace top:
+\(\{\frac{1}{2}\} \times (\frac{1}{2}, \frac{3}{2})\) is open in \(\mathbb{R} \times \mathbb{R}\).
+\end{example}
+
+\begin{definition}[Convex Set]
+\(Y\) is \textbf{convex} if \(\forall a, b \in Y\), \((a, b) \subset Y\).
+\end{definition}
+
+\begin{theorem}
+Let \(Y \subset X\) be a \textbf{convex} subset of \((X, <)\). Then the restriction of the order topology on \(X\) is the order topology on \(Y\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Take \((a, +\infty), (-\infty, b) \subset X\). This is a basis of topology on \(X\).
+
+% Take \(Y \subset X\).
+
+% If \(a \in Y\), \(Y \cap (a, +\infty) = \{ y \in Y \mid a < y \}\).
+
+% Otherwise \(a\) is either an upper bound or lower bound for \(Y\).
+
+% \(Y \cap (a, +\infty)\) is either \(Y\) or \(\emptyset\) (depending on relation). Same for \((-\infty, b)\).
+% \end{proof}
+
+\subsection{Closed Sets and Closure}
+
+\begin{definition}[Closed Set]
+\(A \subset X\) is closed \(\iff X \setminus A\) is open.
+\end{definition}
+
+\begin{proposition}
+\begin{enumerate}
+    \item \(\emptyset, X\) closed.
+    \item \(A_\alpha\) closed \(\implies \bigcap A_\alpha\) closed.
+    \item \(A_1, \cdots, A_n\) closed \(\implies \bigcup_{i=1}^n A_i\) closed.
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}[Closed Sets in Subspace]
+Let \(X\) be a topological space, \(Y \subset X\) have subspace topology. Then
+\(A \subset Y\) closed in \(Y \iff A = Y \cap \tilde{A}\), where \(\tilde{A} \subset X\) is closed in \(X\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     Let \(A \subset Y\) be closed in \(Y\), then \(Y \setminus A\) is open in \(Y\).
+
+%     So \(Y \setminus A = Y \cap U\), where \(U\) is open in \(X\).
+
+%     \(X \setminus U\) is closed in \(X\).
+
+%     \((X \setminus U) \cap Y = Y \setminus (U \cap Y) = Y \setminus (Y \setminus A) = A\). (Let \(\tilde{A} = X \setminus U\).)
+
+%     \item[\(\Leftarrow\)]
+%     Let \(A = Y \cap C\), where \(C\) is closed in \(X\).
+
+%     Then \(X \setminus C\) is open in \(X\), \((X \setminus C) \cap Y\) is open in \(Y\).
+
+%     But \((X \setminus C) \cap Y = (X \cap Y) \setminus (C \cap Y) = Y \setminus A\).
+
+%     So \(Y \setminus A\) is open in \(Y \implies A\) is closed in \(Y\).
+% \end{itemize}
+% \end{proof}
+
+\begin{definition}[Neighborhood, Interior, Closure]
+\begin{itemize}
+    \item If \(U \subset X\) open, \(x \in U\), then \(U\) is a \textbf{neighborhood} of \(x\).
+    \item \textbf{Interior} of \(A\): \(\text{Int } A = \bigcup \{ U \subset A, U \text{ open in } X \}\).
+    \item \textbf{Closure} of \(A\): \(\overline{A} = \bigcap \{ C \supset A, C \text{ closed in } X \}\).
+\end{itemize}
+Note: \(\text{Int } A \subset A \subset \overline{A}\).
+\end{definition}
+
+\begin{remark}[Warning]
+    If \(A \subset Y \subset X\), then the closure of \(A\) in \(Y\) and \(X\) can be different.
+
+    Example: \(A = (0, 1) \subset Y = [0, 1) \subset X = \mathbb{R}\).
+    \begin{itemize}
+        \item \(\overline{A}\) in \(\mathbb{R}\) is \([0, 1]\).
+        \item \(\overline{A}\) in \(Y\) is \([0, 1) = (\overline{A} \text{ in } \mathbb{R}) \cap Y\).
+    \end{itemize}
+\end{remark}
+
+\begin{theorem}
+Let \(Y \subset X\) subspace, \(A \subset Y\) and \(\overline{A}\) be the closure of \(A\) in \(X\), then the closure of \(A\) in \(Y\) is
+\[\overline{A} \cap Y.\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(B\) be the closure of \(A\) in \(Y\).
+
+% \(\overline{A}\) closed in \(X\), so \(\overline{A} \cap Y\) closed in \(Y\).
+
+% \(\overline{A} \cap Y \supset A \implies \overline{A} \cap Y \supset B\) (since \(B\) is smallest closed set containing \(A\)).
+
+% Prove the opposite inclusion:
+
+% \(B\) closed in \(Y \implies B = Y \cap C\), where \(C\) closed in \(X\).
+
+% Hence \(C \supset A\) (closed sets containing \(A\)) \(\implies C \supset \overline{A}\).
+
+% \(\overline{A} \cap Y \subset C \cap Y = B\).
+
+% Therefore, \(B = \overline{A} \cap Y\).
+% \end{proof}

@@ -1,0 +1,187 @@
+\section{Notes 20 - 12.22}
+
+\subsection{Normality in Special Spaces}
+
+\begin{theorem}
+    Every second-countable regular space is normal.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(X\) be a second-countable regular space. Let \(A, B \subset X\) be disjoint closed sets.
+%     Since \(X\) is regular, for every \(a \in A\), there exists an open neighborhood \(U_a\) of \(a\) such that \(\overline{U_a} \cap B = \emptyset\) (since \(X \setminus B\) is an open neighborhood of \(a\)).
+    
+%     Since \(X\) is second-countable, there exists a countable subcover of \(\{U_a\}_{a \in A}\). Let's denote the countable cover of \(A\) by \(\{U_n\}_{n=1}^\infty\).
+%     Thus, \(A \subset \bigcup_{n=1}^\infty U_n\), and for each \(n\), \(\overline{U_n} \cap B = \emptyset\).
+    
+%     Similarly, we can find a countable family of open sets \(\{V_n\}_{n=1}^\infty\) covering \(B\) (that is, \(B \subset \bigcup_{n=1}^\infty V_n\)) such that for each \(n\), \(\overline{V_n} \cap A = \emptyset\).
+
+%     Now we construct disjoint open sets \(U'\) and \(V'\) containing \(A\) and \(B\) respectively. Define
+%     \[U'_n = U_n \setminus \bigcup_{i=1}^n \overline{V_i} \ \text{and} \ V'_n = V_n \setminus \bigcup_{i=1}^n \overline{U_i}\]
+
+%     Note that \(U'_n\) and \(V'_n\) are open sets.
+%     It holds that \(A \subset \bigcup U'_n\). Indeed, if \(a \in A\), then \(a \in U_n\) for some \(n\). Also, \(a \notin \overline{V_i}\) for any \(i\) (since \(\overline{V_i} \cap A = \emptyset\)). Thus \(a \in U'_n\).
+%     Similarly, \(B \subset \bigcup V'_n\).
+
+%     Let \(U' = \bigcup_{n=1}^\infty U'_n\) and \(V' = \bigcup_{n=1}^\infty V'_n\).
+    
+%     \textit{Claim: \(U' \cap V' = \emptyset\).}
+
+%     Suppose for contradiction that \(x \in U' \cap V'\). Then \(x \in U'_j \cap V'_k\) for some indices \(j, k\).
+%     Without loss of generality, assume \(j \le k\).
+%     From the definition, \(x \in U'_j \implies x \in U_j\).
+%     On the other hand, \(x \in V'_k = V_k \setminus \bigcup_{i=1}^k \overline{U_i}\). Since \(j \le k\), \(\overline{U_j}\) is one of the sets being subtracted. Thus \(x \notin \overline{U_j}\).
+%     This contradicts \(x \in U_j \subset \overline{U_j}\).
+%     Thus \(U' \cap V' = \emptyset\), so \(X\) is normal.
+% \end{proof}
+
+\begin{theorem}
+    Every metrizable space \(X\) is normal.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(d\) be the metric on \(X\). Let \(A, B \subset X\) be disjoint closed sets.
+%     For each \(a \in A\), since \(B\) is closed and \(a \notin B\), \(dist(a, B) > 0\). Thus there exists \(\varepsilon_a > 0\) such that \(B(a, \varepsilon_a) \cap B = \emptyset\).
+%     Similarly, for each \(b \in B\), there exists \(\varepsilon_b > 0\) such that \(B(b, \varepsilon_b) \cap A = \emptyset\).
+
+%     Define open sets
+%     \[U = \bigcup_{a \in A} B(a, \frac{\varepsilon_a}{2}) \supset A, \ V = \bigcup_{b \in B} B(b, \frac{\varepsilon_b}{2}) \supset B\]
+
+%     We claim \(U \cap V = \emptyset\).
+%     Suppose not. Let \(z \in U \cap V\). Then \(z \in B(a, \frac{\varepsilon_a}{2})\) and \(z \in B(b, \frac{\varepsilon_b}{2})\) for some \(a \in A, b \in B\).
+%     By triangle inequality
+%     \[d(a, b) \le d(a, z) + d(z, b) < \frac{\varepsilon_a}{2} + \frac{\varepsilon_b}{2}\]
+
+%     Without loss of generality, suppose \(\varepsilon_a \le \varepsilon_b\). Then
+%     \[d(a, b) < \frac{\varepsilon_b}{2} + \frac{\varepsilon_b}{2} = \varepsilon_b\]
+
+%     This implies \(a \in B(b, \varepsilon_b)\). But we chose \(\varepsilon_b\) such that \(B(b, \varepsilon_b) \cap A = \emptyset\), and \(a \in A\).
+    
+%     Contradiction! Thus, \(U \cap V = \emptyset\).
+% \end{proof}
+
+\begin{theorem}
+    Every compact Hausdorff space is normal.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(X\) be a compact Hausdorff space.
+%     First, recall that \(X\) is regular (a compact subset can be separated from a point in Hausdorff space).
+    
+%     Let \(A, B\) be disjoint closed subsets of \(X\). Since \(X\) is closed (in itself) and \(A\) is a closed subset of a compact space, \(A\) is compact.
+    
+%     For every \(a \in A\), since \(X\) is regular and \(B\) is closed (and \(a \notin B\)), there exist disjoint open sets \(U_a\) and \(V_a\) such that \(a \in U_a\) and \(B \subset V_a\).
+    
+%     The family \(\{U_a\}_{a \in A}\) forms an open cover of the compact set \(A\).
+%     Thus, there exists a finite subcover \(\{U_{a_1}, ..., U_{a_n}\}\).
+%     Let \(V_{a_1}, ..., V_{a_n}\) be the corresponding open sets containing \(B\).
+    
+%     Define
+%     \[U = \bigcup_{i=1}^n U_{a_i} \ \text{and} \ V = \bigcap_{i=1}^n V_{a_i}\]
+
+%     Then \(U\) is open and contains \(A\) (since it is the union of the subcover).
+%     \(V\) is open (finite intersection of open sets) and contains \(B\) (since each \(V_{a_i}\) contains \(B\)).
+    
+%     Finally, check disjointness
+%     \[U \cap V = \left(\bigcup_{i=1}^n U_{a_i}\right) \cap \left(\bigcap_{j=1}^n V_{a_j}\right) = \bigcup_{i=1}^n \left(U_{a_i} \cap \bigcap_{j=1}^n V_{a_j}\right)\]
+
+%     Since \(\bigcap_{j=1}^n V_{a_j} \subset V_{a_i}\) and \(U_{a_i} \cap V_{a_i} = \emptyset\), each term in the union is empty.
+%     Thus, \(U \cap V = \emptyset\).
+% \end{proof}
+
+\subsection{Urysohn's Lemma}
+
+\begin{theorem}[Urysohn's Lemma]
+    Given a normal space \(X\) and two disjoint closed sets \(A, B \subset X\), there exists a continuous function \(f: X \to [0, 1]\) such that
+    \begin{align*}
+        f(x) = 0 \ \text{for each } x \in A \\
+        f(x) = 1 \ \text{for each } x \in B
+    \end{align*}
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(P = [0, 1] \cap \mathbb{Q}\). The proof proceeds in several steps.
+    
+%     \paragraph*{Step 1: Construction of Open Sets on \(P\)}
+%     We want to define for each \(p \in P\) an open set \(U_p\) such that
+%     \begin{equation}
+%         A \subset U_p \subset \overline{U_p} \subset U_q \ \text{whenever } p < q \tag{\(*\)}
+%     \end{equation}
+%     and \(U_1 = X \setminus B\).
+    
+%     Enumerate the elements of \(P\) in a sequence \(\{r_n\}\) such that \(r_1 = 1\) and \(r_2 = 0\). (For instance: \(1, 0, 1/2, 1/3, 2/3, \cdots\)).
+%     \begin{itemize}
+%         \item Define \(U_{r_1} = U_1 = X \setminus B\). Since \(A \cap B = \emptyset\), \(A \subset U_1\).
+%         \item Define \(U_{r_2} = U_0\). Since \(X\) is normal, \(A\) is closed and \(U_1\) is open with \(A \subset U_1\), there exists open \(U_0\) such that \(A \subset U_0 \subset \overline{U_0} \subset U_1\).
+%     \end{itemize}
+    
+%     Let \(P_n = \{r_1, \cdots, r_n\}\). Suppose we have defined \(U_p\) for all \(p \in P_n\) satisfying condition \((*)\).
+%     Let \(r = r_{n+1}\). Let \(p\) be the largest number in \(P_n\) smaller than \(r\), and \(q\) be the smallest number in \(P_n\) larger than \(r\). So \(p < r < q\) are immediate predecessor and successor in \(P_n\).
+%     By hypothesis, \(\overline{U_p} \subset U_q\). Since \(\overline{U_p}\) is closed and \(U_q\) is open, by normality, there exists open \(U_r\) such that
+%     \[\overline{U_p} \subset U_r \subset \overline{U_r} \subset U_q\]
+
+%     This maintains the condition \((*)\) for \(P_{n+1}\). By induction, \(U_p\) is defined for all \(p \in P\).
+    
+%     \paragraph*{Step 2: Extension to Rationals}
+%     Extend the definition to all \(p \in \mathbb{Q}\):
+%     \begin{itemize}
+%         \item If \(p < 0\), let \(U_p = \emptyset\).
+%         \item If \(p > 1\), let \(U_p = X\).
+%     \end{itemize}
+
+%     Condition \((*)\) \(\overline{U_p} \subset U_q\) for \(p < q\) still holds.
+    
+%     \paragraph*{Step 3: Definition of the Function}
+%     For \(x \in X\), define \(Q(x) = \{p \in \mathbb{Q} \mid x \in U_p\}\).
+%     Since \(U_p = X\) for \(p > 1\), \(Q(x)\) is non-empty. Since \(U_p = \emptyset\) for \(p < 0\), \(Q(x)\) is bounded from below by 0. Define
+%     \[f(x) = \inf Q(x)\]
+
+%     Clearly \(f(x) \in [0, 1]\).
+%     \begin{itemize}
+%         \item If \(x \in A\), then \(x \in U_0 \subset U_p\) for all \(p \ge 0\). Thus \(0 \in Q(x)\) and \(f(x) \le 0 \implies f(x) = 0\).
+%         \item If \(x \in B\), then \(x \notin U_1\). So \(x \notin U_p\) for any \(p \le 1\). \(Q(x)\) contains only rationals \(> 1\). Thus \(f(x) = 1\).
+%     \end{itemize}
+    
+%     \paragraph*{Step 4: Continuity}
+%     We verified two properties (proof omitted but standard):
+%     \begin{enumerate}
+%         \item[(i)] \(x \in U_r \implies f(x) \le r\)
+%         \item[(ii)] \(x \notin U_r \implies f(x) \ge r\)
+%     \end{enumerate}
+    
+%     To show continuity at \(x_0 \in X\): Let \((c, d)\) be an open interval containing \(f(x_0)\).
+%     Choose \(p, q \in \mathbb{Q}\) such that \(c < p < f(x_0) < q < d\).
+%     Let \(U = U_q \setminus \overline{U_p}\). This is an open set.
+    
+%     Check \(x_0 \in U\):
+%     \begin{itemize}
+%         \item \(f(x_0) < q \implies x_0 \in U_q\) (by contrapositive of (ii): if \(x \notin U_q \implies f(x) \ge q\)).
+%         \item \(f(x_0) > p \implies x_0 \notin \overline{U_p}\) (Wait, actually: if \(x_0 \in \overline{U_p} \subset U_{r}\) for any \(p<r<f(x_0)\), then \(f(x_0) \le r\), contradiction).
+%     \end{itemize}
+
+%     More formally: Since \(p < f(x_0)\), there exists \(r \in \mathbb{Q}\) such that \(p < r < f(x_0)\). Then \(x_0 \notin U_r\) (by (i) contrapositive). Since \(\overline{U_p} \subset U_r\), \(x \notin \overline{U_p}\).
+%     Thus \(x_0 \in U\).
+    
+%     For any \(z \in U\):
+%     \begin{itemize}
+%         \item \(z \in U_q \implies f(z) \le q\).
+%         \item \(z \notin \overline{U_p} \implies z \notin U_p \implies f(z) \ge p\).
+%     \end{itemize}
+%     So \(f(z) \in [p, q] \subset (c, d)\).
+%     Thus, \(f(U) \subset (c, d)\), so \(f\) is continuous.
+% \end{proof}

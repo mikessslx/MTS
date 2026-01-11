@@ -1,0 +1,149 @@
+\section{Notes 4 - 10.24}
+
+\subsection{Homeomorphisms and Isometries}
+
+\begin{recap}[Continuous Map]
+\(f: X \to Y\) is continuous if \(f^{-1}(U) \subset X\) is open for every open \(U \subset Y\).
+\end{recap}
+
+\begin{note}
+\textbf{Key Note}: A continuous bijection \(f: X \to Y\) does \textbf{not} ensure \(f^{-1}\) is continuous.
+\end{note}
+
+\begin{definition}[Homeomorphism]
+A homeomorphism is a continuous bijection \(f: X \to Y\) where \(f^{-1}\) is also continuous. \(X \cong Y\) (topologically equivalent) if there exists a homeomorphism \(f: X \to Y\).
+\end{definition}
+
+\begin{definition}[Isometry]
+\((X, d)\) and \((Y, d')\) are isometric if there exists a bijection \(f: X \to Y\) (an isometry) such that
+\[d'(f(x), f(y)) = d(x, y) \ \forall x, y \in X\]
+\end{definition}
+
+\begin{remark}[Relationship]
+Every isometry is a homeomorphism (isometries are continuous, bijective, and \(f^{-1}\) is also an isometry/continuous). However, not all homeomorphisms are isometries (homeomorphisms preserve topology, not necessarily metric distances).
+\end{remark}
+
+\begin{example}
+Let \(D = \{ (x,y) \mid x^2 + y^2 \leq 1 \}\) (closed disk, Euclidean metric) and \(S = \{ (x,y) \mid \max(|x|, |y|) \leq 1 \}\) (closed square, \(\|\cdot\|_\infty\) metric). \(D\) and \(S\) are homeomorphic but not isometric: For \(p_1, p_2 \in D\) with \(d(p_1, p_2) = \sqrt{2}\), their images in \(S\) satisfy \(d'(f(p_1), f(p_2)) \leq 2\), so distances are not preserved.
+\end{example}
+
+\subsection{Properties of Homeomorphisms}
+
+\begin{proposition}[Composition]
+If \(f: X \to Y\) and \(g: Y \to Z\) are continuous, then \(g \circ f: X \to Z\) (where \((g \circ f)(x) = g(f(x))\)) is continuous.
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{enumerate}
+%     \item Let \(U \subset Z\) be open.
+%     \item Since \(g\) is continuous, \(g^{-1}(U) \subset Y\) is open.
+%     \item Since \(f\) is continuous, \(f^{-1}(g^{-1}(U)) = (g \circ f)^{-1}(U) \subset X\) is open.
+%     \item Thus \(g \circ f\) is continuous (open preimage definition).
+% \end{enumerate}
+% \end{proof}
+
+\begin{corollary}
+If \(f: X \to Y\) and \(g: Y \to Z\) are homeomorphisms, then \(g \circ f: X \to Z\) is a homeomorphism.
+\((g \circ f)^{-1} = f^{-1} \circ g^{-1}\) is continuous because composition of continuous maps is continuous.
+\end{corollary}
+
+\begin{proposition}[Equivalence Relation]
+The relation \(\cong\) (is homeomorphic to) is an equivalence relation on metric spaces.
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{enumerate}
+%     \item \textbf{Reflexive}: \(X \cong X\) (identity map \(\text{Id}_X: X \to X\) is a homeomorphism).
+%     \item \textbf{Symmetric}: If \(X \cong Y\) (via homeomorphism \(f: X \to Y\)), then \(Y \cong X\) (via \(f^{-1}: Y \to X\), a homeomorphism).
+%     \item \textbf{Transitive}: If \(X \cong Y\) (via \(f\)) and \(Y \cong Z\) (via \(g\)), then \(X \cong Z\) (via \(g \circ f\), a homeomorphism: bijective, continuous, inverse \(f^{-1} \circ g^{-1}\) is continuous).
+% \end{enumerate}
+% \end{proof}
+
+\subsection{Path-Connected Spaces and IVT}
+
+\begin{definition}[Path-Connected]
+\(X\) is said to be \textbf{path-connected} if any two points \(x, y \in X\) can be joined by a path: \(\exists \gamma: [0,1] \to X\), with \(\gamma(0) = x\), \(\gamma(1) = y\), and \(\gamma\) continuous.
+\end{definition}
+
+\begin{proposition}
+If \(X\) is path-connected and \(f: X \to Y\) is a homeomorphism, then \(Y\) is path-connected.
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% For \(f(x), f(y) \in Y\), let \(\gamma: [0,1] \to X\) be a path from \(x\) to \(y\). Then \(f \circ \gamma: [0,1] \to Y\) is continuous, with \((f \circ \gamma)(0) = f(x)\) and \((f \circ \gamma)(1) = f(y)\). Thus \(Y\) is path-connected.
+% \end{proof}
+
+\begin{example}[\(\mathbb{R} \setminus \{0\}\) is Not Path-Connected]
+\begin{proof}[Proof by Contradiction]
+Suppose \(\mathbb{R} \setminus \{0\}\) is path-connected. Then \(\exists\) continuous \(f: [0,1] \to \mathbb{R} \setminus \{0\}\) with \(f(0) = -1\), \(f(1) = 1\).
+
+By the \textbf{Intermediate Value Theorem (IVT)}: For continuous \(f: [a,b] \to \mathbb{R}\), if \(f(a) < f(b)\), then \(\forall y \in [f(a), f(b)]\), \(\exists c \in [a,b]\) such that \(f(c) = y\).
+
+Applying IVT to \(f: [0,1] \to \mathbb{R}\), \(\exists t \in [0,1]\) with \(f(t) = 0\). But \(f(t) \in \mathbb{R} \setminus \{0\}\) (contradiction). Thus \(\mathbb{R} \setminus \{0\}\) is not path-connected.
+\end{proof}
+\end{example}
+
+\begin{proposition}[IVT for Path-Connected Spaces]
+For a path-connected space \(X\), if \(f: X \to \mathbb{R}\) is continuous, then \(f(X)\) is an interval: If \(\exists x_1, x_2 \in X\) with \(f(x_1) = y_1\), \(f(x_2) = y_2\), then \(\forall y_3 \in [y_1, y_2]\), \(\exists x_3 \in X\) such that \(f(x_3) = y_3\).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{enumerate}
+%     \item Since \(X\) is path-connected, \(\exists\) continuous \(\gamma: [0,1] \to X\) with \(\gamma(0) = x_1\), \(\gamma(1) = x_2\).
+%     \item \(f \circ \gamma: [0,1] \to \mathbb{R}\) is continuous (composition of continuous maps).
+%     \item By IVT (for \([0,1]\)), \(\forall y_3 \in [y_1, y_2]\), \(\exists t_0 \in [0,1]\) with \((f \circ \gamma)(t_0) = y_3\).
+%     \item Let \(x_3 = \gamma(t_0) \in X\): then \(f(x_3) = y_3\).
+% \end{enumerate}
+% \end{proof}
+
+\subsection{Connected Spaces}
+
+\begin{definition}[Connected Space]
+\(X\) is said to be \textbf{connected} if
+\begin{enumerate}
+    \item \(X\) cannot be represented as \(X = U_1 \cup U_2\) with \(U_1, U_2 \neq \varnothing\), \(U_1, U_2\) open, and \(U_1 \cap U_2 = \varnothing\).
+    \item \(X\) cannot be represented as \(X = V_1 \cup V_2\) with \(V_1, V_2 \neq \varnothing\), \(V_1, V_2\) closed, and \(V_1 \cap V_2 = \varnothing\).
+    \item There is no proper nonempty subset \(U \subset X\) which is both open and closed (clopen).
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+\(X\) is connected \(\iff\)
+\begin{itemize}
+    \item there is no continuous surjective map \(X \to \{0, 1\}\).
+    \item \(X\) satisfies the Intermediate Value Theorem (IVT).
+\end{itemize}
+\end{proposition}
+
+\begin{remark}
+    \begin{itemize}
+        \item \(X\) path connected \(\implies X\) connected.
+        \item The converse is \textbf{not} true.
+    \end{itemize}
+\end{remark}
+
+\begin{example}[Connected but Not Path-Connected Space]
+Let \(X \subset \mathbb{R}^2\):
+\[X = \left\{ \left(x, \sin\frac{1}{x}\right) \mid x > 0 \right\} \cup \left( \{0\} \times [-1,1] \right)\]
+
+\begin{itemize}
+    \item \(X\) is \textbf{connected}: The curve accumulates on \(\{0\} \times [-1,1]\), so \(X\) cannot split into disjoint non-empty open sets.
+    \item \(X\) is \textbf{not path-connected}: No continuous path exists between \(\{0\} \times [-1,1]\) and \(\left(x, \sin\frac{1}{x}\right)\) (due to rapid oscillation of \(\sin\frac{1}{x}\)).
+\end{itemize}
+\end{example}

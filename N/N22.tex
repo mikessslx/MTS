@@ -1,0 +1,167 @@
+\section{Notes 22 - 12.26}
+
+\subsection{The Tychonoff Theorem}
+
+\begin{theorem}[Tychonoff Theorem]
+    If \(\{X_\alpha\}_{\alpha \in J}\) is a family of compact spaces, then their product \(\prod_{\alpha \in J} X_\alpha\) is compact (in the product topology).
+\end{theorem}
+
+\begin{remark}
+    \(X, Y\) compact \(\implies X \times Y\) compact. This is easy to prove, but the infinite case is hard to generalize using open covers directly. We use the closed set formulation.
+\end{remark}
+
+\subsection{Closed Set Formulation of Compactness}
+
+Let \(X\) be a topological space, \(\mathcal{C} \subset 2^X\) a collection of subsets of \(X\).
+
+\begin{definition}[Finite Intersection Property]
+    A collection \(\mathcal{C}\) has the \textbf{finite intersection property (f.i.p.)} if for every finite subcollection \(\{C_1, \cdots, C_n\} \subset \mathcal{C}\), the intersection is non-empty:
+    \[C_1 \cap \cdots \cap C_n \neq \emptyset\]
+\end{definition}
+
+\begin{theorem}
+    \(X\) is compact iff for every collection of closed sets \(\mathcal{C}\) of \(X\) with the f.i.p., we have
+    \[\bigcap_{C \in \mathcal{C}} C \neq \emptyset\]
+    (that is, all sets in \(\mathcal{C}\) have a point in common).
+\end{theorem}
+
+\begin{example}
+    Take \(X = (0, 1)\), \(C_n = (0, \frac{1}{n}]\).
+    Intersection of any finite number of sets:
+    \[C_{n_1} \cap \cdots \cap C_{n_m} = C_{\max(n_1, \cdots, n_m)} \neq \emptyset.\]
+    
+    However, \(\bigcap_{n \in \mathbb{N}} C_n = \bigcap_{n \in \mathbb{N}} (0, \frac{1}{n}] = \emptyset\).
+    Thus, \((0, 1)\) is not compact.
+\end{example}
+
+\subsection{Proof Preparation}
+
+\paragraph*{False Attempt Strategy}
+Take \(X_1, X_2\) compact. Let \(\mathcal{A}\) be a collection of closed subsets of \(X_1 \times X_2\) with f.i.p.
+
+Consider projections \(\{\pi_1(A) \mid A \in \mathcal{A}\}\). This has f.i.p. in \(X_1\).
+Since \(X_1\) is compact, \(\bigcap \overline{\pi_1(A)} \neq \emptyset\). So \(\exists x_1 \in \bigcap \overline{\pi_1(A)}\).
+Similarly, \(\exists x_2 \in \bigcap \overline{\pi_2(A)}\).
+Then need to prove \((x_1, x_2) \in \bigcap_{A \in \mathcal{A}} A\).
+
+\textbf{This is FALSE!}
+
+Counterexample: \(X = [0, 1] \times [0, 1]\). Consider ellipses or sets concentrating around different points but projecting to the whole interval. (Sketch in notes shows non-trivial interaction.)
+
+\paragraph*{Correct Strategy (Maximal F.I.P. Collections)}
+Idea: Given a collection of subsets (closed sets) \(\mathcal{A}\) with f.i.p., extend it to a \textbf{maximal possible} collection of subsets \(\mathcal{D} \supset \mathcal{A}\) with f.i.p.
+
+We fix the problem with closures later: take \textit{any} collection of subsets \(\mathcal{A}\) such that \(\{\overline{A}\}\) have f.i.p., look for \(x \in \bigcap \overline{A}\).
+
+\begin{remark}[Zorn's Lemma]
+    Let \(A\) be a strictly partially ordered set (poset) such that every linearly ordered subset (chain) has an upper bound in \(A\). Then \(A\) has a maximal element.
+\end{remark}
+
+\begin{lemma}[Lemma 1]
+    Let \(X\) be a set, \(\mathcal{A}\) a collection of subsets of \(X\) with f.i.p.
+    Then there exists a collection \(\mathcal{D} \supset \mathcal{A}\) such that
+    \begin{enumerate}
+        \item \(\mathcal{D}\) has f.i.p.
+        \item \(\mathcal{D}\) is maximal (not contained in any other collection with f.i.p.).
+    \end{enumerate}
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(\mathbb{A} = \{ \mathcal{B} \supset \mathcal{A} \mid \mathcal{B} \text{ has f.i.p.} \}\) (a collection with f.i.p.). Order \(\mathbb{A}\) by inclusion \(\subset\).
+
+%     Need to show every chain has an upper bound.
+    
+%     Let \(\mathbb{B} \subset \mathbb{A}\) be a simply ordered (chain) subset.
+%     Define \(\mathcal{C} = \bigcup_{\mathcal{B} \in \mathbb{B}} \mathcal{B}\) (candidate for upper bound).
+%     Clearly \(\mathcal{B} \supset \mathcal{A}\) for all \(\mathcal{B} \in \mathbb{B}\), so \(\mathcal{C} \supset \mathcal{A}\).
+    
+%     Does \(\mathcal{C}\) have f.i.p.?
+%     Take \(C_1, \cdots, C_n \in \mathcal{C}\).
+%     Then \(C_i \in \mathcal{B}_i\) for some \(\mathcal{B}_i \in \mathbb{B}\).
+%     Since \(\mathbb{B}\) is a chain, there exists \(k\) such that \(\mathcal{B}_k \supseteq \mathcal{B}_i\) for all \(i\).
+%     Then \(C_1, \cdots, C_n \in \mathcal{B}_k\).
+%     Since \(\mathcal{B}_k\) has f.i.p., \(C_1 \cap \cdots \cap C_n \neq \emptyset\).
+    
+%     So \(\mathcal{C} \in \mathbb{A}\) and is an upper bound.
+%     By Zorn's Lemma, there exists a maximal element \(\mathcal{D}\).
+% \end{proof}
+
+\begin{lemma}[Lemma 2]
+    Let \(X\) be a set, \(\mathcal{D}\) a maximal collection of subsets of \(X\) with f.i.p.
+    \begin{enumerate}
+        \item[(a)] \(\mathcal{D}\) is closed under taking finite intersections: if \(D_1, \cdots, D_n \in \mathcal{D}\), then \(D_1 \cap \cdots \cap D_n \in \mathcal{D}\).
+        \item[(b)] If \(A \subset X\) intersects every \(D \in \mathcal{D}\), then \(A \in \mathcal{D}\).
+    \end{enumerate}
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{enumerate}[(a)]
+%     \item
+%     Take \(D_1, \cdots, D_n \in \mathcal{D}\). Let \(B = D_1 \cap \cdots \cap D_n\). If \(B \notin \mathcal{D}\), then \(\mathcal{E} = \mathcal{D} \cup \{B\} \supsetneq \mathcal{D}\).
+
+%     Then \(\mathcal{E}\) has f.i.p.
+%     Check: Take \(D'_1, \cdots, D'_m, B \in \mathcal{E}\).
+
+%     Then \(D'_1 \cap \cdots \cap D'_m \cap B = D'_1 \cap \cdots \cap D'_m \cap D_1 \cap \cdots \cap D_n\).
+
+%     This is a finite intersection of elements in \(\mathcal{D}\), so it is not empty \(\neq \emptyset\).
+
+%     Contradiction to maximality. So \(B \in \mathcal{D}\).
+
+%     \item
+%     Given such an \(A\), take \(\mathcal{E} = \mathcal{D} \cup \{A\}\).
+%     Then \(\mathcal{E}\) has f.i.p.: need to show \(D_1 \cap \cdots \cap D_n \cap A \neq \emptyset\).
+
+%     By assumption, \(D_1 \cap \cdots \cap D_n \cap A = D \cap A \neq \emptyset\), where \(D = D_1 \cap \cdots \cap D_n \in \mathcal{D}\) by (a).
+    
+%     Since \(\mathcal{D}\) is maximal, \(\mathcal{D} = \mathcal{E}\), so \(A \in \mathcal{D}\).
+% \end{enumerate}
+% \end{proof}
+
+\subsection{Proof of Tychonoff's Theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(X = \prod X_\alpha\), \(X_\alpha\) compact. Take \(\mathcal{A}\) coll. of subsets of \(X\) with f.i.p.
+
+%     Need to prove \(\bigcap_{A \in \mathcal{A}} \overline{A} \neq \emptyset\).
+    
+%     By Lemma 1, take \(\mathcal{D} \supset \mathcal{A}\) with f.i.p. maximal.
+%     \(\bigcap_{D \in \mathcal{D}} \overline{D} \neq \emptyset\).
+    
+%     Take \(X_\alpha, \alpha \in J, \pi_\alpha: X \to X_\alpha\).
+%     \(\{\pi_\alpha(D) \mid D \in \mathcal{D}\}\) is a coll. of subsets of \(X_\alpha\) with f.i.p.
+
+%     Since \(X_\alpha\) compact, \(\exists x_\alpha \in \bigcap_{D \in \mathcal{D}} \overline{\pi_\alpha(D)}\).
+    
+%     Now prove \(x = (x_\alpha)_{\alpha \in J} \in \overline{D}\) for every \(D \in \mathcal{D}\).
+    
+%     \(X\) has \textit{subbasis} of topology given by \(\prod U_\alpha = \pi_\beta^{-1}(U_\beta)\), where
+%     \[\begin{cases}
+%         U_\alpha = X_\alpha & \text{if } \alpha \neq \beta, \text{ for } \beta \in J \text{ fixed}, \\
+%         U_\beta \subset X_\beta & \text{open}.
+%     \end{cases}\]
+
+%     Show that if \(\pi_\beta^{-1}(U_\beta)\) is any subbasis element, \(x \in \pi_\beta^{-1}(U_\beta)\), then \(\pi_\beta^{-1}(U_\beta)\) intersects every element of \(\mathcal{D}\).
+    
+%     \(x_\beta \in U_\beta\), \(x_\beta \in \overline{\pi_\beta(D)}\), \(\forall D \in \mathcal{D}\).
+%     So \(y_\beta = \pi_\beta(y) \in U_\beta \cap \pi_\beta(D)\), \(y \in \pi_\beta^{-1}(U_\beta) \cap D\).
+    
+%     Then \(\pi_\beta^{-1}(U_\beta) \in \mathcal{D}\) (by Lemma 2(b)).
+    
+%     Every basis element cont. \(x\) is a finite intersection
+%     \[U = \pi_{\beta_1}^{-1}(U_{\beta_1}) \cap \cdots \cap \pi_{\beta_n}^{-1}(U_{\beta_n}) \in \mathcal{D} \ (\text{by Lemma 2(a)}).\]
+    
+%     Then every basis element \(U\) cont. \(x\) intersects \(D \implies x \in \overline{D} \implies \bigcap \overline{D} \ni x\).
+% \end{proof}

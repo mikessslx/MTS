@@ -1,0 +1,167 @@
+\section{Notes 23 - 12.29}
+
+\subsection{Stone-\v{C}ech Compactification (1937)}
+
+\begin{definition}[Compactification]
+    A \textbf{compactification} of a Hausdorff space \(X\) is a Hausdorff space \(Y \supset X\) such that \(Y = \overline{X}\).
+    We say that compactifications \(Y_1\) and \(Y_2\) are \textbf{equivalent} if there exists a homeomorphism \(h: Y_1 \to Y_2\) such that \(h(x) = x\) for all \(x \in X\).
+\end{definition}
+
+\begin{example}
+    \leavevmode
+    \begin{enumerate}
+        \item \(X = (0, 1)\), \(Y = S^1 \subset \mathbb{R}^2\). \(x \mapsto (\cos 2\pi x, \sin 2\pi x)\). (One-point compactification).
+        \item \(X = (0, 1)\), \(Y = [0, 1]\). (Standard compactification).
+        \item \(X = (0, 1)\), \(X \hookrightarrow Y \subset \mathbb{R}^2\) via \(x \mapsto (x, \sin \frac{1}{x})\).
+        Here \(Y = \overline{X_0}\) where \(X_0 = \{(x, \sin \frac{1}{x}) \mid x \in (0, 1) \}\).
+        What is \(Y_0 \setminus X_0 = A\)? \(A = \{0\} \times [-1, 1] \cup \{(1, \sin 1)\}\).
+    \end{enumerate}
+\end{example}
+
+\subsection{Complete Regularity and Embedding}
+
+\begin{proposition}
+    If \(X \subset Y\) and \(Y\) is compact, then \(X\) is completely regular.
+\end{proposition}
+
+\begin{recap}[Completely Regular]
+    \(X\) is completely regular if for every closed set \(Z \subset X\) and point \(y \in X \setminus Z\) (or \(y \in U \subset X\)), there exists a continuous function \(f: X \to \mathbb{R}\) such that \(f(y) > 0\) and \(f(Z) = 0\) (or \(f(z) = 0 \forall z \in X \setminus U\)). (Property \(T_{3\frac{1}{2}}\)).
+\end{recap}
+
+\begin{remark}
+\begin{enumerate}
+    \item \(X\) is completely regular as a subspace of \(Y\).
+    \item If \(X\) is completely regular, it has a compactification.
+    \item Urysohn Metrization Theorem: \(X \hookrightarrow [0, 1]^\omega \subset \mathbb{R}^\omega\) (regular, countable basis).
+\end{enumerate}
+\end{remark}
+
+\begin{theorem}[Embedding Theorem]
+    Let \(X\) be \(T_1\). Suppose \(X\) has an indexed family of continuous functions \(\{f_\alpha\}_{\alpha \in J}, f_\alpha: X \to \mathbb{R}\), such that for all \(x_0 \in X\) and open \(U \ni x_0\), there exists \(f_\alpha\) such that \(f_\alpha(x_0) > 0\) and \(f_\alpha(X \setminus U) = 0\).
+    Then \(F: X \to \mathbb{R}^J\) defined by \(x \mapsto \{f_\alpha(x)\}_{\alpha \in J}\) is an embedding \(X \hookrightarrow \mathbb{R}^J\).
+    If additionally \(f_\alpha: X \to [0, 1]\), then \(F: X \hookrightarrow [0, 1]^J\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     \textbf{\(F\) is injective:}
+%     \(\forall x \neq y \implies F(x) \neq F(y)\).
+%     Take \(f_\alpha\) separating \(\{x\}\) and \(\{y\}\).
+    
+%     We have \(f_\alpha(x) > 0, f_\alpha(y) = 0 \implies f_\alpha(x) \neq f_\alpha(y) \implies F(x) \neq F(y)\).
+
+%     \textbf{\(F\) is continuous} since all \(f_\alpha\) are continuous.
+
+%     Need to show: \(F\) takes open sets to open sets.
+
+%     But \(f_\alpha: X \setminus U \to \{0\}\), so for closed sets this is true.
+% \end{proof}
+
+\begin{theorem}
+    \(X\) is completely regular iff it is homeomorphic to a subspace of \([0, 1]^J\) for some \(J\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     \(h: X \hookrightarrow [0, 1]^J\) (\([0, 1]^J\) is compact by Tychonoff's Thm).
+
+%     \(\overline{h(X)}\) is closed, subspace of compact \(\implies\) compact.
+% \end{proof}
+
+\begin{lemma}
+    Let \(X\) be a Hausdorff space, \(h: X \to Z\) an embedding with \(Z\) compact Hausdorff.
+    Then there exists a compactification \(Y \supset X\) s.t. there is an embedding \(H: Y \to Z\) with \(H(x) = h(x) \forall x \in X\).
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     \(X_0 = h(X)\), \(Y_0 = \overline{h(X)}\) in \(Z\). So \(\overline{X_0} = Y_0\).
+
+%     Want: \(Y \simeq Y_0\). Construct it as follows:
+
+%     Take \(k: A \xrightarrow{1:1} Y \setminus X\).
+%     \(Y = X \cup A\), \(H(x) = h(x) \forall x \in X\), \(H(a) = k(a) \forall a \in A\).
+    
+%     \(U\) is open in \(Y \iff H(U)\) open in \(Z\).
+
+%     Since \(H|_X = h\), then \(X\) is a subspace of \(Y\).
+%     \(H: Y \hookrightarrow Z\) embedding.
+
+%     Let \(H_i: Y_i \to Z\), \(H_i: X \to h(X) = X_0\), \(Y_i \to \overline{X_0} \subset Z\), where \(i = 1, 2\) and \(Y_i\) compact.
+
+%     Since \(H_i(Y_i) \supset X_0\), \(H_i(Y_i)\) is closed (compact implies closed in Hausdorff).
+    
+%     \(H_i(Y_i) = \overline{X_0}\), \(H_i: Y_i \xrightarrow{\sim} \overline{X_0}\), so \(H_2^{-1} \circ H_1: Y_1 \xrightarrow{\sim} Y_2\) is a homeomorphism.
+% \end{proof}
+
+\subsection{Examples of Extension Problems}
+
+\begin{xca}
+Given a function \(f\) on \(X\), can we extend it to a function on \(Y = \overline{X}\)? (Assuming \(f\) is \textbf{BOUNDED}.)
+\end{xca}
+
+\begin{example}
+    \leavevmode
+    \begin{enumerate}
+        \item
+        \(f: (0, 1) \to \mathbb{R}\) is extendable to \(S^1\) iff \(\lim_{x \to 0^+} f(x) = \lim_{x \to 1^-} f(x)\).
+
+        \item
+        \(f(x)\) can be extended to \([0, 1] \implies\) Bounded.
+        \begin{itemize}
+            \item \(\frac{1}{x}\) defined on \((0, 1]\), not on \([0, 1]\). Not bounded.
+            \item \(\sin \frac{1}{x}\) bounded, not extendable to \(0\).
+            \item \(f\) extendable \(\iff \lim_{x \to 0^+} f(x), \lim_{x \to 1^-} f(x)\) exist (are finite).
+        \end{itemize}
+
+        \item
+        \(\sin \frac{1}{x}\) can be extended to \(\overline{X_0}\).
+        \[\gamma: (0, 1) \xrightarrow{h} \mathbb{R}^2 \xrightarrow{\pi_2} \mathbb{R}, \ x \longmapsto (x, \sin \frac{1}{x}) \longmapsto \sin \frac{1}{x}\]
+
+        On \(Y_0 = \overline{X_0}\) (in \(\mathbb{R}^2\)), we have \((0, y) \xrightarrow{\pi_2} y\).
+    
+        The map \(F: Y_0 \to \mathbb{R}\), \((x, \sin \frac{1}{x}) \longmapsto \sin \frac{1}{x}\), \((0, y) \longmapsto y\), is continuous!
+    
+        (Note: \(x \mapsto \sin \frac{1}{x}\) is \(\pi_2 \circ h\), so continuous.)
+    \end{enumerate}
+\end{example}
+
+\subsection{Stone-\v{C}ech Compactification Construction}
+
+\begin{theorem}
+    Let \(X\) be completely regular. There exists a compactification \(Y\) of \(X\) such that \textit{every} bounded continuous map \(f: X \to \mathbb{R}\) extends uniquely to \(\hat{f}: Y \to \mathbb{R}\). (\(Y\) is called the \textbf{Stone-\v{C}ech compactification} of \(X\).)
+\end{theorem}
+
+\begin{remark}
+    Uniqueness will be discussed next time (26/1/5).
+\end{remark}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+%     Let \(\{f_\alpha\}_{\alpha \in J}\) be the collection of \textit{all} bounded continuous functions on \(X\), \(J\) indexing set.
+%     For each \(\alpha \in J\), \(f_\alpha: X \to [\inf f_\alpha, \sup f_\alpha] = I_\alpha\).
+
+%     Define \(h: X \to \prod_{\alpha \in J} I_\alpha\), \(h(x) = (f_\alpha(x))_{\alpha \in J}\) (which is compact by Tychonoff thm!).
+
+%     Since \(X\) is completely regular, \(\{f_\alpha\}\) separates points from closed sets (and points from points), and hence \(h\) is an embedding (Embedding Theorem).
+    
+%     Let \(Y\) be the compactification obtained from this embedding
+%     \[H: Y \to \prod_{\alpha \in J} I_\alpha \ (H(x) = h(x), \ \forall x \in X)\]
+
+%     Take any bounded function \(f\) on \(X\), \(\exists \beta \in J: f = f_\beta\).
+%     \[Y \xrightarrow{H} \prod_{\alpha \in J} I_\alpha \xrightarrow{\pi_\beta} I_\beta\]
+
+%     So \(\hat{f} = \hat{f}_\beta = \pi_\beta \circ H\) continuous.
+% \end{proof}

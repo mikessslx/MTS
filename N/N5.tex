@@ -1,0 +1,151 @@
+\section{Notes 5 - 10.27}
+
+\subsection{Connectedness (Recap and Equivalences)}
+
+\begin{recap}[Path-Connectedness]
+A space \(X\) is path-connected if \(\forall x,y \in X\), \(\exists\) continuous \(\gamma: [0,1] \to X\) with \(\gamma(0)=x\), \(\gamma(1)=y\).
+\end{recap}
+
+\begin{theorem}[Def-Thm]
+The following are equivalent:
+\begin{enumerate}
+    \item \textbf{IVT}: \(\forall f: X \to \mathbb{R}\) continuous, s.t. \(f(x)=a, f(y)=b, a < b\), \(\forall c \in [a,b], \exists z \in X\) s.t. \(f(z)=c\).
+    \item There is no continuous map \(f: X \to \{0,1\}\), \(f(x)=0, f(y)=1\) for some \(x, y \in X\) (surjective).
+    \item 
+    \begin{enumerate}
+        \item[(3a)] \(X\) cannot be presented as a disjoint union of two open nonempty sets. \(X = U_1 \cup U_2, U_1, U_2 \text{ open}, U_1 \cap U_2 = \emptyset \implies U_1 = \emptyset \text{ or } U_2 = \emptyset\).
+        \item[(3b)] If \(X = V_1 \cup V_2\), \(V_1, V_2\) closed, \(V_1 \cap V_2 = \emptyset\), then \(V_1 = \emptyset\) or \(V_2 = \emptyset\).
+        \item[(3c)] If \(U \subset X\) is both \underline{open and closed}, then \(U = \emptyset\) or \(U = X\) (``clopen set'').
+    \end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Path-Connected \(\implies\) Connected]
+All path-connected spaces are connected, but connected spaces need not be path-connected (e.g., the topologist's sine curve).
+\end{remark}
+
+\begin{example}[Topologist's Sine Curve]
+Let \(X = \left\{ \left(x, \sin\frac{1}{x}\right) \mid x > 0 \right\} \cup \left( \{0\} \times [-1,1] \right) \subset \mathbb{R}^2\).
+
+\begin{proof}[\textbf{\(X\) is Not Path-Connected}]
+Let \(p_1 = (0,0)\) and \(p_2 = (1, \sin 1)\).
+
+Suppose there exists a continuous path \(\gamma: [0,1] \to X\) such that \(\gamma(0)=p_1\) and \(\gamma(1)=p_2\).
+
+Let \(\gamma(t) = (x(t), y(t))\), where \(x, y: [0,1] \to \mathbb{R}\) are continuous functions.
+
+Let \(U = \{ \tau \in [0,1] \mid x(\tau) = 0 \} = x^{-1}(\{0\})\).
+
+Then \(U = x^{-1}(0)\) is closed (the preimage of a closed set \(\{0\}\)).
+
+Thus, \(\sup U \in U\) and \(1 \notin U \implies \sup U = t_0 < 1\).
+
+For \(t > t_0\), we have \(x(t) > 0\), so \(\varphi(t) = \frac{1}{x(t)}\) is well-defined. (As \(t \to t_0^+\), \(\varphi(t) \to +\infty\).)
+
+The \(y\)-coordinate for \(t > t_0\) is \(y(t) = \sin \frac{1}{x(t)} = \sin \varphi(t)\).
+
+Now, consider any interval \((t_0, t_0 + \varepsilon)\). Since \(\varphi(t) \to \infty\), this interval contains infinitely many points where \(\sin \varphi(t) = 1\) and where \(\sin \varphi(t) = -1\). This implies \(y(t)\) does not converge to \(y(t_0) = 0\) as \(t \to t_0^+\), contradicting the continuity of \(\gamma\).
+\end{proof}
+
+\textbf{\(X\) is Connected}:
+Let \(X = Y \cup (\{0\} \times [-1,1])\) and \(Y = \left\{ \left(x, \sin\frac{1}{x}\right) \mid x > 0 \right\}\). Note that \(Y\) is connected (and even path-connected).
+Furthermore, \(X = \overline{Y}\).
+\end{example}
+
+\begin{proposition}[Fact]
+If \(A\) is a connected, then \(\overline{A}\) is also connected (in \(\mathbb{R}^2\) or other metric spaces).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Assume that \(\overline{A} = U_1 \cup U_2\), where \(U_1, U_2\) are open in \(\overline{A}\) and \(U_1 \cap U_2 = \varnothing\).
+
+% Consider the sets \(A_1 = U_1 \cap A\) and \(A_2 = U_2 \cap A\).
+
+% We have \(A = A_1 \cup A_2\), \(A_1, A_2\) are open in \(A\) and \(A_1 \cap A_2 = \varnothing\).
+
+% Since \(A\) is connected, one of these sets must be empty.
+
+% Let \(A_1 = U_1 \cap A = \varnothing\), then \(U_1 \subset \overline{A} \setminus A\). However, \(U_1\) is a non-empty open subset of \(\overline{A}\). 
+
+% By definition, every non-empty open set in \(\overline{A}\) must intersect \(A\), which contradicts \(U_1 \cap A = \varnothing\)!
+% \end{proof}
+
+\subsection{Connected Components}
+
+\begin{definition}[Path-Connected Components]
+For any \(x, y \in X\), say that \(x \sim y\)
+if \(\exists \gamma: [0,1] \to X, \gamma(0)=x, \gamma(1)=y\).
+
+This is an \textbf{equivalence relation}:
+\begin{itemize}
+    \item \textbf{Reflexive}: \(x \sim x\) (\(\gamma(t)=x \forall t\)).
+    \item \textbf{Symmetric}: If \(x \sim y\), \(y \sim x\) (\(\tilde{\gamma}(t) = \gamma(1-t)\)).
+    \item \textbf{Transitive}: If \(x \sim y, y \sim z\), \(x \sim z\) (concatenate paths):
+    \[\gamma(t) = \begin{cases}
+        \gamma_1(2t) & t \leq \frac{1}{2} \\
+        \gamma_2(2t-1) & t \geq \frac{1}{2}
+    \end{cases}\]
+    (\(\gamma_1: x \to y\), \(\gamma_2: y \to z\)).
+\end{itemize}
+
+The \textbf{connected components} (path-connected components) of \(X\) are the equivalence classes of \(\sim\).
+\end{definition}
+
+\begin{definition}[General Connected Components]
+Connected components (for general connectedness) are maximal connected subsets of \(X\) (each is connected, and no larger connected subset contains it).
+\end{definition}
+
+\begin{remark}[Invariance Under Homeomorphism]
+The number of connected components is preserved under homeomorphisms (\(X \cong Y \implies X,Y\) have the same number of components).
+\end{remark}
+
+\begin{example}[Examples of Components]
+    \leavevmode
+    \begin{enumerate}
+        \item[\bfseries Ex 1.] \((0,1) \cup (2,3) \not\cong (0,1)\)
+
+        \item[\bfseries Ex 2.] \([0,1] \not\cong [0,1] \times [0,1]\)
+    
+        Removing a non-boundary point makes \([0,1]\) disconnected (\([0,1] \setminus \{pt\}\) is disconnected), but \([0,1] \times [0,1] \setminus \{pt\}\) is connected for any points.
+    
+        \item[\bfseries Ex 3.] \([0,1] \not\cong (0,1) \not\cong [0,1)\)
+    \end{enumerate}
+\end{example}
+
+\subsection{Equivalent Norms on \(\mathbb{R}^n\)}
+
+\begin{example}[Norms on \(\mathbb{R}^2\)]
+For \(v = (x,y) \in \mathbb{R}^2\), common norms:
+\[\|v\|_1 = |x| + |y|, \ \|v\|_2 = \sqrt{x^2 + y^2}, \ \|v\|_\infty = \max(|x|, |y|)\]
+
+These induce diamond-shaped, circular, and square-shaped balls, respectively.
+\end{example}
+
+\begin{proposition}[Same Topology]
+A subset \(U \subset \mathbb{R}^2\) is open in one of these metrics \(\iff\) it is open in the others (they define the \textbf{same topology}).
+
+\paragraph*{Reason (Ball Inclusions)}
+For \(\varepsilon > 0\):
+\[U_\varepsilon^{(2)} \subset U_\varepsilon^{(1)} \subset U_\varepsilon^{(\infty)}, \ U_{\varepsilon/\sqrt{2}}^{(2)} \subset U_\varepsilon^{(1)} \subset U_{\varepsilon/2}^{(2)}\]
+
+This ensures open sets (unions of balls) are identical across metrics.
+\end{proposition}
+
+\begin{definition}[Equivalent Norms]
+Two norms \(\|\cdot\|_a\) and \(\|\cdot\|_b\) on a vector space \(V\) are \textbf{equivalent} if \(\exists C_1, C_2 > 0\) such that
+\[C_1 \|v\|_a \leq \|v\|_b \leq C_2 \|v\|_a \ \forall v \in V\]
+\end{definition}
+
+\begin{xca}[Exercises]
+\leavevmode
+\begin{enumerate}
+    \item[(1)] This is an equiv. relation.
+    \item[(2)] Equiv. norms define the same topology.
+    \item[(3)] \(\|\cdot\|_1, \|\cdot\|_2, \|\cdot\|_\infty\) on \(\mathbb{R}^2\) equivalent.
+    \item[(4*)] All norms on \(\mathbb{R}^n\) are equivalent.
+\end{enumerate}
+\end{xca}

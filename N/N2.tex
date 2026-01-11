@@ -1,0 +1,169 @@
+\section{Notes 2 - 10.17}
+
+\subsection{Recap}
+
+\begin{recap}[Norm]
+A norm \(\|\cdot\|: V \to \mathbb{R}\) satisfies:
+\begin{enumerate}
+    \item \(\|x\| \geq 0\), and \(\|x\| = 0 \iff x = 0\)
+    \item \(\|\lambda x\| = |\lambda| \cdot \|x\|\) for all \(\lambda \in \mathbb{R}, x \in V\)
+    \item \(\|x + y\| \leq \|x\| + \|y\|\) (triangle inequality)
+\end{enumerate}
+\end{recap}
+
+A norm defines a metric: \(d(x, y) = \|x - y\|\).
+
+\begin{remark}[Relationship to Inner Product Spaces]
+A positive-definite inner product \(\langle \cdot, \cdot \rangle\) defines a norm: \(\|x\| = \sqrt{\langle x, x \rangle}\). The triangle inequality follows from Cauchy-Schwarz. The hierarchy is:
+\[\text{Inner Product Space} \implies \text{Normed Space} \implies \text{Metric Space}\]
+\end{remark}
+
+\begin{definition}[\(l_p\)-Spaces (Revisited)]
+\begin{itemize}
+    \item \(l_p = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \sum_{i=1}^\infty |x_i|^p \text{ converges} \right\}\) for \(1 \leq p < \infty\)
+    \item \(l_\infty = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \text{ bounded} \right\}\)
+    \item Norms:
+    \[\|x\|_p = \left( \sum_{i=1}^\infty |x_i|^p \right)^{1/p} \ (1 \leq p < \infty), \ \|x\|_\infty = \max_i |x_i|\]
+    \item \(l_2\) is an inner product space with \(\langle x, y \rangle = \sum_{i=1}^\infty x_i y_i\) and \(\|x\|_2 = \sqrt{\langle x, x \rangle}\), satisfying the triangle inequality.
+\end{itemize}
+\end{definition}
+
+\subsection{Important Inequalities}
+
+\begin{theorem}[Minkowski Inequality]
+For \(1 \leq p < \infty\) and \(x, y \in l_p\),
+\[\|x + y\|_p \leq \|x\|_p + \|y\|_p\]
+\end{theorem}
+
+For \(p > 1\), let \(q > 1\) be its conjugate (\(\frac{1}{p} + \frac{1}{q} = 1\)).
+
+\begin{theorem}[Hölder's Inequality]
+For sequences \(a_1, \cdots, a_n\), \(b_1, \cdots, b_n \geq 0\), and \(p, q > 1\) with \(\frac{1}{p} + \frac{1}{q} = 1\),
+\[\sum_{k=1}^n a_k b_k \leq \left( \sum_{k=1}^n a_k^p \right)^{\frac{1}{p}} \left( \sum_{k=1}^n b_k^q \right)^{\frac{1}{q}}\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}[Proof of Minkowski Inequality for Finite Sequences]
+% Let \(x = (x_1, \cdots, x_n)\), \(y = (y_1, \cdots, y_n)\), and \(1 \leq p < \infty\). We aim to show:
+% \[\left( \sum_{k=1}^n |x_k + y_k|^p \right)^{\frac{1}{p}} \leq \left( \sum_{k=1}^n |x_k|^p \right)^{\frac{1}{p}} + \left( \sum_{k=1}^n |y_k|^p \right)^{\frac{1}{p}}\]
+
+% \paragraph*{Step 1: Decompose \(|x_k + y_k|^p\)}
+% \[|x_k + y_k|^p = |x_k + y_k|^{p-1} |x_k + y_k| \leq |x_k + y_k|^{p-1} (|x_k| + |y_k|)\]
+
+% \paragraph*{Step 2: Apply Hölder's Inequality to each term}
+% \begin{itemize}
+%     \item For \(\sum |x_k + y_k|^{p-1} |x_k|\): Let \(a_k = |x_k|\), \(b_k = |x_k + y_k|^{p-1}\), \(q = \frac{p}{p-1}\) (so \(\frac{1}{p} + \frac{1}{q} = 1\)). Then
+%     \[\sum |x_k + y_k|^{p-1} |x_k| \leq \left( \sum |x_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
+%     \item For \(\sum |x_k + y_k|^{p-1} |y_k|\): Similarly,
+%     \[\sum |x_k + y_k|^{p-1} |y_k| \leq \left( \sum |y_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
+% \end{itemize}
+
+% \paragraph*{Step 3: Combine the inequalities}
+% Let \(A = \left( \sum |x_k + y_k|^p \right)^{\frac{1}{p}}\). Summing the two inequalities gives:
+% \[A^p \leq \left( \sum |x_k|^p \right)^{\frac{1}{p}} A^{\frac{p}{q}} + \left( \sum |y_k|^p \right)^{\frac{1}{p}} A^{\frac{p}{q}}\]
+
+% Since \(\frac{p}{q} = p - 1\), divide both sides by \(A^{p-1}\) (for \(A \neq 0\)):
+% \[A \leq \left( \sum |x_k|^p \right)^{\frac{1}{p}} + \left( \sum |y_k|^p \right)^{\frac{1}{p}}\]
+% \end{proof}
+
+\begin{theorem}[Young's Inequality]
+For \(a, b \geq 0\) and \(p, q > 1\) with \(\frac{1}{p} + \frac{1}{q} = 1\),
+\[ab \leq \frac{a^p}{p} + \frac{b^q}{q}\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Since \(\ln x\) is concave, by Jensen's inequality:
+% \[\ln a + \ln b = \frac{1}{p} \ln a^p + \frac{1}{q} \ln b^q \leq \ln\left( \frac{a^p}{p} + \frac{b^q}{q} \right)\]
+
+% Exponentiating both sides gives the inequality. A special case is \(ab \leq \frac{a^2 + b^2}{2}\) (when \(p = q = 2\)).
+% \end{proof}
+
+\textbf{Hölder's Inequality (Alternative Proof)}
+For sequences \(a_1, \cdots, a_n\), \(b_1, \cdots, b_n \geq 0\) and \(p, q > 1\) with \(\frac{1}{p} + \frac{1}{q} = 1\),
+\[\sum_{k=1}^n a_k b_k \leq \left( \sum_{k=1}^n a_k^p \right)^{\frac{1}{p}} \left( \sum_{k=1}^n b_k^q \right)^{\frac{1}{q}}\]
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}[Proof (from Young's Inequality)]
+% Let \(A = \left( \sum_{k=1}^n a_k^p \right)^{\frac{1}{p}}\), \(B = \left( \sum_{k=1}^n b_k^q \right)^{\frac{1}{q}}\). Define \(u_k = \frac{a_k}{A}\), \(v_k = \frac{b_k}{B}\), so \(\sum_{k=1}^n u_k^p = 1\) and \(\sum_{k=1}^n v_k^q = 1\). By Young's Inequality:
+% \[u_k v_k \leq \frac{u_k^p}{p} + \frac{v_k^q}{q}\]
+
+% Summing over \(k\):
+% \[\sum_{k=1}^n u_k v_k \leq \frac{1}{p} \sum_{k=1}^n u_k^p + \frac{1}{q} \sum_{k=1}^n v_k^q = \frac{1}{p} + \frac{1}{q} = 1\]
+
+% Substituting back \(u_k, v_k\):
+% \[\sum_{k=1}^n \frac{a_k b_k}{AB} \leq 1 \implies \sum_{k=1}^n a_k b_k \leq AB = \left( \sum_{k=1}^n a_k^p \right)^{\frac{1}{p}} \left( \sum_{k=1}^n b_k^q \right)^{\frac{1}{q}}\]
+% \end{proof}
+
+% Tutorial
+\subsection{Metric Space and Neighborhoods}
+
+Let \(X\) be a metric space.
+
+\begin{definition}[Neighborhoods]
+\textbf{Neighborhood}: For \(x \in X\) and \(\varepsilon > 0\), \(U_\varepsilon(x) = \{ y \in X \mid d(x, y) < \varepsilon \}\).
+
+\textbf{Punctured Neighborhood}: \(\cdot{U}_\varepsilon(x) = \{ y \in X \mid 0 < d(x, y) < \varepsilon \} = U_\varepsilon(x) \setminus \{ x \}\).
+\end{definition}
+
+\begin{definition}
+A subset \(M \subset X\) is open if \(\forall x \in M\), \(\exists \varepsilon > 0\) such that \(U_\varepsilon(x) \subset M\). \(\varnothing\) and \(X\) are open by definition.
+\end{definition}
+
+\begin{theorem}[Theorems on Open Sets]
+\begin{enumerate}
+    \item The intersection of finitely many open sets \(U_1 \cap \cdots \cap U_k\) is open.
+    \item The union of any collection of open sets \(\bigcup U_\alpha\) is open.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{enumerate}
+%     \item
+%     Let \(V = \bigcap_{i=1}^k U_i\). If \(V = \emptyset\), it is open.
+    
+%     Otherwise, let \(x \in V\), then \(x \in U_i\) for all \(i = 1, \cdots, k\).
+    
+%     Since each \(U_i\) is open, there exists \(\varepsilon_i > 0\) such that \(U_{\varepsilon_i}(x) \subset U_i\).
+    
+%     Take \(\varepsilon = \min\{\varepsilon_1, \cdots, \varepsilon_k\} > 0\), then \(U_\varepsilon(x) \subset U_{\varepsilon_i}(x) \subset U_i\) for all \(i\).
+    
+%     Thus, \(U_\varepsilon(x) \subset V \implies V\) is open.
+    
+%     \item
+%     Let \(U = \bigcup_\alpha U_\alpha\). For any \(x \in U\), there exists some \(\alpha\) such that \(x \in U_\alpha\).
+    
+%     Since \(U_\alpha\) is open, there exists \(\varepsilon > 0\) such that \(U_\varepsilon(x) \subset U_\alpha\).
+    
+%     Since \(U_\alpha \subset U\), then \(U_\varepsilon(x) \subset U \implies U\) is open.
+% \end{enumerate}
+% \end{proof}
+
+\begin{example}[Questions and Examples]
+    \leavevmode
+    \begin{enumerate}
+        \item[\bfseries Qu 1.] Is \(U_R(y) \subset U_r(x)\) possible for \(r < R\)?
+    
+        Example: Let \(X\) be a disk of radius 1 (\(U_1(0) = X\)), then \(B_{\frac{3}{2}}\left( \frac{3}{4} \right) \subset B_1(0)\), so yes.
+
+        \item[\bfseries Qu 2.] Draw balls centered at 0 in \(\mathbb{R}^2\) for norms \(\|\cdot\|_1\), \(\|\cdot\|_2\), \(\|\cdot\|_\infty\).
+
+        \item[\bfseries Qu 3.] For the ``Amazon metric'' on \(\mathbb{R}^2\):
+        \[d((x_1,y_1),(x_2,y_2)) = \begin{cases} |y_1 - y_2| & x_1 = x_2 \\ |y_1| + |x_1 - x_2| + |y_2| & x_1 \neq x_2 \end{cases}\]
+
+        Describe balls centered at (0,0) and (0,1).
+    \end{enumerate}
+\end{example}

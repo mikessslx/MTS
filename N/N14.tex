@@ -1,0 +1,161 @@
+\section{Notes 14 - 12.01}
+
+\subsection{Metrizability and Convergence}
+
+\begin{recap}[The Sequence Lemma]
+Let \(X\) be a topological space, \(A \subset X\).
+\begin{itemize}
+    \item If there exists a sequence \(x_n \in A\) such that \(\lim_{n \to \infty} x_n = x\), then \(x \in \overline{A}\).
+    \item The converse is true if \(X\) is \textbf{metrizable} (or first-countable).
+\end{itemize}
+\end{recap}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     Take \(U \ni x\) open. Then \(x_n \in U\) for \(n \gg 0 \implies U \cap A \neq \emptyset \implies x \in \overline{A}\).
+
+%     \item[\(\Leftarrow\)] (Assuming first-countable/metrizable.) 
+    
+%     Take \(U_n = U_{1/n}(x)\) (in metric case), \(x_n \in U_{1/n}(x) \cap A\) (exists since \(x \in \overline{A}\)).
+
+%     If \(m > n\), \(U_{1/n}(x) \supset U_{1/m}(x)\), so \(x_m \in U_{1/n}(x)\) for each \(m > n\).
+    
+%     Any open set \(U\) contains \(U_\varepsilon = U_{1/n}\) for \(n\) large enough, so \(U \ni x_m\) for \(m > n\).
+% \end{itemize}
+% \end{proof}
+
+\begin{theorem}[Heine's Definition of Limit]
+Let \(f: X \to Y\). If \(f\) is continuous, then for every \(x_n \in X, x_n \to x \in X\), we have \(f(x_n) \to f(x)\).
+The converse holds if \(X\) is metrizable (or first-countable).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     Let \(f\) be continuous and take \(V \ni f(x)\), \(V \subset Y\) open \(\implies f^{-1}(V) \subset X\) open.
+
+%     Then \(f^{-1}(V) \ni x_n\) for \(n \gg 0\). Thus, \(f(x_n) \in f(f^{-1}(V)) \subset V\).
+    
+%     \item[\(\Leftarrow\)]
+%     Recall that \(f\) is continuous \(\iff \forall A \subset X, f(\overline{A}) \subset \overline{f(A)}\).
+
+%     Take \(A \subset X, x \in \overline{A}\). Then \(\exists x_n \in A, x_n \to x\) (since \(X\) metrizable/1st countable).
+
+%     Then \(f(x_n) \to f(x)\), so \(f(x) \in \overline{f(A)} \implies f(\overline{A}) \subset \overline{f(A)}\).
+% \end{itemize}
+% \end{proof}
+
+\subsection{Countability Axioms}
+
+\begin{definition}[First-Countable Space]
+\(X\) is \textbf{first-countable} if it has a countable basis at each \(x \in X\).
+We use the following:
+Given \(x\), there is a \textbf{countable} family of neighborhoods \(\mathcal{U} = \{U_1, U_2, \cdots\}\) (can assume nested \(U_1 \supset U_2 \supset \cdots\)) such that
+\[\forall U \ni x \text{ open}, \ \exists n \text{ s.t. } U \supset U_n\]
+\end{definition}
+
+\begin{definition}[Second-Countable Space]
+\(X\) is \textbf{second-countable} if it has a \textbf{countable basis} (for the topology on \(X\)). There exists a countable basis \(\mathcal{B}\) such that \(\forall x \in X, \forall U \ni x\) open, \(\exists B \in \mathcal{B}\) s.t. \(x \in B \subset U\).
+\[\text{2nd-countable} \implies \text{1st-countable}\]
+\end{definition}
+
+\subsection{Examples and Counterexamples}
+
+\begin{example}[Examples of Countability]
+    \leavevmode
+    \begin{enumerate}
+        \item[\bfseries Ex 1.] \textbf{\(\mathbb{R}^n\) is 2nd-Countable}
+        Has a countable basis \(\{U_\varepsilon(x) \mid x \in \mathbb{Q}^n, \varepsilon \in \mathbb{Q}_{>0}\}\).
+        It is also 1st-countable.
+
+        \item[\bfseries Ex 2.] \textbf{Finite Complement Topology on \(\mathbb{R}\)}
+        Not 1st-countable.
+        \(x \in U\) open \(\implies U = \mathbb{R} \setminus \{y_1, \cdots, y_k\}\).
+        Suppose there exists a countable basis at \(x\): \(U_n = \mathbb{R} \setminus F_n\) (finite sets).
+        Consider \(U = \mathbb{R} \setminus \{y\}\) where \(y \notin \bigcup F_n\) and \(y \neq x\).
+        Then \(U\) is open neighborhood of \(x\), but \(U \not\supset U_n\) for any \(n\) (since \(y \in U_n\)).
+
+        \item[\bfseries Ex 3.] \textbf{Uncountable Discrete Space}
+        \(X\) uncountable with discrete topology.
+        Then \(\forall x \in X\), the set \(\{x\}\) is open. So any basis of \(X\) should contain \(\{\{x\}\}_{x \in X}\).
+        \(\implies X\) not 2nd-countable.
+        But \(X\) is metrizable (discrete metric) \(\implies\) 1st-countable.
+
+        \item[\bfseries Ex 4.] \textbf{\(\mathbb{R}^2\) with ``Amazon River metric''}
+        \(d((x,y), (x',y')) = |y-y'|\) if \(x=x'\), else \(|y| + |x'-x| + |y'|\).
+        Basis elements at \((x,y_0)\) look like vertical segments \(\{ (x,y) \mid x=x_0, y \in (y_0-\varepsilon, y_0+\varepsilon) \}\).
+        \(\implies\) No countable basis (similar to discrete on the x-axis). Not 2nd-countable.
+        But metric \(\implies\) 1st-countable.
+
+        \item[\bfseries Ex 5.] \textbf{\(\mathbb{R}_\ell\) (Lower Limit Topology)}
+        Basis \([a, b)\).
+        \textbf{Not 2nd-countable}: Let \(\{B_n\}\) be a countable basis.
+        \(x \in \mathbb{R}_\ell\). \(U = [x, \infty) \implies \exists n: x \in B_n \subset [x, \infty)\).
+        Then \(x = \min B_n\).
+        So \(\forall x \in \mathbb{R}_\ell, \exists B_n: x = \min B_n\).
+        But there are countably many \(B_n\), uncountably many \(x\). Contradiction.
+        \textbf{1st-countable}: \(x \in [x, x+1/n)\) is a countable local basis.
+    \end{enumerate}
+\end{example}
+
+\subsection{Metrizability of Product Spaces}
+
+\begin{remark}
+Using the diagonal argument (sequence lemma) to disprove metrizability.
+\(J\) is infinite:
+\[\text{Box Top.} \supset \text{Uniform Metric Top.} \supset \text{Product Top.}\]
+(Box is finer).
+\end{remark}
+
+\begin{proposition}
+\(\mathbb{R}^\omega\) with \textbf{box topology} is not metrizable (hence \(\mathbb{R}^J\) not metrizable for any \(J\) infinite with box topology).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(A = \{(x_1, x_2, \cdots) \mid x_i > 0\}\) (\(0 \in \overline{A}\)).
+
+% Check: \(0 \in (a_1, b_1) \times (a_2, b_2) \times \cdots\) (basis element with \(a_i < 0 < b_i\) \(\forall i\)), then
+% \[(\frac{b_1}{2}, \frac{b_2}{2}, \cdots) \in B \cap A.\]
+
+% There is no sequence \((a_n) \in A\) such that \(a_n \to 0\).
+
+% Let \(a_n = (x_{1n}, x_{2n}, \cdots)\) and take the box \(B = \prod_{k=1}^\infty (-x_{kk}, x_{kk})\).
+
+% Then \(a_n \notin B\) for all \(n\) (since the \(n\)-th coordinate is \(x_{nn} \notin (-x_{nn}, x_{nn})\)) \(\implies a_n \not\to 0\).
+% \end{proof}
+
+\begin{proposition}
+Let \(J\) be uncountable. Then \(\mathbb{R}^J\) in \textbf{product topology} is not metrizable.
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(A = \{(x_\alpha) \mid x_\alpha = 1 \text{ for all but finitely many coordinates} \}\) (\(0 \in \overline{A}\)).
+
+% Let \(U = \prod U_\alpha\) be a basic open set of \(0\) (\(U_\alpha = \mathbb{R}\) if \(\alpha \neq \alpha_1, \cdots, \alpha_n\)).
+
+% Then take \(x_\alpha = \begin{cases} 0 & \text{if } \alpha = \alpha_1, \cdots, \alpha_n \\ 1 & \text{if } \alpha \neq \alpha_1, \cdots, \alpha_n \end{cases} \implies x_\alpha \in U \cap A \implies 0 \in \overline{A}\).
+
+% No sequence \(a^{(n)} \to 0\), \(a^{(n)} \in A\):
+% Let \(a^{(n)} = (x_\alpha^{(n)})\) be such a sequence.
+
+% \(\exists \beta \in J: x_\beta^{(n)} = 1 \forall n\) and take \(U = \pi_\beta^{-1}((-1, 1))\) (cylinder).
+
+% Then \(U \not\ni a^{(n)} \forall n\) (since \(x_\beta^{(n)} = 1 \notin (-1, 1)\)) \(\implies a^{(n)} \not\to 0\).
+% \end{proof}

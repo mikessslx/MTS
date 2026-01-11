@@ -1,0 +1,186 @@
+\section{Notes 10 - 11.14}
+
+\subsection{Hausdorff Spaces (\(T_2\))}
+
+\begin{definition}[Hausdorff Space]
+A topological space \(X\) is \textbf{Hausdorff}, or (\(T_2\)) if for any distinct points \(x \neq y\) in \(X\), there exist open sets \(U \ni x\) and \(V \ni y\) such that \(U \cap V = \varnothing\).
+\end{definition}
+
+\begin{proposition}
+If \(X\) is a metric space, then \(X\) is Hausdorff.
+\end{proposition}
+
+\begin{proof}
+Let \(x \neq y\) and \(d = d(x, y) > 0\), then \(U_{d/2}(x) \cap U_{d/2}(y) = \varnothing\).
+\end{proof}
+
+\begin{proposition}
+If \(X\) is Hausdorff, then \(\{x_0\} \subset X\) is closed for every \(x_0 \in X\).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% We show that \(X \setminus \{x_0\}\) is open.
+% For any \(x \in X \setminus \{x_0\}\) (\(x \neq x_0\)), since \(X\) is Hausdorff, there exist disjoint open sets \(U_x \ni x_0\) and \(U \ni x\).
+
+% Since \(x_0 \in U_x\) and \(U \cap U_x = \varnothing\), it follows that \(x_0 \notin U\). Thus, \(U \subset X \setminus \{x_0\}\).
+
+% Since this holds for any \(x\), \(X \setminus \{x_0\}\) is open \(\implies \{x_0\}\) is closed.
+% \end{proof}
+
+\begin{xca}
+If for all \(x \in X\), \(\{x\}\) is closed, is it true that \(X\) is Hausdorff?
+\end{xca}
+\begin{proof}[Solution]
+No. Consider the \textbf{Finite Complement Topology}. \(\{x\}\) are closed (since their complement is open), but the space is not Hausdorff (any two non-empty open sets intersect).
+\end{proof}
+
+\subsection{Fréchet Spaces (\(T_1\))}
+
+\begin{definition}[Fréchet Space]
+If every point \(x \in X\) is closed (\(\{x\}\) is a closed set), \(X\) is a \textbf{Fréchet space}, or (\(T_1\)) space.
+\end{definition}
+
+\begin{remark}[Relationship between \(T_1\) and \(T_2\)]
+\[(T_2) \implies (T_1)\]
+(Hausdorff spaces are \(T_1\), but the converse is not true).
+\end{remark}
+
+\begin{proposition}
+\(X\) is (\(T_1\)) iff \(\forall x \neq y \in X, \exists \text{ open } U \ni x \text{ such that } y \notin U\).
+\end{proposition}
+
+Ex. Prove this.
+
+\begin{xca}
+Let \(X\) satisfy the following: for every \(x, y \in X, x \neq y\), either \(\exists U \ni x, y \notin U\) or \(\exists U \ni y, x \notin U\). Is it true that \(X\) is (\(T_1\))?
+\end{xca}
+
+\begin{theorem}
+Let \(X\) be a (\(T_1\)) space and \(A \subset X\). Then \(x \in A'\) (limit point) if and only if every open neighborhood \(U \ni x\) contains infinitely many points from \(A\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Leftarrow\)] Obvious.
+%     \item[\(\Rightarrow\)]
+%     Suppose \(x \in A'\). Then for any open \(U \ni x\), we have \(U \cap (A \setminus \{x\}) \neq \varnothing\).
+
+%     Suppose for contradiction that \(U \cap A\) is finite, say \(U \cap A = \{y_1, \cdots, y_n\}\).
+
+%     Then \(V = U \setminus \{y_1, \cdots, y_n\}\) is open (finite sets are closed in \(T_1\)).
+
+%     Also \(x \in V\) (assuming \(x\) was not one of \(y_i\), or taking \(V = U \setminus (\{y_1, \cdots, y_n\} \setminus \{x\})\)).
+
+%     Then \((V \setminus \{x\}) \cap A = \emptyset\), which implies \(x\) is not a limit point. Contradiction!
+% \end{itemize}
+% \end{proof}
+
+\begin{theorem}[Uniqueness of Limits]
+A sequence \((x_1, x_2, \cdots)\) in a Hausdorff space \(X\) has at most one limit.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Suppose \(a_1, a_2\) are distinct limits. Since \(X\) is Hausdorff, \(\exists U_1 \ni a_1, U_2 \ni a_2\) with \(U_1 \cap U_2 = \varnothing\).
+
+% Then \(U_1\) contains all \(x_n\) starting from \(N_1\).
+
+% \(x_n \in U_2\) if \(n > N_2\). So for \(n > \max(N_1, N_2)\), \(x_n \in U_1 \cap U_2 = \varnothing\). Contradiction!
+% \end{proof}
+
+\begin{theorem}[Properties of Hausdorff Spaces]
+\begin{enumerate}
+    \item[(i)] \((X, <)\) with the order topology is Hausdorff.
+    \item[(ii)] If \(X\) is Hausdorff, \(Y \subset X\) with subspace topology \(\implies Y\) Hausdorff.
+    \item[(iii)] If \(X_1, X_2\) Hausdorff, then \(X_1 \times X_2\) with product topology is Hausdorff.
+\end{enumerate}
+\end{theorem}
+
+\subsection{Continuity}
+
+\begin{definition}[Continuity]
+A function \(f: X \to Y\) is \textbf{continuous} if \(\forall V \subset Y\) open, \(f^{-1}(V) \subset X\) is open.
+\end{definition}
+
+\begin{remark}
+If topology on \(Y\) is given by basis \(\mathcal{B}\), \(f\) continuous \(\iff f^{-1}(B)\) is open \(\forall B \in \mathcal{B}\).
+\end{remark}
+
+\begin{example}
+\(\mathbb{R}_{st} \leftrightarrow \mathbb{R}_{\ell}\).
+\(f(x)=x\) (Id as maps of sets).
+\begin{itemize}
+    \item \(\mathbb{R}_{st} \xrightarrow{f} \mathbb{R}_{\ell}\): not continuous. \(f^{-1}([0, 1)) = [0, 1)\) not open in \(\mathbb{R}_{st}\).
+    \item \(\mathbb{R}_{\ell} \xrightarrow{g} \mathbb{R}_{st}\): continuous. For \(\mathbb{R}_{st}\), \((a, b)\) is open. \(g^{-1}((a, b)) = (a, b)\) is open in \(\mathbb{R}_{\ell}\) (since \([x, b) \subset (a, b)\) type sets form basis, or simply \(\mathbb{R}_{\ell}\) finer).
+\end{itemize}
+\end{example}
+
+\begin{remark}[Observation]
+    If \(\mathcal{T}, \mathcal{T}'\) topologies on \(X\) and \(\mathcal{T} \subsetneq \mathcal{T}'\), then
+    \begin{itemize}
+        \item \(f = Id: (X, \mathcal{T}) \to (X, \mathcal{T}')\) is \textbf{not} continuous.
+        \item \(g = Id: (X, \mathcal{T}') \to (X, \mathcal{T})\) is continuous.
+    \end{itemize}
+\end{remark}
+
+\begin{theorem}[TFAE]
+\begin{enumerate}
+    \item \(f: X \to Y\) continuous.
+    \item \(\forall A \subset X\), \(f(\overline{A}) \subset \overline{f(A)}\).
+    \item For every closed \(C \subset Y\), \(f^{-1}(C)\) closed in \(X\).
+    \item \(\forall x \in X\), \(\forall V \ni f(x), \exists U \ni x: f(U) \subset V\).
+\end{enumerate}
+\[(1) \implies (2) \implies (3) \implies (1), \ (1) \iff (4)\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item \((1) \implies (2)\): \(f: X \to Y, A \subset X\). Let \(x \in \overline{A}\); need to show \(f(x) \in \overline{f(A)}\). Take \(V \ni f(x)\) open. \(x \in f^{-1}(V)\) open in \(X\). So \(\exists y \in A \cap f^{-1}(V)\). Then \(f(y) \in f(A) \cap V\). So \(V \cap f(A) \neq \varnothing\).
+%     \item \((2) \implies (3)\): Let \(C \subset Y\) closed, \(A = f^{-1}(C)\). Need to show \(A = \overline{A}\).
+%     \(f(A) = f(f^{-1}(C)) \subset C\). So if \(x \in \overline{A}\), \(f(x) \in f(\overline{A}) \subset \overline{f(A)} \subset \overline{C} = C\). So \(x \in f^{-1}(C)\).
+%     \item \((3) \implies (1)\): Obvious (take complement).
+%     \item \((1) \implies (4)\): Take \(f^{-1}(V) =: U\) open.
+%     \item \((4) \implies (1)\): Let \(V \subset Y\) open. Need: \(f^{-1}(V)\) open. \(x \in f^{-1}(V) \implies f(x) \in V\). So \(\exists U_x \subset X\) s.t. \(f(U_x) \subset V\). Take \(U = \bigcup U_x\) open. \(f^{-1}(V) \subset U \implies f^{-1}(V) = U\).
+% \end{itemize}
+% \end{proof}
+
+\subsection{Constructing Continuous Functions}
+
+\begin{theorem}[Constructing Continuous Functions]
+\(X, Y, Z\) topological spaces.
+\begin{enumerate}
+    \item[(a)] \(f: X \to Y, f(x) = y \in Y\) is continuous (constant).
+    \item[(b)] \(A \subset X, j: A \hookrightarrow X\) continuous (subspace embedding).
+    \item[(c)] \(f: X \to Y, g: Y \to Z\) cont \(\implies gf: X \to Z\) cont.
+    \item[(d)] Restriction of domain: \(f: X \to Y\) cont, \(A \subset X\), then \(f|_A: A \to Y\) cont.
+    \item[(e)] \(f: X \to Y, Z \subset Y, f(X) \subset Z\). Then \(f: X \to Z\) continuous (restriction of range).
+    \item[(f)] \(f: X \to Y, Y \subset Z\), then \(f: X \to Z\) continuous.
+    \item[(g)] \(f: X \to Y\) is cont if \(X = \bigcup U_\alpha\), \(f|_{U_\alpha} \to Y\) cont. (Locality).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof of (g)]
+\(V \subset Y \implies f^{-1}(V) = \bigcup_\alpha (f^{-1}(V) \cap U_\alpha)\).
+\end{proof}
+
+\begin{lemma}[Pasting Lemma]
+Let \(X = A \cup B\).
+\(f: A \to Y\) cont, \(g: B \to Y\) cont.
+\(f(x) = g(x) \forall x \in A \cap B\).
+Then \(f\) and \(g\) are ``glued together'': \(\exists h: X \to Y\) cont, \(h|_A = f, h|_B = g\). (\(A, B\) both closed or open.)
+\end{lemma}

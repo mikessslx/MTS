@@ -1,0 +1,179 @@
+\section{Notes 18 - 12.16}
+
+\subsection{Locally Compact Spaces}
+
+\begin{definition}[Locally Compact Space]
+    \leavevmode
+    \begin{itemize}
+        \item \(X\) is \textbf{locally compact} at \(x \in X\) if \(\exists U\) open, \(C\) compact such that \(x \in U \subset C\).
+        \item \(X\) is \textbf{locally compact} if it is locally compact at every \(x \in X\).
+    \end{itemize}
+\end{definition}
+
+\begin{recap}[One-Point Compactification]
+Let \(X\) be a topological space. Then \(X\) is locally compact Hausdorff \(\iff \exists Y\) such that
+\begin{enumerate}
+    \item \(X \subset Y\)
+    \item \(Y \setminus X = \{pt\}\)
+    \item \(Y\) is compact Hausdorff.
+\end{enumerate}
+\end{recap}
+
+\begin{note}[Uniqueness]
+If there are two \(Y, Y'\) satisfying (1)-(3), then \(\exists f: Y \xrightarrow{\sim} Y'\) such that \(f|_X = \text{Id}\).
+(The map sends \(p \in Y \setminus X\) to \(p' \in Y' \setminus X\)).
+\end{note}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}[Proof (Continued)]
+% \textbf{Step 2 (\(\Rightarrow\))}: The topology on \(Y\) is given by \(Y = X \cup \{\infty\}\):
+% \begin{enumerate}
+%     \item \(U \subset X\) open. (Note: \(U \not\ni \infty\)).
+%     \item \(Y \setminus C\) is open, where \(C \subset X\) is compact. (Note: \(Y \setminus C \ni \infty\)).
+% \end{enumerate}
+
+% Check constraints:
+% \begin{enumerate}
+%     \item \textbf{This is a topology} (Verified last time).
+%     \item \textbf{\(X \subset Y\) is a subspace}:
+%     \begin{itemize}
+%         \item[(a)] If \(U \subset Y, U \not\ni \infty\), then \(U\) is open in \(X\).
+%         \item[(b)] If \(U = Y \setminus C\) (so \(\infty \in U\)), then \(U \cap X = (Y \setminus C) \cap X = X \setminus C\). Since \(X\) is Hausdorff and \(C\) is compact, \(C\) is closed in \(X\). Thus \(X \setminus C\) is open in \(X\).
+%     \end{itemize}
+%     \item \textbf{\(Y\) is compact}:
+%     Let \(\mathcal{A}\) be an open covering of \(Y\). \(\mathcal{A}\) contains some set \(U_\infty = Y \setminus C\) containing \(\infty\).
+%     Take all sets in \(\mathcal{A}\) different from \(U_\infty\), and intersect them with \(X\) (these are open in \(X\)).
+%     This collection covers \(C\). Since \(C\) is compact in \(X\), \(\exists\) finite subcover \(\mathcal{A}'\) of \(C\).
+%     Then \(\mathcal{A}' \cup \{Y \setminus C\}\) is a finite subcover of \(Y\).
+% \end{enumerate}
+
+% \textbf{Step 3:} Show that \(Y\) is Hausdorff. Take \(x, y \in Y\).
+% \begin{itemize}
+%     \item If \(x, y \neq \infty\), they are in \(X\). \(X\) is Hausdorff \(\implies \exists U \ni x, V \ni y\) disjoint open in \(X\). These are open in \(Y\).
+%     \item If \(y = \infty, x \in X\):
+%     Since \(X\) is locally compact at \(x\), \(\exists U\) open, \(C\) compact such that \(x \in U \subset C\).
+%     Let \(V = Y \setminus C\). Then \(V\) is open in \(Y\) and contains \(\infty\).
+%     \(U\) is open in \(Y\) and \(x \in U\).
+%     \(U \subset C \implies U \cap (Y \setminus C) = \varnothing \implies U \cap V = \varnothing\).
+% \end{itemize}
+
+% \textbf{Step 4 (\(\Leftarrow\))} Let \(Y\) satisfy (1)-(3). Let \(\infty \in Y\) be the point such that \(X = Y \setminus \{\infty\}\). We show \(X\) is locally compact Hausdorff:
+% \begin{itemize}
+%     \item \textbf{Hausdorff}:
+%     Obvious (\(X\) is a subspace of Hausdorff \(Y\)).
+
+%     \item \textbf{Locally Compact}:
+%     For any point \(x \in X\):
+
+%     Since \(Y\) is Hausdorff, \(\exists U \ni x, V \ni \infty\) open in \(Y\) such that \(U \cap V = \varnothing\). Let \(C = Y \setminus V\). Then \(C\) is closed in \(Y \implies C\) is compact (subspace of compact). Since \(U \cap V = \varnothing\), \(U \subset Y \setminus V = C\). Also \(V \ni \infty \implies C \subset X\). So \(x \in U \subset C \subset X\), with \(U\) open in \(Y\) (hence in \(X\)) and \(C\) compact. Thus \(X\) is locally compact at \(x\).
+% \end{itemize}
+% \end{proof}
+
+\begin{example}
+\(Y\) is called the \textbf{one-point compactification} of \(X\).
+Examples:
+\begin{itemize}
+    \item \(\overline{\mathbb{R}} \cong S^1\)
+    \item \(\overline{\mathbb{R}^n} \cong S^n\)
+    \item \(\overline{\mathbb{C}} \cong \mathbb{C} \cup \{\infty\} \cong S^2\) (Riemann sphere).
+    Map: \(z \mapsto \frac{az+b}{cz+d}, \left(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in \text{Mat}_2(\mathbb{C}), \det \neq 0\).
+\end{itemize}
+\end{example}
+
+\subsection{Corollaries}
+
+\begin{theorem}
+Let \(X\) be a Hausdorff space. Then \(X\) is locally compact \(\iff \forall x \in X, \forall U \ni x\) open,
+there exists \(V \ni x\) open, \(\overline{V} \subset U\), \(\overline{V}\) compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Leftarrow\)] \(x \in V \subset \overline{V} \implies X\) locally compact at \(x\).
+    
+%     \item[\(\Rightarrow\)] Let \(Y \supset X\) be the one-point compactification.
+%     Let \(C = Y \setminus U\) (closed \(\implies\) compact).
+%     Then \(\exists V \ni x\) open, \(W \supset C\) open such that \(W \cap V = \varnothing\).
+%     \(\overline{V}\) is compact (closed in \(Y\)), \(\overline{V} \cap C = \varnothing \implies \overline{V} \subset U\).
+% \end{itemize}
+% \end{proof}
+
+\begin{corollary}
+Let \(X\) be locally compact Hausdorff.
+Let \(A \subset X\) be open or closed. Then \(A\) is locally compact.
+\end{corollary}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item Let \(A \subset X\) be \textbf{closed}.
+    
+%     Given \(x \in A\), since \(X\) is locally compact, \(\exists U\) open, \(C\) compact in \(X\) s.t. \(x \in U \subset C\). Then \(x \in (U \cap A) \subset (C \cap A) \subset A\). \(U \cap A\) is open in \(A\). \(C \cap A\) is closed in \(C\) (since \(A\) closed in \(X\)) \(\implies C \cap A\) is compact \(\implies A\) is locally compact.
+
+%     \item Let \(A \subset X\) be \textbf{open}.
+    
+%     Let \(x \in A\). \(X\) locally compact, then \(\exists V\) open, \(K\) compact s.t. \(x \in V \subset K\). Using regularity of locally compact Hausdorff spaces: \(\exists x \in V \subset \overline{V} \subset A\) with \(\overline{V}\) compact. \(V\) is open in \(A\), \(\overline{V}\) is compact. Thus, \(A\) is locally compact at \(x\).
+% \end{itemize}
+% \end{proof}
+
+\begin{corollary}
+\(X\) is locally compact Hausdorff \(\iff X\) is homeomorphic to an open subspace of a compact Hausdorff space.
+
+Prove as exercise.
+\end{corollary}
+
+\subsection{Urysohn's Metrization Theorem}
+
+\begin{theorem}[Urysohn's Metrization Theorem]
+Every \(X\) that is \textbf{second-countable} and \textbf{regular (T3)} is \textbf{metrizable} (sufficient, not necessary condition).
+\end{theorem}
+
+\begin{recap}[Countability Axioms]
+    \leavevmode
+    \begin{itemize}
+        \item \textbf{First-countable}: \(\forall x \in X, \exists \{B_n\}_{n \in \mathbb{N}} = \mathcal{B}_x\) such that every open \(U \ni x\) contains at least one \(B_n\).
+        \item \textbf{Second-countable}: \(\exists \{B_n\}_{n \in \mathbb{N}} = \mathcal{B}\) (countable basis) such that \(\forall x \in X, \forall U \ni x\) open, \(\exists n\) s.t. \(x \in B_n \subset U\).
+        \item \textbf{Example}: \(\mathbb{R}^n\) with \(B = \{ U_\varepsilon(x) \mid x \in \mathbb{Q}^n, \varepsilon \in \mathbb{Q}_{>0} \}\).
+    \end{itemize}
+\end{recap}
+
+\begin{xca}
+Show that if \(X_n\) are 1st (resp. 2nd) countable, then \(\prod X_n\) is also 1st (resp. 2nd) countable.
+\end{xca}
+
+\begin{theorem}[Properties of 2nd Countable Spaces]
+Let \(X\) be second-countable. Then
+\begin{enumerate}
+    \item[(a)] Every open cover of \(X\) has a \textbf{countable subcover} (\(X\) is a \textbf{Lindelöf space}).
+    \item[(b)] There exists a countable subset \(A \subset X\) such that \(\overline{A} = X\) (\(X\) is \textbf{separable}).
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(\mathcal{B} = \{B_n\}\) be a countable basis.
+% \begin{enumerate}
+%     \item[(a)]
+%     Let \(\mathcal{A}\) be an open covering of \(X\). For each \(n\), if \(B_n\) is contained in some element of \(\mathcal{A}\), pick one such element \(A_n \in \mathcal{A}\) (Axiom of Choice). Let \(J = \{ n \mid \exists A \in \mathcal{A} \text{ s.t. } B_n \subset A \}\). Then \(\{A_n\}_{n \in J}\) is a countable subcollection.
+    
+%     Claim: It covers \(X\).cLet \(x \in X\). Since \(\mathcal{A}\) covers \(X\), \(\exists A \in \mathcal{A}\) s.t. \(x \in A\). Since \(\mathcal{B}\) is a basis, \(\exists n\) s.t. \(x \in B_n \subset A\). Thus, \(n \in J\) and \(x \in B_n \subset A_n\). Therefore, \(x\) is covered.
+
+%     \item[(b)]
+%     For each \(B_n \neq \varnothing\), pick \(x_n \in B_n\). Let \(D = \{x_n \mid n \in \mathbb{N}\}\). This is countable.
+
+%     Claim: \(\overline{D} = X\). Take any \(x \in X\) and any open neighborhood \(U \ni x\). Basis condition \(\implies \exists B_k \subset U\) s.t. \(x \in B_k\). Then \(B_k \neq \varnothing \implies x_k \in B_k \subset U\). Thus, \(U \cap D \neq \varnothing\). Therefore, \(x \in \overline{D}\).
+% \end{enumerate}
+% \end{proof}

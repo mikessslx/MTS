@@ -1,0 +1,180 @@
+\section{Notes 12 - 11.21}
+
+\subsection{Metrizable Spaces}
+
+\begin{definition}[Metrizable Space]
+A topological space \((X, \mathcal{T})\) is \textbf{metrizable} if there is a metric \(d\) on \(X\) inducing the topology \(\mathcal{T}\).
+(that is, \(U \in \mathcal{T} \iff \forall x \in U, \exists \varepsilon > 0\) s.t. \(U_\varepsilon(x) \subset U\)).
+Here \(U_\varepsilon(x) = \{ y \in X \mid d(x, y) < \varepsilon \}\).
+\end{definition}
+
+\begin{remark}[Basis]
+Take \(U_\varepsilon(x)\) for all \(\varepsilon > 0, x \in X\) as a basis of topology on \(X\).
+\end{remark}
+
+\begin{xca}
+Why is this a basis?
+\end{xca}
+\begin{proof}[Solution]
+\(U_{\varepsilon_1}(x) \cap U_{\varepsilon_2}(x) = U_{\min(\varepsilon_1, \varepsilon_2)}(x)\). (Intersection condition holds).
+\end{proof}
+
+\subsection{Metrics on \(\mathbb{R}^n\)}
+
+\begin{definition}[Standard Metrics on \(\mathbb{R}^n\)]
+For \(x = (x_1, \cdots, x_n), y = (y_1, \cdots, y_n) \in \mathbb{R}^n\):
+\begin{enumerate}
+    \item \(d_1(x, y) = \sum_{i=1}^n |x_i - y_i|\)
+    \item \(d_2(x, y) = \left( \sum_{i=1}^n (x_i - y_i)^2 \right)^{1/2}\)
+    \item \(d_\infty(x, y) = \max_{i=1, \cdots, n} |x_i - y_i|\)
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+The metrics \(d_1, d_2, d_\infty\) define the same topology on \(\mathbb{R}^n\).
+This is the product (= box) topology on \(\mathbb{R}^n = \mathbb{R} \times \cdots \times \mathbb{R}\) (\(n\) times).
+\end{proposition}
+
+\begin{lemma}[Comparing Metrics]
+Let \(d, d'\) be two metrics on \(X\) defining topologies \(\mathcal{T}, \mathcal{T}'\).
+\(\mathcal{T}' \supset \mathcal{T}\) (\(\mathcal{T}'\) is finer) iff
+\(\forall x \in X, \varepsilon > 0, \exists \delta > 0\) such that \(U_\delta^{(d')}(x) \subset U_\varepsilon^{(d)}(x)\).
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Look at the shapes of balls:
+% \begin{itemize}
+%     \item \(d_\infty\) balls are squares.
+%     \item \(d_2\) balls are circles.
+%     \item \(d_1\) balls are diamonds.
+% \end{itemize}
+
+% We can fit a circle inside a square, and a square inside a circle (scaled).
+% \(d_\infty \sim d_2\), \(d_1 \sim d_\infty\), \(d_1 \sim d_2\).
+% Thus they induce the same topology.
+% \end{proof}
+
+\subsection{Bounding a Metric}
+
+\begin{definition}[Bounded Metric]
+Let \(d\) be a metric on \(X\).
+Let \(\overline{d}: X \times X \to \mathbb{R}\),
+\[\overline{d}(x, y) = \min(d(x, y), 1) = \begin{cases} d(x, y) & \text{if } d(x, y) \le 1 \\ 1 & \text{otherwise} \end{cases}\]
+\end{definition}
+
+\begin{theorem}
+\(\overline{d}\) is a metric on \(X\) defining the \textbf{same topology} as \(d\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Need to show: \(\overline{d}(x, z) \le \overline{d}(x, y) + \overline{d}(y, z)\).
+
+% If \(d(x, y) \ge 1\) or \(d(y, z) \ge 1\), then RHS \(\ge 1\). Since LHS \(\le 1\), inequality holds.
+
+% If both \(< 1\), then \(\overline{d} = d\), and triangle inequality holds for \(d\).
+
+% \textbf{Same topology}:
+% For \(\varepsilon < 1\), we have \(U_\varepsilon^{(d)}(x) = U_\varepsilon^{(\overline{d})}(x)\).
+
+% Since small balls generate the topology, the topologies are identical.
+% \end{proof}
+
+\subsection{Metrics on Infinite Products}
+
+\begin{example}
+How to introduce a metric on \(\mathbb{R}^\omega = \mathbb{R}^\mathbb{N} = \text{Maps}(\mathbb{N} \to \mathbb{R}) \ni (x_1, x_2, \cdots)\).
+\begin{enumerate}
+    \item \(d(x, y) = \sqrt{\sum (x_i - y_i)^2}\). \textbf{Not a metric} (sum can be infinite).
+    \item \(d(x, y) = \sup |x_i - y_i|\). (Can be \(\infty\)).
+    \item \(\overline{d}(x, y) = \sup \overline{d}(x_i, y_i) = \sup \min(|x_i - y_i|, 1)\).
+\end{enumerate}
+\end{example}
+
+\begin{definition}[Uniform Metric]
+Define the \textbf{uniform metric} \(\overline{\rho}\) on \(\mathbb{R}^J\) (for any set \(J\)) by:
+\[\overline{\rho}(x, y) = \sup_{\alpha \in J} \overline{d}(x_\alpha, y_\alpha) = \sup_{\alpha \in J} \min(|x_\alpha - y_\alpha|, 1)\]
+\end{definition}
+
+\begin{theorem}
+The \textbf{Uniform topology} on \(\mathbb{R}^J\) is:
+\begin{itemize}
+    \item (Strictly) \textbf{finer} than the product topology on \(\mathbb{R}^J\).
+    \item (Strictly) \textbf{coarser} than the box topology (provided \(J\) is infinite).
+\end{itemize}
+Diagram: Product \(\subset\) Uniform \(\subset\) Box.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item Comparison with Product Topology.
+
+%     Take \(x \in \prod U_\alpha\) (basis element in product topology).
+
+%     \(U_\alpha \subset \mathbb{R}\) open for \(\alpha = \alpha_1, \cdots, \alpha_n\); \(U_\alpha = \mathbb{R}\) otherwise.
+
+%     For \(\alpha = \alpha_1, \cdots, \alpha_n\), take \(\varepsilon_1, \cdots, \varepsilon_n < 1\) such that \(U_{\varepsilon_i}(x_{\alpha_i}) \subset U_{\alpha_i}\).
+    
+%     Let \(\varepsilon = \min(\varepsilon_1, \cdots, \varepsilon_n)\), then \(U_\varepsilon^{(\overline{\rho})}(x) \subset \prod U_\alpha\), so Product \(\subset\) Uniform.
+
+%     \item Comparison with Box Topology.
+    
+%     \(U_\varepsilon^{(\overline{\rho})}(x) = \prod U_\alpha\) is not quite generated by products?
+    
+%     Actually, \(U_\varepsilon^{(\overline{\rho})}(x) \subset \prod (x_\alpha - \varepsilon, x_\alpha + \varepsilon)\).
+    
+%     Box topology basis elements are arbitrary products. Box is finer.
+% \end{itemize}
+% \end{proof}
+
+\begin{example}[Convergence Comparison]
+\(x_n \to x\) in Box \(\implies x_n \to x\) in Uniform \(\implies x_n \to x\) in Product.
+Example in \(\mathbb{R}^\omega\):
+\begin{itemize}
+    \item \(w_1 = (1, 1, 1, \cdots)\)
+    \item \(w_2 = (0, 2, 2, 2, \cdots)\)
+    \item \(w_3 = (0, 0, 3, 3, 3, \cdots)\)
+\end{itemize}
+\(\lim_{n \to \infty}^P w_n = (0, 0, 0, \cdots)\) (pointwise convergence). However, does it converge in Box or Uniform? In Box topology: a sequence \(x_n \to 0\) effectively requires \(x_n\) to be eventually 0 in all components simultaneously?
+
+Problem: If \(x_n \to 0\) in box topology, what can be said about \(x_n\)?
+
+Guess: \(\exists M: x_n^{(m)} = 0 \forall m > M\) (for components?).
+\end{example}
+
+\subsection{Sequence Lemma}
+
+\begin{lemma}[The Sequence Lemma]
+Let \(X\) be a topological space, \(A \subset X\).
+If there is a sequence \(x_n \in A\) such that \(x_n \to x\), then \(x \in \overline{A}\). The \textbf{converse} is true if \(X\) is \textbf{metrizable}.
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     If \(x_n \to x\), then \(\forall \text{ open } U \ni x\), \(U\) contains almost all terms \(x_n\). Thus,
+%     \[U \cap A \neq \emptyset \implies x \in \overline{A}.\]
+
+%     \item[\(\Leftarrow\)]
+%     (If \(X\) is metrizable): Let \(x \in \overline{A}\) and take \(U_{1/n}(x)\). This is an open neighborhood of \(x\).
+
+%     Pick \(x_n \in U_{1/n}(x) \cap A\) (non-empty since \(x \in \overline{A}\)), then \(d(x_n, x) < 1/n\).
+
+%     For any \(\varepsilon > 0\), take \(N = 1/\varepsilon\). For \(n > N\), \(d(x_n, x) < \varepsilon\). Thus, \(x_n \to x\).
+% \end{itemize}
+% \end{proof}

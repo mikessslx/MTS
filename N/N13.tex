@@ -1,0 +1,256 @@
+\section{Notes 13 - 11.24 - Nikita}
+
+\subsection{Compact Spaces}
+
+\begin{note}[Motivation]
+(In analysis)
+Let \(f: K \to \mathbb{R}\) be a continuous function, where \(K\) is a compact space (e.g., \(f: [0, 1] \to \mathbb{R}\)). Then \(f\) attains its maximum and minimum.
+Being compact depends on topology.
+For instance, in discrete topology, if \(X\) is infinite, it is not compact.
+Board scrawl: \(\emptyset, X \in \mathcal{T} \implies X\) is compact (This refers to the trivial/anti-discrete topology).
+\end{note}
+
+\begin{definition}[Covering]
+A collection \(\mathcal{A}\) of subsets of a space \(X\) is called a \textbf{``cover''} or \textbf{``a covering''} if the union of the elements of \(\mathcal{A}\) is equal to \(X\).
+It is called an \textbf{open covering} if all these sets are \textbf{open}.
+\[\{U_i\}_{i \in I}, \ U_i \text{ open}, \ \bigcup_{i \in I} U_i = X \ (\text{open covering of } X)\]
+\end{definition}
+
+\begin{definition}[Compact Space]
+\(X\) is called a \textbf{compact space} if every open covering \(\mathcal{A}\) contains a \textbf{finite subcollection} which also covers \(X\).
+(One can choose a finite subcovering from \textbf{any} covering of \(X\)).
+\end{definition}
+
+\begin{example}[Examples of Compactness]
+    \leavevmode
+    \begin{enumerate}
+        \item \(X = (0, 1)\). \(U_n = (\frac{1}{n}, 1)\), \(n \in \mathbb{N}\). \(\bigcup U_n = X\).
+        We cannot choose a finite subcovering. (Any finite union is \((\frac{1}{N}, 1) \neq X\)).
+        \(\implies (0, 1) \subset \mathbb{R}\) is \textbf{not} compact in standard topology.
+
+        \item \(\mathbb{R}\) with standard topology is \textbf{not compact}.
+        \(U_n = (n, n+2)\), \(n \in \mathbb{Z}\). \(\bigcup U_n = \mathbb{R}\).
+        Cannot choose a finite subcovering.
+
+        \item \(Y = (0, 1]\) not compact.
+        \(U_n = (\frac{1}{n}, 1]\). \(\bigcup U_n = Y\).
+        Cannot choose a finite subcovering.
+
+        \item \(\{0\} \cup \{1/n \mid n \in \mathbb{N}\} \subset \mathbb{R}\) \textbf{is compact}.
+        The interval containing \(0\) (in the cover) contains all \(1/n\) for \(n\) big enough.
+
+        \item \(\bigcup \{1/n \mid n \in \mathbb{N}\}\) is \textbf{not compact}.
+    \end{enumerate}
+\end{example}
+
+\begin{remark}[Topologies and Compactness]
+    \begin{itemize}
+        \item In \textbf{discrete topology}, infinite sets are \textbf{not compact}.
+        \item In \textbf{anti-discrete topology} (trivial topology), all sets are compact.
+        \item \textbf{Finite spaces} are always compact.
+    \end{itemize}
+\end{remark}
+
+\subsection{Compact Subspaces}
+
+\begin{definition}[Cover of Subspace]
+Let \(Y \subset X\). A collection \(\mathcal{A}\) of subsets of \(X\) \textbf{covers} \(Y\) if its union contains \(Y\).
+\end{definition}
+
+\begin{lemma}
+Let \(Y \subset X\). Then \(Y\) is compact \(\iff\) from any open covering of \(Y\) \textbf{in \(X\)} one can choose a finite subcovering.
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Topology on \(Y\): \(U \subset Y\) open in \(Y\) if \(\exists V \subset X\) open in \(X\) s.t. \(U = V \cap Y\).
+
+% \begin{itemize}
+%     \item[\(\Leftarrow\)]
+%     Consider any family \(U_i\) of open sets in \(Y\), with \(\bigcup U_i = Y\).
+
+%     \(\forall U_i, \exists V_i\) open in \(X\) s.t. \(U_i = V_i \cap Y\).
+
+%     \(\implies \{V_i\}_{i \in I}\) is a covering of \(Y\) in \(X\) by open sets.
+    
+%     \(\implies\) One can choose a finite subcovering in \(X\), \(Y \subset V_{i_1} \cup \cdots \cup V_{i_k}\).
+    
+%     \(\implies Y = (V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = U_{i_1} \cup \cdots \cup U_{i_k}\).
+
+%     \item[\(\Rightarrow\)]
+%     Consider any covering \(Y \subset \bigcup_{i \in I} V_i\), \(V_i \subset X\) open in \(X\).
+    
+%     \(Y = \bigcup_{i \in I} (V_i \cap Y)\). Note \((V_i \cap Y)\) is open in \(Y\).
+
+%     Choose a finite subcovering \((V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = Y\), then \(Y \subset \bigcup_{j=1}^k V_{i_j}\).
+% \end{itemize}
+% \end{proof}
+
+\begin{theorem}
+Every \textbf{closed subspace} of a \textbf{compact space} is compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(Y \subset X\) be closed, \(X\) compact. Consider any open covering of \(Y\) in \(X\): \(Y \subset \bigcup_{i \in I} U_i\).
+
+% \(\implies (\bigcup_{i \in I} U_i) \cup (X \setminus Y)\) is an open covering of \(X\) (\(X \setminus Y\) is open).
+
+% \(\implies\) Choose a finite subcovering (\(X\) is compact).
+
+% \(\implies\) This finite collection covers \(Y\) (and elements covering \(X \setminus Y\) can be discarded).
+
+% \(\implies\) Finite subcovering of \(Y\).
+% \end{proof}
+
+\begin{theorem}[Compact in Hausdorff]
+Every \textbf{compact subspace} of a \textbf{Hausdorff space} is \textbf{closed}.
+(\(\mathbb{R}\) with standard topology is Hausdorff).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(X\) be Hausdorff, \(Y \subset X\) compact. We show \(X \setminus Y\) is open.
+
+% \(\iff \forall x \in X \setminus Y, \exists\) open \(U\) s.t. \(x \in U \subset X \setminus Y\).
+
+% Pick any \(x \in X \setminus Y\).
+
+% \(\forall y \in Y\), since \(x \neq y\) and \(X\) is Hausdorff, \(\exists U_y \ni y, V_y \ni x\) such that \(U_y \cap V_y = \varnothing\).
+
+% Since \(Y \subset \bigcup_{y \in Y} U_y\) is compact, choose a finite subcovering \(Y \subset \bigcup_{i=1}^n U_{y_i}\).
+
+% Consider \(V = \bigcap_{i=1}^n V_{y_i}\). This is an open set containing \(x\) (finite intersection of open sets).
+
+% And \(V \cap Y = \varnothing\). (Proof: \(V \cap U_{y_i} \subset V_{y_i} \cap U_{y_i} = \varnothing \implies V \cap \bigcup U_{y_i} = \varnothing \implies V \cap Y = \varnothing\).)
+
+% Thus, \(V \subset X \setminus Y\) and \(X \setminus Y\) is open.
+% \end{proof}
+
+\begin{lemma}[Separation]
+Let \(Y\) be a compact subspace of Hausdorff \(X\), \(x \in X \setminus Y\).
+Then \(\exists\) open \(U, V\) such that \(Y \subset U, x \in V, U \cap V = \varnothing\).
+(Proved inside the Theorem above).
+\end{lemma}
+
+\subsection{Continuity and Compactness}
+
+\begin{theorem}
+The image of a compact set under a continuous map is compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(f: X \to Y\) be continuous. \(X\) is compact.
+
+% Consider open covering of \(f(X)\): \(f(X) \subset \bigcup_{i \in I} U_i\), \(U_i\) open in \(Y\).
+
+% Since \(f\) is continuous, \(f^{-1}(U_i)\) is open in \(X \implies X = \bigcup_{i \in I} f^{-1}(U_i)\) (since \(f(X) \subset \bigcup U_i\)).
+
+% Choose a finite subcovering \(X = \bigcup_{j=1}^n f^{-1}(U_{i_j})\), then \(f(X)\) is covered by \(U_{i_1}, \cdots, U_{i_n}\).
+% \end{proof}
+
+\begin{theorem}[Homeomorphism]
+Let \(f: X \to Y\) be a continuous bijection. If \(X\) is compact and \(Y\) is Hausdorff, then \(f\) is a homeomorphism.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(f^{-1}\) is continuous \(\iff\) images of open sets are open \(\iff f\) is a closed map \(\iff f(D)\) is closed \(\forall\) closed \(D \subset X\).
+
+% Consider \(D \subset X\) closed.
+
+% \(X\) compact \(\implies D\) is compact (closed in compact) \(\implies f(D)\) is compact in \(Y\).
+
+% \(Y\) Hausdorff \(\implies f(D)\) is closed \(\implies f\) is a closed map.
+% \end{proof}
+
+\subsection{Product of Compact Spaces}
+
+\begin{lemma}[Tube Lemma]
+Let \(x_0 \in X\). Suppose \(Y\) is \textbf{compact}.
+Suppose \(x_0 \times Y\) is covered by open sets \(W_i\) in \(X \times Y\).
+Then one can choose a finite subcovering of it, and \(\exists\) open \(U \ni x_0\) such that
+\[(U \times Y) \subset W_{i_1} \cup \cdots \cup W_{i_n}\]
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% May assume that all \(W_i\) are base sets \(W_i = U_i \times V_i\).
+
+% \(\implies \{V_i\}\) covers \(Y\).
+
+% \(\implies\) Use compactness of \(Y\), choose finite subcovering \(V_1, \cdots, V_n\),
+% \[x_0 \times Y \subset (U_1 \times V_1) \cup \cdots \cup (U_n \times V_n) \supset U \times Y.\]
+
+% Define \(U = \bigcap_{i=1}^n U_i = U_1 \cap U_2 \cap \cdots \cap U_n\), then \(U \times Y \subset \bigcup (U_i \times V_i)\) (since \(U \subset U_i\)).
+% \end{proof}
+
+\begin{theorem}[Tychonoff, Finite Case]
+The product of finitely many compact spaces is compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Enough to prove for two sets, \(X, Y\) compacts.
+
+% \(X \times Y\) (Any open set in \(X \times Y\) is a union of base spaces \(U \times V, U \subset X, V \subset Y\) open).
+
+% Consider any open covering of \(X \times Y\) by \(W_i, i \in I\).
+
+% \(\forall x \in X\), choose a finite subcovering of \(x \times Y\), and \(U_x\) from the Tube Lemma.
+
+% \(X = \bigcup_{x \in X} U_x\), choose finite subcovering (\(X\) is compact):
+% \[X = U_{x_1} \cup \cdots \cup U_{x_k}.\]
+
+% Now take all finite coverings of \(U_{x_j} \times Y \implies\) obtained a finite subcovering of \(X \times Y\).
+% \end{proof}
+
+\subsection{Finite Intersection Property}
+
+\begin{definition}[Finite Intersection Property]
+A collection \(\mathcal{C}\) of sets has the \textbf{finite intersection property} if for any finite subcollection \(C_1, \cdots, C_n \in \mathcal{C}\),
+\[\bigcap_{i=1}^n C_i \text{ is non-empty.}\]
+\end{definition}
+
+\begin{theorem}
+Let \(X\) be a topological space. Then \(X\) is compact \(\iff\)
+every collection of \textbf{closed} sets with finite intersection property has non-empty intersection:
+\[\bigcap_{C \in \mathcal{C}} C \neq \varnothing\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(\mathcal{A}\) be a collection of open sets and \(\mathcal{C} = \{X \setminus A \mid A \in \mathcal{A}\}\) be the collection of complements (closed sets).
+% \begin{enumerate}
+%     \item \(\mathcal{A}\) open sets \(\iff \mathcal{C}\) collection of closed sets.
+%     \item \(\mathcal{A}\) covers \(X \iff \bigcap_{C_i \in \mathcal{C}} C_i = \varnothing\).
+%     \item A finite \(A_1, \cdots, A_n \in \mathcal{A}\) covers \(X \iff \bigcap_{i=1}^n (X \setminus A_i) = \varnothing\).
+% \end{enumerate}
+
+% Now, the Theorem follows.
+% \end{proof}

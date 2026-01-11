@@ -1,0 +1,129 @@
+\section{Notes 6 - 10.31}
+
+\subsection{Topological Spaces in General}
+
+\begin{definition}[Topological Space]
+A \textbf{topological space} is a pair \((X, \mathcal{U})\), where \(\mathcal{U} \subseteq 2^X\) (all subsets of \(X\)) and
+\begin{enumerate}
+    \item \(\varnothing, X \in \mathcal{U}\)
+    \item If \(U_\alpha \in \mathcal{U}\), then \(\bigcup_\alpha U_\alpha \in \mathcal{U}\) (arbitrary union)
+    \item If \(U_1, \cdots, U_k \in \mathcal{U}\), then \(\bigcap_{i=1}^k U_i \in \mathcal{U}\) (finite intersection)
+\end{enumerate}
+\end{definition}
+
+\(\mathcal{U}\) is a \textbf{topology} on \(X\), and \(U \in \mathcal{U}\) are \textbf{open sets}.
+
+\begin{example}[Examples of Topologies]
+    \leavevmode
+    \begin{enumerate}
+        \item[\bfseries Ex 1.] \textbf{(Metric Spaces)}
+        Any metric space \((X, d)\) is a topological space, where \(\mathcal{U} = \{ U \mid \forall x \in U, \exists \varepsilon > 0, U_\varepsilon(x) \subset U \}\).
+
+        \item[\bfseries Ex 2.] \textbf{(Discrete Topology)}
+        \(\mathcal{U} = 2^X\) (every subset of \(X\) is open).
+
+        \item[\bfseries Ex 3.] \textbf{(Antidiscrete Topology)}
+        \(\mathcal{U} = \{\varnothing, X\}\) (only \(\varnothing, X\) are open; not metric-induced).
+
+        \item[\bfseries Ex 4.] \textbf{(Finite Complement Topology)}
+        For infinite \(X\) (e.g., \(\mathbb{R}\)), \(\mathcal{U} = \{ U \mid X \setminus U \text{ is finite} \} \cup \{\varnothing\}\).
+    \end{enumerate}
+\end{example}
+
+\subsection{Hausdorff Spaces}
+
+\begin{proposition}[Metric Spaces are Hausdorff]
+For distinct \(x,y \in X\) (metric space), \(\exists\) open \(U, V\) with \(x \in U\), \(y \in V\), \(U \cap V = \varnothing\).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(\varepsilon = \frac{d(x,y)}{2}\), take \(U = U_\varepsilon(x)\), \(V = U_\varepsilon(y)\). If \(z \in U \cap V\), \(d(x,y) \leq d(x,z) + d(z,y) < \varepsilon + \varepsilon = d(x,y)\) (contradiction), then \(U \cap V = \varnothing\).
+% \end{proof}
+
+\begin{definition}[Hausdorff Space]
+\((X, \mathcal{U})\) is \textbf{Hausdorff} if \(\forall x \neq y \in X\), \(\exists U, V \in \mathcal{U}\) with \(x \in U\), \(y \in V\), \(U \cap V = \varnothing\).
+\end{definition}
+
+\begin{remark}
+Finite complement topology is \textit{not} Hausdorff: For \(U, V\) containing \(x \neq y\), \(X \setminus U, X \setminus V\) are finite, so \(U \cap V = X \setminus ((X \setminus U) \cup (X \setminus V))\) is non-empty.
+\end{remark}
+
+\subsection{Closed Sets and Zariski Topology}
+
+\begin{definition}[Topological Space by Closed Sets]
+A topology can be defined by satisfying closed sets: (\(Y \subset X\) is closed if \(X \setminus Y\) is open)
+\begin{enumerate}
+    \item \(\varnothing, X\) are closed;
+    \item Arbitrary intersections: If \(\{V_\alpha\}\) are closed, \(\bigcap V_\alpha\) is closed;
+    \item Finite unions: If \(V_1, \cdots, V_n\) are closed, \(\bigcup_{i=1}^n V_i\) is closed.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Infinite Intersection of Open Sets]
+Is \(\bigcap_{i=1}^\infty U_i\) open if each \(U_i\) is open?
+
+Let \(U_n = \left(-\frac{1}{n}, \frac{1}{n}\right) \subset \mathbb{R}\). Then \(\bigcap_{n=1}^\infty U_n = \{0\}\), which is \textit{not open}.
+\end{example}
+
+\begin{definition}[Zariski Topology]
+For \(X = \mathbb{C}^n\) (or \(\mathbb{R}^n\), \(K\) a field), \(Y \subset X\) is \textbf{closed} if \(Y\) is the solution set of polynomials:
+\[Y = \left\{ (x_1, \cdots, x_n) \mid f_\alpha(x_1, \cdots, x_n) = 0 \ \forall \alpha \right\}\]
+where \(f_\alpha\) are polynomials.
+\end{definition}
+
+\begin{example}[Zariski Closed Sets]
+\begin{itemize}
+    \item A single point \((a_1, \cdots, a_n) \in \mathbb{C}^n\) (closed: \(x_1=a_1, \cdots, x_n=a_n\)).
+    \item \(\{ (x,y) \mid x^2 + y^2 = 3 \}\), \(\{ (x,y) \mid xy = \frac{1}{4} \}\) (closed: single polynomial equations).
+\end{itemize}
+\end{example}
+
+\begin{remark}[Link to Finite Complement Topology]
+For \(X = \mathbb{C}^1\) (or \(\mathbb{R}^1\)), the Zariski topology \textit{equals the finite complement topology}: closed sets are finite sets (solutions to non-constant polynomials) or \(X\). The Zariski topology is \textbf{not Hausdorff}.
+\end{remark}
+
+\subsection{Basis for a Topology}
+
+\begin{definition}[Basis for a Topology]
+Let \((X, \mathcal{U})\) be a topological space. A subset \(\mathcal{B} \subseteq \mathcal{U}\) is a basis of \(\mathcal{U}\) if
+\begin{enumerate}
+    \item \(\forall x \in X, \exists U \in \mathcal{B}\) with \(x \in U\);
+    \item \(\forall x \in X, \forall U_1, U_2 \in \mathcal{B}\) (with \(x \in U_1, x \in U_2\)), \(\exists U_3 \in \mathcal{B}\) with \(x \in U_3 \subseteq U_1 \cap U_2\).
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Basis for Metric Spaces]
+For a metric space (e.g., \(\mathbb{R}^n\)), the set of open balls \(\mathcal{B} = \{ U_\varepsilon(x) \mid x \in X, \varepsilon > 0 \}\) is a basis:
+\begin{enumerate}
+    \item Obvious (\(x \in U_\varepsilon(x)\) for any \(\varepsilon > 0\));
+    \item \(\forall x \in U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\), take \(\varepsilon = \min(\varepsilon_1, \varepsilon_2)\), \(U_\varepsilon(x) \subseteq U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\) and \(U_\varepsilon(x) \in \mathcal{B}\).
+\end{enumerate}
+\end{example}
+
+\begin{theorem}[Open Sets Are Unions of Basis Elements]
+If \(\mathcal{B}\) is a basis of \(\mathcal{U}\), then any \(U \in \mathcal{U}\) can be written as \(U = \bigcup_{U_\alpha \in \mathcal{B}} U_\alpha\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(\forall x \in U, \exists \tilde{U}_x \in \mathcal{B}\) such that \(x \in \tilde{U}_x \subset U\). Take \(U_x \subset U \cap \tilde{U}_x\). Since \(\bigcup U_x \subset U\), then
+% \[\bigcup U_x = U.\]
+% \end{proof}
+
+\begin{example}
+\begin{enumerate}
+    \item Balls in \(d_1, d_2, d_\infty\)-metric in \(\mathbb{R}^n\) form a basis of the standard topology.
+    \item \(\{ U_\varepsilon(x) \mid \varepsilon \in \mathbb{Q}, \varepsilon > 0, x \in \mathbb{Q}^n \}\) is a countable set that is a basis of standard topology on \(\mathbb{R}^n\).
+\end{enumerate}
+\end{example}
+
+\begin{xca}
+Find a metric space not admitting a countable basis of topology.
+\end{xca}

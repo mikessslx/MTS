@@ -1,0 +1,170 @@
+\section{Notes 16 - 12.08}
+
+\subsection{Norms on \(\mathbb{R}^n\)}
+
+\begin{definition}[Norm]
+A \textbf{norm} on \(\mathbb{R}^n\) is a function \(\| \cdot \|: \mathbb{R}^n \to \mathbb{R}\) satisfying
+\begin{enumerate}
+    \item \(\|x\| \ge 0\), and \(\|x\| = 0 \iff x = 0\).
+    \item \(\|x + y\| \le \|x\| + \|y\|\) (Triangle Inequality).
+    \item \(\|\lambda x\| = |\lambda| \cdot \|x\|\) for all \(x \in \mathbb{R}^n, \lambda \in \mathbb{R}\).
+\end{enumerate}
+\end{definition}
+\begin{note}
+Norm \(\to\) Metric \(\to\) Topology.
+\end{note}
+
+\begin{example}
+    \leavevmode
+    \begin{itemize}
+        \item \(\|x\|_1 = \sum |x_i|\)
+        \item \(\|x\|_2 = (\sum x_i^2)^{1/2}\) (Euclidean)
+        \item \(\|x\|_\infty = \max |x_i|\)
+    \end{itemize}
+\end{example}
+
+\begin{definition}[Equivalence of Norms]
+Two norms \(\| \cdot \|_a, \| \cdot \|_b\) are \textbf{equivalent} if \(\exists m, M \in \mathbb{R}_{>0}\) such that
+\[m \|x\|_a \le \|x\|_b \le M \|x\|_a\]
+This implies \(U_\varepsilon^{(b)}(0) \subseteq U_{M \varepsilon}^{(a)}(0) \subseteq U_{(M/m) \varepsilon}^{(b)}(0)\) (Topology is the same).
+\end{definition}
+
+\begin{proposition}
+Equivalence of norms is an equivalence relation.
+\end{proposition}
+
+\begin{theorem}
+All norms on \(\mathbb{R}^n\) are equivalent.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Given \(\| \cdot \|_a, \| \cdot \|_b\). Let \(\| \cdot \|_b\) be the Euclidean norm \(\| \cdot \|_2\).
+
+% Define a function \(f: \mathbb{R}^n \setminus \{0\} \to \mathbb{R}_{>0}\), \(f(x) = \frac{\|x\|_a}{\|x\|_b}\), which is a continuous function on \(\mathbb{R}^n \setminus \{0\}\).
+
+% \(f(x) = f(\lambda x)\) for any \(\lambda \neq 0\) (homogeneity cancels out).
+
+% So \(f(x)\) is completely determined by \(f|_{S^{n-1}}\), where \(S^{n-1} = \{ x \mid \|x\|_b = 1 \}\).
+
+% (\(S^{n-1}\) is compact (closed and bounded in Euclidean metric).)
+
+% Then \(f(x)\) has maximum and minimum values on \(S^{n-1}\). Let \(m = \min_{S^{n-1}} f\), \(M = \max_{S^{n-1}} f\).
+
+% Since \(\|x\|_a > 0\) for \(x \neq 0\), \(m > 0\), then \(0 < m \le \frac{\|x\|_a}{\|x\|_b} \le M < \infty\). Thus, \(\| \cdot \|_a \sim \| \cdot \|_b\).
+% \end{proof}
+
+\begin{remark}
+In infinite-dimensional spaces, norms are \textbf{not} always equivalent. \(S^\infty\) is \textbf{not compact} (closed and bounded, but not compact). Example: \(\ell_1 = \{ (x_k) \mid \sum |x_k| < \infty \}\).
+\end{remark}
+
+\subsection{Uniform Continuity}
+
+\begin{remark}[Goal]
+Prove that any continuous map between metric spaces \((X, d_X) \to (Y, d_Y)\), with \(X\) \textbf{compact}, is \textbf{uniformly continuous}.
+\end{remark}
+
+\begin{lemma}[The Lebesgue Number Lemma]
+Let \((X, d)\) be a metric compact space and \(\mathcal{A}\) be an open covering of \(X\).
+
+Then \(\exists \delta > 0\) (called a \textbf{Lebesgue number}) such that for any subset \(Y \subset X\) with \(\text{diam}(Y) < \delta\), we have \(Y \subset A\) for some \(A \in \mathcal{A}\). (\(\text{diam}(Y) = \sup \{ d(x, y) \mid x, y \in Y \}\)).
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% If \(X \in \mathcal{A}\), nothing to prove (any \(\delta\) works).
+
+% Otherwise: take a finite subcovering \(\{A_1, \cdots, A_n\} \subset \mathcal{A}\).
+
+% Let \(C_i = X \setminus A_i\), closed subsets in compact \(X\), and hence compact.
+
+% For any \(x \in X\), \(x \in A_i\) for some \(i \implies x \notin C_i \implies d(x, C_i) \ge 0\).
+
+% Define \(f(x) = \frac{1}{n} \sum_{i=1}^n d(x, C_i)\) (average distance). Show that \(f(x) > 0\):
+
+% \(\forall x \in X\), choose \(i\) such that \(A_i \ni x\). Choose \(\varepsilon\) so that \(U_\varepsilon(x) \subset A_i, d(x, C_i) \ge \varepsilon\). \(f(x) \ge \frac{\varepsilon}{n}\).
+
+% Let \(\delta = \min f(x) > 0\), then \(\delta\) is a Lebesgue number:
+
+% Take \(B \subset X, \text{diam}B < \delta, x_0 \in B\). \(B \subset U_\delta(x_0)\).
+
+% \(\delta \le f(x_0) \le d(x_0, C_m)\) (take \(\max d(x_0, C_i)\)) for some \(1 \le m \le n\).
+
+% \(U_\delta(x_0) \subset A_m = X \setminus C_m\), so \(B \subset A_m\).
+% \end{proof}
+
+\begin{definition}[Uniform Continuity]
+A function \(f: (X, d_X) \to (Y, d_Y)\) is \textbf{uniformly continuous} if
+\(\forall \varepsilon > 0, \exists \delta > 0\) such that for each \(x, x' \in X\),
+with \(d_X(x, x') < \delta\), we have \(d_Y(f(x), f(x')) < \varepsilon\).
+\end{definition}
+
+\begin{theorem}
+Let \(f: X \to Y\) be a continuous map of metric spaces.
+If \(X\) is \textbf{compact}, then \(f\) is uniformly continuous.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Take \(\varepsilon > 0\). Consider the covering of \(Y\) by open balls \(\{ U_{\varepsilon / 2}(y) \}_{y \in Y}\). Take \(\mathcal{A}\) to be the collection of preimages: \(\mathcal{A} = \{ f^{-1}(U_{\varepsilon / 2}(y)) \mid y \in Y \}\).
+
+% This is an open covering of \(X\). Let \(\delta\) be a \textbf{Lebesgue number} of this covering \(\mathcal{A}\). Then if \(x, x' \in X\) and \(d_X(x, x') < \delta\), then the set \(\{x, x'\}\) has diameter \(< \delta\) and \(\{x, x'\} \subset f^{-1}(U_{\varepsilon / 2}(y))\) for some \(y \in Y \implies f(x), f(x') \in U_{\varepsilon / 2}(y) \implies d_Y(f(x), y) < \varepsilon / 2\) and \(d_Y(f(x'), y) < \varepsilon / 2\).
+
+% By triangle inequality, \(d_Y(f(x), f(x')) < \varepsilon\).
+% \end{proof}
+
+\subsection{Cardinality of Compact Spaces}
+
+\begin{theorem}[Cardinality of Compact Sets]
+Let \(X\) be a non-empty \textbf{compact Hausdorff} space \textbf{without isolated points} (perfect space).
+Then \(X\) is \textbf{uncountable}.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \textbf{Step 1}: Given \(x \in U\) open, show that \(\exists\) open \(V \subset U\), \(V \neq \emptyset\), such that \(\overline{V} \subset U\) and \(x \notin \overline{V}\).
+
+% Choose \(y \in U, y \neq x\). Let \(W_1, W_2\) be disjoint open neighborhoods of \(x\) and \(y\) and \(V = W_2 \cap U\).
+
+% Then \(V\) is open and non-empty. Thus, \(x \notin \overline{V}\) (since \(W_1 \cap V = \varnothing\)).
+
+% \textbf{Step 2}: Given \(f: \mathbb{N} \to X\). We show \(f\) is not surjective.
+
+% Apply Step 1 to \(x_0 = f(0), U = X\) and choose \(V_0\) open, \(\overline{V_0} \subset X, f(0) \notin \overline{V_0}\).
+
+% Choose \(V_1 \subset V_0\) such that \(\overline{V_1} \subset V_0\) and \(f(1) \notin \overline{V_1}\).
+
+% Inductively, \(\overline{V_0} \supset \overline{V_1} \supset \overline{V_2} \supset \cdots\).
+
+% This is a nested sequence of non-empty closed sets in a compact set \(X \implies \bigcap_{n \in \mathbb{N}} \overline{V_n} \neq \emptyset\).
+
+% Let \(x \in \bigcap \overline{V_n}\), then \(x \neq f(n)\) for any \(n\) (since \(x \in \overline{V_n} \subset V_{n-1}\) and \(f(n) \notin \overline{V_n}\)).
+
+% Thus, \(f\) is not surjective.
+% \end{proof}
+
+\begin{corollary}
+\([a, b] \subset \mathbb{R}\) is uncountable.
+\end{corollary}
+
+\begin{note}[One-Point Compactification (Preview)]
+Idea: Given locally compact \(X\), construct \(Y = X \cup \{\infty\}\).
+Topology:
+\begin{enumerate}
+    \item Open in \(X \implies\) Open in \(Y\).
+    \item \(Y \setminus C\) where \(C \subset X\) compact \(\implies\) Open in \(Y\).
+\end{enumerate}
+Need to check topology axioms. \(Y\) is Compact Hausdorff. (Next Time.)
+\end{note}

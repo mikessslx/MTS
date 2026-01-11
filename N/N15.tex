@@ -1,0 +1,169 @@
+\section{Notes 15 - 12.05}
+
+\subsection{Metrizability of Infinite Products}
+
+\begin{recap}
+\begin{enumerate}
+    \item \(\mathbb{R}^\omega\) is \textbf{not} metrizable in the \textbf{box topology}.
+    \item If \(J\) is uncountable, \(\mathbb{R}^J\) is \textbf{not} metrizable in the \textbf{product topology}.
+\end{enumerate}
+\end{recap}
+
+\begin{theorem}
+\(\mathbb{R}^\omega\) is \textbf{metrizable} in the \textbf{product topology}.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(\mathbb{R}^\omega = \{(x_1, x_2, \cdots) \mid x_i \in \mathbb{R}\}\). Let \(\bar{d}(a, b) = \min(|a - b|, 1)\) (standard bounded metric on \(\mathbb{R}\)).
+
+% Define \(D(x, y) = \sup_{i \in \mathbb{Z}_{>0}} \left\{ \frac{\bar{d}(x_i, y_i)}{i} \right\}\).
+
+% \paragraph*{(1) This is a metric}
+% \begin{itemize}
+%     \item Positive, zero iff equal, symmetric: clear.
+%     \item Triangle inequality: \(D(x, z) \le D(x, y) + D(y, z)\).
+%     \[\frac{\bar{d}(x_i, z_i)}{i} \le \frac{\bar{d}(x_i, y_i) + \bar{d}(y_i, z_i)}{i} \le D(x, y) + D(y, z).\]
+%     Taking sup over \(i\), we get \(D(x, z) \le D(x, y) + D(y, z)\).
+% \end{itemize}
+
+% \paragraph*{(2) It defines the product topology}
+% We need to show the topologies strictly match.
+% \begin{itemize}
+%     \item[(a)] \textbf{Metric \(\implies\) Product}:
+%     For any \(U\) open in metric topology, show it is open in product topology. \(\forall x \in U, \exists \varepsilon > 0\) such that \(U_D(x, \varepsilon) \subset U\). We find a basic open set \(V\) in product topology s.t. \(x \in V \subset U_D(x, \varepsilon)\). Take \(N\) such that \(\frac{1}{N} < \varepsilon\). Let \(V = (x_1 - \varepsilon, x_1 + \varepsilon) \times \cdots \times (x_N - \varepsilon, x_N + \varepsilon) \times \mathbb{R} \times \mathbb{R} \times \cdots\), then \(V \subset U_D(x, \varepsilon)\).
+
+%     (Check: let \(y \in V\). If \(i \le N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{\varepsilon}{1} = \varepsilon\). If \(i > N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{1}{i} < \frac{1}{N} < \varepsilon\). Thus, \(D(x, y) \le \max(\cdots) < \varepsilon\)).
+
+%     \item[(b)] \textbf{Product \(\implies\) Metric}:
+%     Let \(U = \prod U_i\) be basic open in product topology (\(U_i = \mathbb{R}\) for \(i > n\)). Let \(x \in U\). Need: \(U_D(x, \varepsilon) \subset U\). Since \(U_i\) is open in \(\mathbb{R}\), \(\exists \varepsilon_i > 0\) s.t. \((x_i - \varepsilon_i, x_i + \varepsilon_i) \subset U_i\) (for \(i = 1 \cdots n\)). Let \(\varepsilon = \min_{i=1 \cdots n} \{ \frac{\varepsilon_i}{i} \}\). Claim: \(U_D(x, \varepsilon) \subset U\). Let \(y \in U_D(x, \varepsilon)\), then
+%     \[\frac{\bar{d}(x_i, y_i)}{i} \le D(x, y) < \varepsilon \le \frac{\varepsilon_i}{i} \implies \bar{d}(x_i, y_i) < \varepsilon_i \implies |x_i - y_i| < \varepsilon_i \implies y_i \in U_i.\]
+% \end{itemize}
+% \end{proof}
+
+\subsection{Properties of Ordered Sets and Compactness}
+
+\subsubsection{Least Upper Bound Property}
+\begin{note}[Least Upper Bound Property]
+Let \(X\) be a linearly ordered set with \(<\) topology. Basis: \((a, b) = \{x \in X \mid a < x < b\}\).
+
+\(A \subset X\): \(A\) is \textbf{bounded from above} if \(\exists b \in X\) s.t. \(a \le b, \forall a \in A\).
+
+\(b\) is an upper bound if \(b' < b \implies \exists a \in A\) s.t. \(b' < a\) (implies \(b\) is \textbf{least} upper bound).
+\end{note}
+
+\begin{definition}[Least Upper Bound Property]
+\((X, \le)\) has the \textbf{least upper bound property} if every nonempty subset \(A \subset X\) bounded from above has \(\sup A \in X\).
+\end{definition}
+
+\begin{theorem}[Compactness of Intervals]
+Let \(X\) be an ordered set with the least upper bound property. Then \(\forall a \le b \in X\), the interval \([a, b]\) is compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(\mathcal{A}\) be an open covering of \([a, b]\).
+
+% \textbf{Step 1}: For all \(x \in [a, b], x \neq b\), there exists \(y > x\) such that \([x, y]\) is covered by at most two intervals from \(\mathcal{A}\).
+% \begin{itemize}
+%     \item If \(x\) has an immediate successor \(y \in X\), take it. Then \([x, y] = \{x, y\}\), which can be covered by 2 sets from \(\mathcal{A}\).
+%     \item If not: Take \(A \in \mathcal{A}\) such that \(x \in A\). Since \(A\) is open, there exists \(z > x\) such that \([x, z) \subset A\). Take any \(y\) such that \(x < y < z\). Then \([x, y] \subset A\) is covered by \(A\).
+% \end{itemize}
+
+% \textbf{Step 2}: Let \(C\) be the set of points \(y > a\) such that \([a, y]\) has a finite subcover. By Step 1 applied to \(a\), \(C \neq \emptyset\). Also \(C\) is bounded by \(b\). Let \(c = \sup C \le b\).
+
+% \textbf{Step 3}: Show that \(c \in C\).
+
+% Let \(A \in \mathcal{A}\) such that \(c \in A\). There exists \(d < c\) such that \((d, c] \subset A\). Since \(c = \sup C\), there exists \(z \in C\) such that \(d < z \le c\). \([a, z]\) has a finite subcover. Adding \(A\) covers \([a, c]\). Then
+% \[c \in C.\]
+
+% \textbf{Step 4}: Show that \(c = b\).
+
+% Suppose \(c < b\). By Step 1, \(\exists y > c\) such that \([c, y]\) is covered by at most 2 sets. Then \([a, y] = [a, c] \cup [c, y]\) has a finite subcover, so \(y \in C\), contradicting \(c = \sup C\)! Thus, \(c = b\).
+% \end{proof}
+
+\begin{corollary}
+\([a, b] \subset \mathbb{R}\) is compact.
+\end{corollary}
+
+\begin{corollary}
+\([a_1, b_1] \times \cdots \times [a_n, b_n] \subset \mathbb{R}^n\) is compact (Tychonoff/Product of compacts).
+\end{corollary}
+
+\begin{theorem}[Heine-Borel]
+A subset \(A \subset \mathbb{R}^n\) is compact \(\iff\) \(A\) is closed and bounded (in Euclidean metric).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)] \(A\) compact \(\implies A\) closed (subset of Hausdorff \(\mathbb{R}^n\)).
+    
+%     Take covering by balls \(U_N(0)\) of radii \(1, 2, \cdots\). They cover \(A \implies\) there is a finite subcover \(U_{N_1}, \cdots, U_{N_k}\).
+%     Then \(A \subset U_N\) where \(N = \max(N_i)\). Thus, \(A\) is bounded.
+
+%     \item[\(\Leftarrow\)] \(A\) bounded \(\implies A \subset [-M, M]^n\) (large box).
+    
+%     The box is compact (product of closed intervals). \(A\) is a closed subset of a compact set \(\implies A\) is compact.
+% \end{itemize}
+% \end{proof}
+
+\begin{theorem}[Extreme Value Theorem]
+Let \(f: X \to Y\) be continuous. \(Y\) ordered, \(X\) compact.
+Then \(\exists c, d \in X\) such that
+\[f(c) = \min f \le f(x) \le \max f = f(d) \ \forall x \in X\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(f(X) \subset Y\) is compact. Show that a compact subset of an ordered set has a largest element.
+
+% Let \(A = f(X)\) and \(M = \sup A\) (exists by LUB property if \(Y=\mathbb{R}\), or construct cover).
+
+% Take \(\{(-\infty, a) \mid a \in A\}\). If there is no largest element, this is an open covering of \(A\). Finite subcovering \((-\infty, a_1) \cup \cdots \cup (-\infty, a_n)\). Let \(a_{\max} = \max(a_i)\), then \(A \subset (-\infty, a_{\max})\).
+
+% Contradiction! (Since \(a_{\max}\) is not covered.)
+% \end{proof}
+
+\subsection{Distance to a Set}
+
+\begin{definition}
+Let \((X, d)\) be a metric space, \(A \subset X, x \in X\).
+\[d(x, A) = \inf \{ d(x, a) \mid a \in A \}\]
+\end{definition}
+
+\begin{proposition}
+\(d(x, A)\) is a continuous function (for \(A\) fixed).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(d(x, a) \le d(x, y) + d(y, a)\).
+
+% Taking inf over \(a \in A\):
+% \[d(x, A) \le d(x, y) + d(y, A) \implies d(x, A) - d(y, A) \le d(x, y).\]
+
+% Symmetrically,
+% \[d(y, A) - d(x, A) \le d(x, y) \implies |d(x, A) - d(y, A)| \le d(x, y).\]
+
+% This implies continuity (Lipshitz continuous).
+% \end{proof}
+
+\begin{remark}[Goal]
+Show that if \(f: X \to Y\) is continuous, \(X, Y\) metric spaces, \(X\) compact \(\implies f\) uniformly continuous.
+\end{remark}

@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%% DO NOT CHANGE HERE %%%%%%%%%%%%%%%%%%%% {
+    \documentclass[12pt,letterpaper]{report}
+    \usepackage{fullpage}
+    \usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+    \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+    \usepackage{lastpage}
+    \usepackage{enumerate}
+    \usepackage{fancyhdr}
+    \usepackage{mathrsfs}
+    \usepackage{xcolor}
+    \usepackage{graphicx}
+    \usepackage{listings}
+    \usepackage{hyperref}
+    
+    \hypersetup{%
+      colorlinks=true,
+      linkcolor=blue,
+      linkbordercolor={0 0 1}
+    }
+    
+    \theoremstyle{plain}
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem{lemma}[theorem]{Lemma}
+    \newtheorem{proposition}[theorem]{Proposition}
+    \newtheorem{corollary}[theorem]{Corollary}
+
+    \theoremstyle{definition}
+    \newtheorem{definition}[theorem]{Definition}
+    \newtheorem{example}{Example}[section]
+    \newtheorem{xca}[theorem]{Exercise}
+
+    \theoremstyle{remark}
+    \newtheorem*{remark}{Remark}
+    \newtheorem*{note}{Note}
+    \newtheorem*{recap}{Recap}
+    \newtheorem*{hint}{Hint}
+    
+    \setlength{\parindent}{0.0in}
+    \setlength{\parskip}{0.05in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% }
+    
+%%%%%%%%%%%%%%%%%%%%%%%% CHANGE HERE %%%%%%%%%%%%%%%%%%%% {
+    \newcommand\course{MTS}
+    \newcommand\semester{Winter 2025}
+    \newcommand\NetIDa{Xiang Li}
+    \newcommand\NetIDb{\href{https://github.com/Mikessslx}{\textcolor{black}{GitHub}}}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% }
+    
+%%%%%%%%%%%%%%%%% DO NOT CHANGE HERE %%%%%%%%%%%%%%%%%%%% {
+    \pagestyle{fancyplain}
+    \headheight 35pt
+    \lhead{\NetIDa}
+    \lhead{\NetIDa\\\NetIDb} 
+    \chead{\textbf{\Large \rightmark}}
+    \rhead{\course \\ \semester}
+    \lfoot{}
+    \cfoot{\thepage}
+    \rfoot{}
+    \headsep 1.5em
+    \renewcommand{\sectionmark}[1]{\markright{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% }
+
+\begin{document}
+
+% 工作流：
+% 1. 复述附上图片的白板内容，并转为英文 latex，写入 L.tex。格式参考已有笔记的格式
+% 2. 好的，继续来
+
+\begin{titlepage}
+    \centering
+    \pagestyle{empty}
+    
+    \vspace*{3cm}
+
+    {\Huge\bfseries Metric and Topological Spaces}\\[2cm]
+
+    {\Large Notes}\\[0.5cm]
+    {\Large \semester}\\[2cm]
+
+    {\large Professor: Evgeny SMIRNOV}\\[2cm]
+    
+    {\Large \NetIDa}\\[0.5cm]
+    {\Large \NetIDb}\\[2cm]
+    
+    \vfill
+
+    {\large GTIIT, \today}
+\end{titlepage}
+
+% Week 1
+\input{N/N1.tex}
+\newpage
+
+\input{N/N2.tex}
+\newpage
+
+% Week 2
+\input{N/N3.tex}
+\newpage
+
+\input{N/N4.tex}
+\newpage
+
+% Week 3
+\input{N/N5.tex}
+\newpage
+
+\input{N/N6.tex}
+\newpage
+
+% Week 4
+\input{N/N7.tex}
+\newpage
+
+\input{N/N8.tex}
+\newpage
+
+% Week 5
+\input{N/N9.tex}
+\newpage
+
+\input{N/N10.tex}
+\newpage
+
+% Week 6
+\input{N/N11.tex}
+\newpage
+
+\input{N/N12.tex}
+\newpage
+
+% Week 7
+\input{N/N13.tex}
+\newpage
+
+\input{N/N14.tex}
+\newpage
+
+% Week 8
+\input{N/N15.tex}
+\newpage
+
+\input{N/N16.tex}
+\newpage
+
+% Week 9
+\input{N/N17.tex}
+\newpage
+
+\input{N/N18.tex}
+\newpage
+
+% Week 10
+\input{N/N19.tex}
+\newpage
+
+\input{N/N20.tex}
+\newpage
+
+% Week 11
+\input{N/N21.tex}
+\newpage
+
+\input{N/N22.tex}
+\newpage
+
+% Week 12
+\input{N/N23.tex}
+\newpage
+
+\end{document}

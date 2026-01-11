@@ -1,0 +1,193 @@
+\section{Notes 11 - 11.17}
+
+\subsection{Product Topology on \(X \times Y\)}
+
+\begin{theorem}
+Let \(f: A \to X \times Y\), \(f(a) = (f_1(a), f_2(a))\). Then \(f\) is continuous \(\iff\) both \(f_1, f_2\) are continuous.
+\([f_1: A \to X, f_2: A \to Y]\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     The projection maps \(\pi_1, \pi_2\) are continuous:
+
+%     Let \(U \subset X\) be open: \(\pi_1^{-1}(U) = U \times Y\); same about \(\pi_2\).
+
+%     Then \(f_1 = \pi_1 \circ f\), \(f_2 = \pi_2 \circ f\) are continuous as compositions.
+
+%     \item[\(\Leftarrow\)]
+%     Take \(U \times V \subset X \times Y\) open. \(f^{-1}(U \times V) = f_1^{-1}(U) \cap f_2^{-1}(V)\) is open.
+% \end{itemize}
+% \end{proof}
+
+\subsection{Infinite Products}
+
+Take (countably) infinitely many spaces \(X_1, X_2, \cdots\).
+
+Maps \([0, 1] \to \mathbb{R}\): how to turn this into a topological space? \(\mathbb{R}^{[0,1]}\).
+
+\subsubsection{Tuples}
+\begin{definition}[Tuples]
+Let \(J\) be an arbitrary set. A \(J\)-tuple of elements from \(X\) is a function \(x: J \to X\), \(\alpha \in J \leadsto x(\alpha) = x_\alpha \in X\).
+Usually denoted \((x_\alpha)_{\alpha \in J}\).
+\end{definition}
+
+\subsubsection{The Cartesian Product}
+\begin{definition}[Cartesian Product]
+Let \((A_\alpha)_{\alpha \in J}\) be an indexed family of sets.
+The \textbf{Cartesian product} of this family \((A_\alpha)\) is denoted by \(\prod_{\alpha \in J} A_\alpha\) and defined as the set of all \(J\)-tuples of elements in \(X\) (where \(X = \bigcup_{\alpha \in J} A_\alpha\)) such that \(x_\alpha \in A_\alpha\) \(\forall \alpha \in J\).
+That is, the set of all functions \(x: J \to \bigcup A_\alpha\) s.t. \(x_\alpha \in A_\alpha, \forall \alpha \in J\).
+
+When \(A_\alpha = X\), \(\prod_{\alpha \in J} A_\alpha = X^J\).
+\end{definition}
+
+\begin{example}
+\(X = [0, 2] \times [1, 5] = \{ (x, y) \mid 0 \le x \le 2, 1 \le y \le 5 \}\).
+\end{example}
+
+\subsection{Topologies on Infinite Products}
+
+Two ways to introduce topology on \(\prod_{\alpha \in J} X_\alpha\).
+
+\subsubsection{1. Box Topology}
+Take \(U_1 \subset X_1, U_2 \subset X_2, \cdots\) (open sets).
+The topology is given by the basis \(\prod_{\alpha \in J} U_\alpha\).
+This defines the \textbf{box topology}.
+
+\begin{definition}[Box Topology]
+Let \((X_\alpha)_{\alpha \in J}\) be an indexed family of topological spaces.
+The \textbf{box topology} on \(\prod_{\alpha \in J} X_\alpha\) is given by the basis \(\prod_{\alpha \in J} U_\alpha\), where \(U_\alpha \subset X_\alpha\) is open. Basis element is
+\[(\prod U_\alpha) \cap (\prod V_\alpha) = \prod (U_\alpha \cap V_\alpha).\]
+\end{definition}
+
+\subsubsection{2. Product Topology}
+Take as a basis products \(U_1 \times U_2 \times \cdots\) where \textbf{only finitely many} of \(U_i \neq X_i\).
+This defines the \textbf{Product topology}.
+
+\subsubsection{Subbasis}
+\begin{definition}[Subbasis]
+A collection \(\mathcal{S}\) of subsets of space \(X\) is a \textbf{subbasis} if \(\bigcup_{S \in \mathcal{S}} S = X\).
+\end{definition}
+
+From Subbasis to Basis: take all finite intersections of elements from \(\mathcal{S}\).
+
+Topology: all unions of these finite intersections.
+
+\begin{note}[Diagram]
+\(\mathcal{S} \xrightarrow{\text{finite } \cap} \mathcal{B} \xrightarrow{\text{arbitrary } \cup} \mathcal{T}\).
+\end{note}
+
+\begin{example}
+    \leavevmode
+    \begin{itemize}
+        \item \(\mathcal{S} = \{X\}\) (trivial).
+        \item \(\mathcal{S} = \{ \text{horizontal strips}, \text{vertical strips} \}\). Basis \(\mathcal{B} = \{ \text{rectangles} \}\).
+    \end{itemize}
+\end{example}
+
+\begin{definition}[Product Topology]
+Let \(\pi_\beta: \prod_{\alpha \in J} X_\alpha \to X_\beta\) be the projection map, \(x \mapsto x_\beta\).
+
+Let \(\mathcal{S}_\beta = \{ \pi_\beta^{-1}(U_\beta) \mid U_\beta \subset X_\beta \text{ open} \}\) (``cylinders''), then \(\mathcal{S} = \bigcup_{\beta \in J} \mathcal{S}_\beta\) is a subbasis.
+
+The topology defined by it is the \textbf{product topology}.
+
+Basis \(\mathcal{B}\) given by finite intersections of elements from \(\mathcal{S}\).
+
+\(\mathcal{B} \ni B = \prod U_\alpha\), where \(U_\alpha \subset X_\alpha\) open, and \(U_\alpha \neq X_\alpha\) for \(\alpha \in \{\beta_1, \cdots, \beta_n\}\) (finite set of indices).
+That is, \(U_\alpha = X_\alpha\) for \textbf{almost all} elements (all except a finite set).
+\end{definition}
+
+\begin{remark}[Comparison]
+If \(|J| < \infty\), the box and product topologies are the same.
+If \(J\) is infinite, \textbf{Box topology} is \textbf{finer} than \textbf{Product topology}.
+\end{remark}
+
+\subsection{Properties of Product Spaces}
+
+\begin{theorem}[Subspace Topology]
+Let \(A_\alpha \subset X_\alpha\) be subspaces.
+Then \(\prod A_\alpha \subset \prod X_\alpha\) is a subspace:
+\begin{itemize}
+    \item in box topology.
+    \item in product topology.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Hausdorff]
+If \(X_\alpha\) are Hausdorff, then \(\prod X_\alpha\) is Hausdorff in both topologies.
+\end{theorem}
+
+\begin{theorem}[Closure]
+Let \(A_\alpha \subset X_\alpha\) be subsets. In each topology (box or product),
+\[\overline{\prod A_\alpha} = \prod \overline{A_\alpha}\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Leftarrow\)]
+%     Take \((x_\alpha) = x \in \prod \overline{A_\alpha}\); show that \(x \in \overline{\prod A_\alpha}\).
+
+%     Let \(\prod U_\alpha \ni x\) (basis element), then
+%     \[x_\alpha \in \overline{A_\alpha} \implies \exists y_\alpha \in A_\alpha \cap U_\alpha.\]
+
+%     So \(y = (y_\alpha) \in \prod A_\alpha\) and \(y \in U = \prod U_\alpha\).
+
+%     So \(x \in \overline{\prod A_\alpha}\).
+
+%     \item[\(\Rightarrow\)]
+%     Take \(x = (x_\alpha) \in \overline{\prod A_\alpha}\); show that \(\forall \beta, x_\beta \in \overline{A_\beta}\).
+
+%     Take \(V_\beta \ni x_\beta\) open in \(X_\beta\); its preimage \(\pi_\beta^{-1}(V_\beta)\) is open in \(\prod X_\alpha\).
+
+%     So \(\exists y = (y_\alpha) \in \prod A_\alpha \cap \pi_\beta^{-1}(V_\beta)\), \(y_\beta \in V_\beta \cap A_\beta \implies x_\beta \in \overline{A_\beta}\).
+% \end{itemize}
+% \end{proof}
+
+\subsection{Continuity into Product Spaces}
+
+\begin{theorem}
+Let \(f: A \to \prod X_\alpha\) be given by \(f(a) = (f_\alpha(a))_{\alpha \in J}\).
+Then \(f\) is continuous \textbf{in the product topology} iff all \(f_\alpha\) are continuous.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+%     \item[\(\Rightarrow\)]
+%     \(f\) continuous. \(\pi_\alpha\) is continuous \(\implies f_\alpha: A \to X_\alpha\), \(f_\alpha = \pi_\alpha \circ f\) is continuous.
+
+%     \item[\(\Leftarrow\)]
+%     Let all \(f_\alpha\) be continuous.
+
+%     Enough to prove: \(f^{-1}(B)\) is open for each element \(B\) of \textbf{subbasis}.
+
+%     But if \(B = \pi_\beta^{-1}(U_\beta)\), \(U_\beta \subset X_\beta\) open.
+%     \(f^{-1}(B) = f^{-1}(\pi_\beta^{-1}(U_\beta)) = f_\beta^{-1}(U_\beta)\) is open in \(A\) (since \(f_\beta\) is continuous).
+% \end{itemize}
+% \end{proof}
+
+\begin{example}[Counterexample for Box Topology]
+\(\mathbb{R}^\omega = \prod_{n \in \mathbb{N}} X_n\), \(X_n = \mathbb{R}\).
+\(f: \mathbb{R} \to \mathbb{R}^\omega\), \(t \mapsto (t, t, t, \cdots)\).
+
+This map is continuous in the product topology (since each component \(f_n(t) = t\) is continuous) and \textbf{not continuous} in the box topology.
+
+Take \(B = (-1, 1) \times (-\frac{1}{2}, \frac{1}{2}) \times (-\frac{1}{3}, \frac{1}{3}) \times \cdots\). \(B\) is open in box topology.
+
+\(f^{-1}(B) = \{ t \mid t \in (-\frac{1}{n}, \frac{1}{n}) \forall n \} = \{0\}\). \(\{0\}\) is \textbf{not open} in \(\mathbb{R}\).
+
+Thus \(f^{-1}(B)\) is not open, so \(f\) is not continuous. (\(f_n(-\delta, \delta) \not\subset (-\frac{1}{n}, \frac{1}{n})\) for large \(n\)).
+\end{example}
