@@ -23,18 +23,22 @@ If \(X\) is a \textbf{metric space}, then
 For \(X\) an arbitrary \textbf{topological space}, \(X\) compact \(\implies X\) LPC. (The converse is \textbf{NOT} true).
 \end{theorem}
 
-\begin{proof}[Proof (Compact \(\implies\) LPC)]
-Let \(X\) be compact, \(A \subset X\) infinite. Assume \(A\) has no limit points, then \(A\) is closed (contains all its limit points, which are none). So \(X \setminus A\) is open.
+\begin{remark}
+Proof (Compact \(\implies\) LPC) is commented out!
+\end{remark}
 
-Since \(a \in A\) is \textbf{not} a limit point, \(\exists U_a\) open such that \(U_a \cap A = \{a\}\).
+% \begin{proof}[Proof (Compact \(\implies\) LPC)]
+% Let \(X\) be compact, \(A \subset X\) infinite. Assume \(A\) has no limit points, then \(A\) is closed (contains all its limit points, which are none). So \(X \setminus A\) is open.
 
-Take all \(\{U_a\}_{a \in A}\) and \(X \setminus A\). This is an open cover of \(X\).
+% Since \(a \in A\) is \textbf{not} a limit point, \(\exists U_a\) open such that \(U_a \cap A = \{a\}\).
 
-Since \(X\) is compact, there exists a finite subcover,
-\[X \subset (X \setminus A) \cup U_{a_1} \cup \cdots \cup U_{a_k}.\]
+% Take all \(\{U_a\}_{a \in A}\) and \(X \setminus A\). This is an open cover of \(X\).
 
-Since \(U_{a_i} \cap A = \{a_i\}\), we must have \(A \subset \{a_1, \cdots, a_k\} \implies A\) is finite, contradiction!
-\end{proof}
+% Since \(X\) is compact, there exists a finite subcover,
+% \[X \subset (X \setminus A) \cup U_{a_1} \cup \cdots \cup U_{a_k}.\]
+
+% Since \(U_{a_i} \cap A = \{a_i\}\), we must have \(A \subset \{a_1, \cdots, a_k\} \implies A\) is finite, contradiction!
+% \end{proof}
 
 \begin{example}[Counterexample: LPC but not Compact]
 Let \(Y = \{p, q\}\) with anti-discrete topology \(\mathcal{T}_Y = \{\emptyset, Y\}\). Let \(X = \mathbb{N} \times Y\) with product topology (\(\mathbb{N}\) is discrete).
@@ -46,23 +50,27 @@ Suppose \(A \ni (n, p)\). Then \((n, q)\) is a limit point of \(A\): every open 
 But \(X\) is \textbf{not compact}: Cover by \(U_n = \{n\} \times Y\). No finite subcover. \(X\) is also \textbf{not sequentially compact}: The sequence \((1, p), (2, p), \cdots\) has no convergent subsequence.
 \end{example}
 
-\begin{proof}[Partial Proof of Theorem 1 (Metric Spaces)]
-\begin{enumerate}
-    \item \textbf{Compact \(\implies\) LPC}: Theorem 2.
-    \item \textbf{LPC \(\implies\) SC}: (Proof works for 1st-countable spaces).
-    Take a sequence \((x_n)\) in \(X\).
-    \begin{itemize}
-        \item
-        If the set of values of \((x_n)\) is finite, then one value is assumed infinitely many times \(\implies\) constant subsequence \(\implies\) convergent.
+\begin{remark}
+Partial Proof of Theorem 1 (Metric Spaces) is commented out!
+\end{remark}
 
-        \item
-        If \((x_n)\) has infinitely many values, let \(A\) be the set of values.
-        
-        By LPC, \(A\) has a limit point \(a \in X\). Since \(X\) is metric (or 1st-countable), we can find a subsequence converging to \(a\). (Take \(U_1(a) \supset U_2(a) \supset \cdots\) and pick \(x_{n_k} \in U_k(a)\) with increasing indices.)
-    \end{itemize}
-    \item \textbf{SC \(\implies\) Compact}: Harder.
-\end{enumerate}
-\end{proof}
+% \begin{proof}[Partial Proof of Theorem 1 (Metric Spaces)]
+% \begin{enumerate}
+% \item \textbf{Compact \(\implies\) LPC}: Theorem 2.
+% \item \textbf{LPC \(\implies\) SC}: (Proof works for 1st-countable spaces).
+% Take a sequence \((x_n)\) in \(X\).
+% \begin{itemize}
+% \item
+% If the set of values of \((x_n)\) is finite, then one value is assumed infinitely many times \(\implies\) constant subsequence \(\implies\) convergent.
+
+% \item
+% If \((x_n)\) has infinitely many values, let \(A\) be the set of values.
+
+% By LPC, \(A\) has a limit point \(a \in X\). Since \(X\) is metric (or 1st-countable), we can find a subsequence converging to \(a\). (Take \(U_1(a) \supset U_2(a) \supset \cdots\) and pick \(x_{n_k} \in U_k(a)\) with increasing indices.)
+% \end{itemize}
+% \item \textbf{SC \(\implies\) Compact}: Harder.
+% \end{enumerate}
+% \end{proof}
 
 \subsection{Locally Compact Spaces}
 
@@ -72,13 +80,13 @@ But \(X\) is \textbf{not compact}: Cover by \(U_n = \{n\} \times Y\). No finite 
 \end{definition}
 
 \begin{example}
-    \leavevmode
-    \begin{enumerate}
-        \item \(\mathbb{R}\) is locally compact. \(\forall x \in \mathbb{R}\), \(x \in (a, b) \subset [a, b]\), and \([a, b]\) is compact.
-        \item \(\mathbb{R}^n\) is locally compact.
-        \item \(\mathbb{Q} \subset \mathbb{R}\) i \textbf{not} locally compact.
-        \item \(\mathbb{R}^\omega\) with product topology is \textbf{not} locally compact. If \(U\) is open, \(U\) contains a basis element \((a_1, b_1) \times \cdots \times (a_n, b_n) \times \mathbb{R} \times \mathbb{R} \times \cdots\). Then \(U\) is not contained in any compact set \(C\). (If \(U \subset C\), then \(\overline{U} \subset C \implies \overline{U}\) is compact. But \(\overline{U}\) contains factors of \(\mathbb{R}\), and hence not compact.)
-    \end{enumerate}
+\leavevmode
+\begin{enumerate}
+\item \(\mathbb{R}\) is locally compact. \(\forall x \in \mathbb{R}\), \(x \in (a, b) \subset [a, b]\), and \([a, b]\) is compact.
+\item \(\mathbb{R}^n\) is locally compact.
+\item \(\mathbb{Q} \subset \mathbb{R}\) i \textbf{not} locally compact.
+\item \(\mathbb{R}^\omega\) with product topology is \textbf{not} locally compact. If \(U\) is open, \(U\) contains a basis element \((a_1, b_1) \times \cdots \times (a_n, b_n) \times \mathbb{R} \times \mathbb{R} \times \cdots\). Then \(U\) is not contained in any compact set \(C\). (If \(U \subset C\), then \(\overline{U} \subset C \implies \overline{U}\) is compact. But \(\overline{U}\) contains factors of \(\mathbb{R}\), and hence not compact.)
+\end{enumerate}
 \end{example}
 
 \begin{note}
@@ -91,9 +99,9 @@ Compact Hausdorff spaces are ``nice''.
 Let \(X\) be a \textbf{Hausdorff} space. Then \(X\) is locally compact
 \(\iff \exists Y\) such that
 \begin{enumerate}
-    \item \(X \subset Y\).
-    \item \(Y \setminus X = \{p\}\) is a single point.
-    \item \(Y\) is a \textbf{compact Hausdorff} space.
+\item \(X \subset Y\).
+\item \(Y \setminus X = \{p\}\) is a single point.
+\item \(Y\) is a \textbf{compact Hausdorff} space.
 \end{enumerate}
 This \(Y\) is unique in the following sense: if \(Y, Y'\) are two such spaces, there exists a homeomorphism \(h: Y \to Y'\) fixing \(X\).
 \end{theorem}
@@ -105,17 +113,17 @@ Proof is commented out!
 % \begin{proof}
 % \textbf{Uniqueness}: Let \(Y = X \cup \{p\}, Y' = X \cup \{q\}\). Define \(h: Y \to Y'\) by \(h(x) = x\) for \(x \in X\), \(h(p) = q\). Show \(h\) is continuous. Take \(U \subset Y'\) open.
 % \begin{itemize}
-%     \item If \(U \subset X\), \(h^{-1}(U) = U\) is open in \(X \implies\) open in \(Y\).
-%     \item If \(q \in U\), let \(C = Y' \setminus U\). \(C\) is closed in \(Y'\), \(C \subset X\).
-%     Since \(Y'\) compact, \(C\) is compact.
-%     \(h^{-1}(U) = Y \setminus C\).
-%     By construction of topology, complements of compact sets \(\subset X\) are open neighborhoods of infinity.
+% \item If \(U \subset X\), \(h^{-1}(U) = U\) is open in \(X \implies\) open in \(Y\).
+% \item If \(q \in U\), let \(C = Y' \setminus U\). \(C\) is closed in \(Y'\), \(C \subset X\).
+% Since \(Y'\) compact, \(C\) is compact.
+% \(h^{-1}(U) = Y \setminus C\).
+% By construction of topology, complements of compact sets \(\subset X\) are open neighborhoods of infinity.
 % \end{itemize}
 
 % \textbf{Construction}: Let \(Y = X \cup \{\infty\}\). Define topology on \(Y\):
 % \begin{enumerate}
-%     \item \(U \subset X\) open \(\implies U\) open in \(Y\).
-%     \item \(Y \setminus C\) open in \(Y\) if \(C \subset X\) is compact.
+% \item \(U \subset X\) open \(\implies U\) open in \(Y\).
+% \item \(Y \setminus C\) open in \(Y\) if \(C \subset X\) is compact.
 % \end{enumerate}
 
 % Need to prove this defines a topology and \(Y\) is compact Hausdorff. (Continued next time).

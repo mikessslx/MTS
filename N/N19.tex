@@ -3,45 +3,45 @@
 \subsection{Countability Axioms Analysis}
 
 \begin{theorem}
-    Let \(X\) be a second-countable space. Then:
-    \begin{enumerate}
-        \item Every covering of \(X\) by open sets has a countable subcovering (\(X\) is a \textbf{Lindelöf space}).
-        \item There exists a countable dense subset of \(X\): \(A \subset X\) such that \(\bar{A} = X\) (\(X\) is \textbf{separable}).
-    \end{enumerate}
+Let \(X\) be a second-countable space. Then:
+\begin{enumerate}
+\item Every covering of \(X\) by open sets has a countable subcovering (\(X\) is a \textbf{Lindelöf space}).
+\item There exists a countable dense subset of \(X\): \(A \subset X\) such that \(\bar{A} = X\) (\(X\) is \textbf{separable}).
+\end{enumerate}
 \end{theorem}
 
 \begin{remark}
-    The implications are as follows:
-    \begin{align*}
-        \text{2nd countable} &\implies \text{Lindelöf} \\
-        \text{2nd countable} &\implies \text{Separable}
-    \end{align*}
-    The converse does not hold.
+The implications are as follows:
+\begin{align*}
+\text{2nd countable} &\implies \text{Lindelöf} \\
+\text{2nd countable} &\implies \text{Separable}
+\end{align*}
+The converse does not hold.
     
-    A counterexample is the Sorgenfrey line \(\mathbb{R}_\ell\) (lower limit topology):
-    \begin{itemize}
-        \item \(\mathbb{R}_\ell\) is 1st-countable.
-        \item \(\mathbb{R}_\ell\) is Lindelöf and separable.
-        \item \(\mathbb{R}_\ell\) is \textbf{not} 2nd countable.
-    \end{itemize}
+A counterexample is the Sorgenfrey line \(\mathbb{R}_\ell\) (lower limit topology):
+\begin{itemize}
+\item \(\mathbb{R}_\ell\) is 1st-countable.
+\item \(\mathbb{R}_\ell\) is Lindelöf and separable.
+\item \(\mathbb{R}_\ell\) is \textbf{not} 2nd countable.
+\end{itemize}
 \end{remark}
 
 \begin{example}[Analysis of \(\mathbb{R}_\ell\)]
-    \leavevmode
-    \begin{enumerate}
-        \item \textbf{First Countability:}
-        For \(x \in \mathbb{R}_\ell\), the collection \(\{[x, x + \frac{1}{n})\}_{n \in \mathbb{N}}\) is a countable local basis at \(x\). Thus, \(\mathbb{R}_\ell\) is first countable.
+\leavevmode
+\begin{enumerate}
+\item \textbf{First Countability:}
+For \(x \in \mathbb{R}_\ell\), the collection \(\{[x, x + \frac{1}{n})\}_{n \in \mathbb{N}}\) is a countable local basis at \(x\). Thus, \(\mathbb{R}_\ell\) is first countable.
 
-        \item \textbf{Second Countability:}
-        \(\mathbb{R}_\ell\) is not second countable. If \(\mathcal{B}\) is a basis, then for any \(x \in \mathbb{R}\), there exists \(B_x \in \mathcal{B}\) such that \(x \in B_x \subseteq [x, x+1)\). This implies \(x = \min B_x\). Since all \(x\) are distinct, the map \(x \mapsto B_x\) is injective from the uncountable set \(\mathbb{R}\) to \(\mathcal{B}\). Thus \(\mathcal{B}\) must be uncountable.
+\item \textbf{Second Countability:}
+\(\mathbb{R}_\ell\) is not second countable. If \(\mathcal{B}\) is a basis, then for any \(x \in \mathbb{R}\), there exists \(B_x \in \mathcal{B}\) such that \(x \in B_x \subseteq [x, x+1)\). This implies \(x = \min B_x\). Since all \(x\) are distinct, the map \(x \mapsto B_x\) is injective from the uncountable set \(\mathbb{R}\) to \(\mathcal{B}\). Thus \(\mathcal{B}\) must be uncountable.
 
-        \item \textbf{Separability:}
-        \(\mathbb{Q} \subset \mathbb{R}_\ell\) is dense. Thus \(\mathbb{R}_\ell\) is separable.
-    \end{enumerate}
+\item \textbf{Separability:}
+\(\mathbb{Q} \subset \mathbb{R}_\ell\) is dense. Thus \(\mathbb{R}_\ell\) is separable.
+\end{enumerate}
 \end{example}
 
 \begin{proposition}
-    \(\mathbb{R}_\ell\) is a Lindelöf space.
+\(\mathbb{R}_\ell\) is a Lindelöf space.
 \end{proposition}
 
 \begin{remark}
@@ -49,66 +49,66 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}
-%     Let \(\mathcal{A}\) be a covering of \(\mathbb{R}_\ell\) by basis elements \([a_\alpha, b_\alpha)\). We need to find a countable subset of \(\mathcal{A}\) covering \(\mathbb{R}_\ell\).
+% Let \(\mathcal{A}\) be a covering of \(\mathbb{R}_\ell\) by basis elements \([a_\alpha, b_\alpha)\). We need to find a countable subset of \(\mathcal{A}\) covering \(\mathbb{R}_\ell\).
 
-%     Let \(C = \bigcup_\alpha (a_\alpha, b_\alpha)\). Note that \(C\) is open in \(\mathbb{R}\) with the standard topology.
+% Let \(C = \bigcup_\alpha (a_\alpha, b_\alpha)\). Note that \(C\) is open in \(\mathbb{R}\) with the standard topology.
 
-%     \textit{Claim:} \(\mathbb{R} \setminus C\) is countable.
-    
-%     \textit{Proof of Claim:} Take \(x \in \mathbb{R} \setminus C\). Since \(x\) is covered by \(\mathcal{A}\), \(x \in [a_\beta, b_\beta)\) for some \(\beta\). Since \(x \notin C\) (and thus \(x \notin (a_\beta, b_\beta)\)), it must be that \(x = a_\beta\).
-%     Choose a rational number \(q_x \in (a_\beta, b_\beta) \cap \mathbb{Q}\). Then \(x < q_x\).
-%     If \(x, y \in \mathbb{R} \setminus C\) with \(x < y\), then \(q_x < q_y\). (Otherwise, if \(q_x > y\), then \(x < y < q_x\), implying \(y \in (a_\beta, b_\beta) \subset C\), a contradiction).
-%     The map \(x \mapsto q_x\) is an injection from \(\mathbb{R} \setminus C\) to \(\mathbb{Q}\). Hence \(\mathbb{R} \setminus C\) is countable.
+% \textit{Claim:} \(\mathbb{R} \setminus C\) is countable.
 
-%     Since \(\mathbb{R} \setminus C\) is countable, we can choose a countable subcollection \(\mathcal{A}' \subset \mathcal{A}\) covering \(\mathbb{R} \setminus C\).
-%     Now, consider \(C\) as a subspace of \(\mathbb{R}_{std}\). \(C\) is covered by the collection \(\{(a_\alpha, b_\alpha)\}\), which are open in \(\mathbb{R}_{std}\). Since \(\mathbb{R}_{std}\) is second countable (and thus Lindelöf), there exists a countable subcover corresponding to \(\mathcal{A}'' \subset \mathcal{A}\).
-%     Then \(\mathcal{A}' \cup \mathcal{A}''\) is a countable subcover of \(\mathbb{R}_\ell\).
+% \textit{Proof of Claim:} Take \(x \in \mathbb{R} \setminus C\). Since \(x\) is covered by \(\mathcal{A}\), \(x \in [a_\beta, b_\beta)\) for some \(\beta\). Since \(x \notin C\) (and thus \(x \notin (a_\beta, b_\beta)\)), it must be that \(x = a_\beta\).
+% Choose a rational number \(q_x \in (a_\beta, b_\beta) \cap \mathbb{Q}\). Then \(x < q_x\).
+% If \(x, y \in \mathbb{R} \setminus C\) with \(x < y\), then \(q_x < q_y\). (Otherwise, if \(q_x > y\), then \(x < y < q_x\), implying \(y \in (a_\beta, b_\beta) \subset C\), a contradiction).
+% The map \(x \mapsto q_x\) is an injection from \(\mathbb{R} \setminus C\) to \(\mathbb{Q}\). Hence \(\mathbb{R} \setminus C\) is countable.
+
+% Since \(\mathbb{R} \setminus C\) is countable, we can choose a countable subcollection \(\mathcal{A}' \subset \mathcal{A}\) covering \(\mathbb{R} \setminus C\).
+% Now, consider \(C\) as a subspace of \(\mathbb{R}_{std}\). \(C\) is covered by the collection \(\{(a_\alpha, b_\alpha)\}\), which are open in \(\mathbb{R}_{std}\). Since \(\mathbb{R}_{std}\) is second countable (and thus Lindelöf), there exists a countable subcover corresponding to \(\mathcal{A}'' \subset \mathcal{A}\).
+% Then \(\mathcal{A}' \cup \mathcal{A}''\) is a countable subcover of \(\mathbb{R}_\ell\).
 % \end{proof}
 
 \begin{example}[Lindelöf Subspaces]
-    A subspace of a Lindelöf space is not necessarily Lindelöf.
-    Consider \(I_{ord}^2 = [0, 1] \times [0, 1]\) with the order topology given by the lexicographical order
-    \[(x, y) < (x', y') \iff x < x' \lor (x = x' \land y < y')\]
+A subspace of a Lindelöf space is not necessarily Lindelöf.
+Consider \(I_{ord}^2 = [0, 1] \times [0, 1]\) with the order topology given by the lexicographical order
+\[(x, y) < (x', y') \iff x < x' \lor (x = x' \land y < y')\]
 
-    This space is compact (hence Lindelöf).
-    However, the subspace \([0, 1] \times (0, 1)\) is not Lindelöf. It can be covered by \(\{ \{x\} \times (0, 1) \}_{x \in [0, 1]}\), which has no countable subcover.
+This space is compact (hence Lindelöf).
+However, the subspace \([0, 1] \times (0, 1)\) is not Lindelöf. It can be covered by \(\{ \{x\} \times (0, 1) \}_{x \in [0, 1]}\), which has no countable subcover.
 \end{example}
 
 \begin{proposition}
-    \(\mathbb{R}_\ell^2 = \mathbb{R}_\ell \times \mathbb{R}_\ell\) is not Lindelöf.
+\(\mathbb{R}_\ell^2 = \mathbb{R}_\ell \times \mathbb{R}_\ell\) is not Lindelöf.
 \end{proposition}
 
 \begin{note}
-    The line \(L = \{(x, -x) : x \in \mathbb{R}\}\) is closed and discrete in \(\mathbb{R}_\ell^2\), preventing a countable subcover for the complement cover strategy.
+The line \(L = \{(x, -x) : x \in \mathbb{R}\}\) is closed and discrete in \(\mathbb{R}_\ell^2\), preventing a countable subcover for the complement cover strategy.
 \end{note}
 
 \subsection{Separation Axioms}
 
 \begin{definition}[Separation Axioms]
-    A topological space \(X\) can satisfy the following separation axioms
-    \begin{enumerate}
-        \item[\textbf{(T1)}] \textbf{(Fréchet)}
-        Given \(x \neq y \in X\), there exists open \(U\) s.t. \(x \in U, y \notin U\).
+A topological space \(X\) can satisfy the following separation axioms
+\begin{enumerate}
+\item[\textbf{(T1)}] \textbf{(Fréchet)}
+Given \(x \neq y \in X\), there exists open \(U\) s.t. \(x \in U, y \notin U\).
         
-        Equivalent to: \(\{x\}\) is closed for every \(x \in X\).
+Equivalent to: \(\{x\}\) is closed for every \(x \in X\).
 
-        \item[\textbf{(T2)}] \textbf{(Hausdorff)}
-        Given \(x \neq y \in X\), there exist open \(U, V\) s.t. \(x \in U, y \in V, U \cap V = \emptyset\).
+\item[\textbf{(T2)}] \textbf{(Hausdorff)}
+Given \(x \neq y \in X\), there exist open \(U, V\) s.t. \(x \in U, y \in V, U \cap V = \emptyset\).
 
-        \item[\textbf{(T3)}] \textbf{(Regular)}
-        \(X\) satisfies (T1) and for any \(x \in X\) and closed set \(B \not\ni x\), there exist open \(U, V\) s.t. \(x \in U, B \subset V, U \cap V = \emptyset\).
+\item[\textbf{(T3)}] \textbf{(Regular)}
+\(X\) satisfies (T1) and for any \(x \in X\) and closed set \(B \not\ni x\), there exist open \(U, V\) s.t. \(x \in U, B \subset V, U \cap V = \emptyset\).
 
-        \item[\textbf{(T4)}] \textbf{(Normal)}
-        \(X\) satisfies (T1) and for any disjoint closed sets \(A, B\), there exist open \(U, V\) s.t. \(A \subset U, B \subset V, U \cap V = \emptyset\).
-    \end{enumerate}
+\item[\textbf{(T4)}] \textbf{(Normal)}
+\(X\) satisfies (T1) and for any disjoint closed sets \(A, B\), there exist open \(U, V\) s.t. \(A \subset U, B \subset V, U \cap V = \emptyset\).
+\end{enumerate}
 \end{definition}
 
 \begin{lemma}[Characterization of Regularity and Normality]
-    Let \(X\) be a (T1) topological space, then
-    \begin{enumerate}
-        \item \(X\) is regular iff \(\forall x \in X\) and open \(U \ni x\), there exists open \(V\) such that \(x \in V \subset \overline{V} \subset U\).
-        \item \(X\) is normal iff \(\forall\) closed \(A\) and open \(U \supset A\), there exists open \(V\) such that \(A \subset V \subset \overline{V} \subset U\).
-    \end{enumerate}
+Let \(X\) be a (T1) topological space, then
+\begin{enumerate}
+\item \(X\) is regular iff \(\forall x \in X\) and open \(U \ni x\), there exists open \(V\) such that \(x \in V \subset \overline{V} \subset U\).
+\item \(X\) is normal iff \(\forall\) closed \(A\) and open \(U \supset A\), there exists open \(V\) such that \(A \subset V \subset \overline{V} \subset U\).
+\end{enumerate}
 \end{lemma}
 
 \begin{remark}
@@ -116,46 +116,46 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}
-%     \textit{Proof of (a):}
-%     \begin{itemize}
-%         \item[\(\Rightarrow\)]
-%         Let \(X\) be regular and \(x \in U \subset X\) open. Let \(B = X \setminus U\), which is closed.
+% \textit{Proof of (a):}
+% \begin{itemize}
+% \item[\(\Rightarrow\)]
+% Let \(X\) be regular and \(x \in U \subset X\) open. Let \(B = X \setminus U\), which is closed.
 
-%         Since \(x \notin B\), there exist disjoint open sets \(V, W\) such that \(x \in V\) and \(B \subset W\).
+% Since \(x \notin B\), there exist disjoint open sets \(V, W\) such that \(x \in V\) and \(B \subset W\).
 
-%         Since \(V \cap W = \emptyset\), \(V \subset X \setminus W\). Since \(X \setminus W\) is closed, \(\overline{V} \subset X \setminus W \subset X \setminus B = U\).
-        
-%         Thus, \(\overline{V} \subset U\).
+% Since \(V \cap W = \emptyset\), \(V \subset X \setminus W\). Since \(X \setminus W\) is closed, \(\overline{V} \subset X \setminus W \subset X \setminus B = U\).
 
-%         \item[\(\Leftarrow\)]
-%         Converse: Let \(x \in X, B\) be a closed set not containing \(x\). Let \(U = X \setminus B\) be open.
+% Thus, \(\overline{V} \subset U\).
 
-%         By hypothesis, there exists open \(V\) s.t. \(x \in V \subset \overline{V} \subset U\).
+% \item[\(\Leftarrow\)]
+% Converse: Let \(x \in X, B\) be a closed set not containing \(x\). Let \(U = X \setminus B\) be open.
 
-%         Let \(W = X \setminus \overline{V}\). Then \(W\) is open and contains \(B\) (since \(\overline{V} \subset U \implies X \setminus U \subset X \setminus \overline{V}\)).
+% By hypothesis, there exists open \(V\) s.t. \(x \in V \subset \overline{V} \subset U\).
 
-%         Also \(V \cap W = \emptyset\). Thus, \(X\) is regular.
-%     \end{itemize}
+% Let \(W = X \setminus \overline{V}\). Then \(W\) is open and contains \(B\) (since \(\overline{V} \subset U \implies X \setminus U \subset X \setminus \overline{V}\)).
 
-%     \textit{Proof of (b) is similar.}
+% Also \(V \cap W = \emptyset\). Thus, \(X\) is regular.
+% \end{itemize}
+
+% \textit{Proof of (b) is similar.}
 % \end{proof}
 
 \begin{theorem}[Preservation Properties]
-    \leavevmode
-    \begin{enumerate}
-        \item \(X\) is Hausdorff \(\implies\) Every subspace \(Y \subset X\) is Hausdorff.
-        \item \(X_\alpha\) Hausdorff \(\implies \prod X_\alpha\) is Hausdorff.
-        \item \(X\) is Regular \(\implies\) Every subspace \(Y \subset X\) is Regular.
-        \item \(X_\alpha\) Regular \(\implies \prod X_\alpha\) is Regular.
-    \end{enumerate}
+\leavevmode
+\begin{enumerate}
+\item \(X\) is Hausdorff \(\implies\) Every subspace \(Y \subset X\) is Hausdorff.
+\item \(X_\alpha\) Hausdorff \(\implies \prod X_\alpha\) is Hausdorff.
+\item \(X\) is Regular \(\implies\) Every subspace \(Y \subset X\) is Regular.
+\item \(X_\alpha\) Regular \(\implies \prod X_\alpha\) is Regular.
+\end{enumerate}
 \end{theorem}
 
 \begin{remark}
-    \leavevmode
-    \begin{enumerate}
-        \item If \(X\) is Normal, a subspace \(Y \subset X\) may \textbf{not} be normal.
-        \item If \(X_1, X_2\) are Normal, \(X_1 \times X_2\) may \textbf{not} be normal.
-    \end{enumerate}
+\leavevmode
+\begin{enumerate}
+\item If \(X\) is Normal, a subspace \(Y \subset X\) may \textbf{not} be normal.
+\item If \(X_1, X_2\) are Normal, \(X_1 \times X_2\) may \textbf{not} be normal.
+\end{enumerate}
 \end{remark}
 
 \begin{remark}
@@ -163,38 +163,38 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}[Proof of (d)]
-%     Let \(X_\alpha\) be regular. This implies \(X_\alpha\) is Hausdorff, so \(\prod X_\alpha\) is Hausdorff.
+% Let \(X_\alpha\) be regular. This implies \(X_\alpha\) is Hausdorff, so \(\prod X_\alpha\) is Hausdorff.
 
-%     Thus, points are closed sets.
+% Thus, points are closed sets.
 
-%     To show regularity, use the Lemma. Let \(x = (x_\alpha) \in \prod X_\alpha\). Let \(U\) be a neighborhood of \(x\).
+% To show regularity, use the Lemma. Let \(x = (x_\alpha) \in \prod X_\alpha\). Let \(U\) be a neighborhood of \(x\).
 
-%     There exists a basic open set \(\prod U_\alpha\) such that \(x \in \prod U_\alpha \subset U\), where \(U_\alpha = X_\alpha\) for all but finitely many \(\alpha\). For each \(\alpha\), since \(X_\alpha\) is regular, choose \(V_\alpha\) such that \(x_\alpha \in V_\alpha \subset \overline{V_\alpha} \subset U_\alpha\). (If \(U_\alpha = X_\alpha\), take \(V_\alpha = X_\alpha\)).
-    
-%     Let \(V = \prod V_\alpha\). Then \(\overline{V} = \prod \overline{V_\alpha} \subset \prod U_\alpha \subset U\).
-%     Thus, \(\prod X_\alpha\) is regular.
+% There exists a basic open set \(\prod U_\alpha\) such that \(x \in \prod U_\alpha \subset U\), where \(U_\alpha = X_\alpha\) for all but finitely many \(\alpha\). For each \(\alpha\), since \(X_\alpha\) is regular, choose \(V_\alpha\) such that \(x_\alpha \in V_\alpha \subset \overline{V_\alpha} \subset U_\alpha\). (If \(U_\alpha = X_\alpha\), take \(V_\alpha = X_\alpha\)).
+
+% Let \(V = \prod V_\alpha\). Then \(\overline{V} = \prod \overline{V_\alpha} \subset \prod U_\alpha \subset U\).
+% Thus, \(\prod X_\alpha\) is regular.
 % \end{proof}
 
 \begin{example}[Normal Spaces]
-    \textbf{Show that \(\mathbb{R}_\ell\) is normal.}
+\textbf{Show that \(\mathbb{R}_\ell\) is normal.}
     
-    \textit{Fact:} \(\mathbb{R}_\ell^2\) is not normal (but it is regular).
+\textit{Fact:} \(\mathbb{R}_\ell^2\) is not normal (but it is regular).
 \end{example}
 
 \begin{example}[Hausdorff but not Regular]
-    \(\mathbb{R}_K\) (K-topology).
+\(\mathbb{R}_K\) (K-topology).
 
-    Basis given by \((a, b)\) and \((a, b) \setminus K\), where \(K = \{1/n \mid n \geq 1\}\).
+Basis given by \((a, b)\) and \((a, b) \setminus K\), where \(K = \{1/n \mid n \geq 1\}\).
 
-    \(\mathbb{R}_K\) is Hausdorff but not regular. (\(K\) is closed, but cannot be separated from \(0\).)
+\(\mathbb{R}_K\) is Hausdorff but not regular. (\(K\) is closed, but cannot be separated from \(0\).)
 
-    Suppose \(U \ni 0\), \(V \supset K\), and \(U \cap V = \emptyset\).
+Suppose \(U \ni 0\), \(V \supset K\), and \(U \cap V = \emptyset\).
 
-    \(U\) must contain some basis element \((a, b) \setminus K\) containing 0.
+\(U\) must contain some basis element \((a, b) \setminus K\) containing 0.
 
-    Choose \(n\) sufficient large such that \(1/n \in (a, b)\).
+Choose \(n\) sufficient large such that \(1/n \in (a, b)\).
 
-    Since \(1/n \in K \subset V\), take a neighborhood of \(1/n\) inside \(V\), say \((c, d)\).
+Since \(1/n \in K \subset V\), take a neighborhood of \(1/n\) inside \(V\), say \((c, d)\).
 
-    We can find points common to both neighborhoods leading to contradiction or limit point arguments showing separation is impossible.
+We can find points common to both neighborhoods leading to contradiction or limit point arguments showing separation is impossible.
 \end{example}

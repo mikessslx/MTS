@@ -3,27 +3,27 @@
 \subsection{Urysohn's Lemma (Recap)}
 
 \begin{recap}[Urysohn's Lemma]
-    Let \(X\) be a normal space, \(A, B \subset X\) closed, \(A \cap B = \emptyset\). Then there is a continuous function \(f: X \to [0, 1]\) such that
-    \[f(x) = 0 \ \forall x \in A, \ f(x) = 1 \ \forall x \in B.\]
+Let \(X\) be a normal space, \(A, B \subset X\) closed, \(A \cap B = \emptyset\). Then there is a continuous function \(f: X \to [0, 1]\) such that
+\[f(x) = 0 \ \forall x \in A, \ f(x) = 1 \ \forall x \in B.\]
 
-    (\(f\) \textit{separates} \(A\) and \(B\)).
+(\(f\) \textit{separates} \(A\) and \(B\)).
 \end{recap}
 
 \begin{definition}[Completely Regular]
-    If \(X\) satisfies \((T1)\) (points are closed) and any closed set \(B\) and point \(x_0 \notin B\) can be separated by a continuous function (that is, \(\exists f: X \to [0, 1]\) such that \(f(x_0) = 0, f(B) = 1\)), then \(X\) is \textbf{completely regular} (CR) or \((T_{3\frac{1}{2}})\).
+If \(X\) satisfies \((T1)\) (points are closed) and any closed set \(B\) and point \(x_0 \notin B\) can be separated by a continuous function (that is, \(\exists f: X \to [0, 1]\) such that \(f(x_0) = 0, f(B) = 1\)), then \(X\) is \textbf{completely regular} (CR) or \((T_{3\frac{1}{2}})\).
 \end{definition}
 
 \begin{remark}
-    Urysohn's Lemma implies \((T4) \implies (T_{3\frac{1}{2}})\).
-    \begin{itemize}
-        \item \((T3)\) (Regularity): Separate point \(x\) and closed \(A\) by disjoint \textit{open sets}.
-        \item \((T_{3\frac{1}{2}})\) (Complete Regularity): Separate point \(x\) and closed \(A\) by a \textit{continuous function}.
-        \item \((T4)\) (Normality): Separate closed \(A\) and closed \(B\) by disjoint \textit{open sets} (which implies separation by function via Urysohn).
-    \end{itemize}
+Urysohn's Lemma implies \((T4) \implies (T_{3\frac{1}{2}})\).
+\begin{itemize}
+\item \((T3)\) (Regularity): Separate point \(x\) and closed \(A\) by disjoint \textit{open sets}.
+\item \((T_{3\frac{1}{2}})\) (Complete Regularity): Separate point \(x\) and closed \(A\) by a \textit{continuous function}.
+\item \((T4)\) (Normality): Separate closed \(A\) and closed \(B\) by disjoint \textit{open sets} (which implies separation by function via Urysohn).
+\end{itemize}
 \end{remark}
 
 \begin{proposition}
-    \(X\) is completely regular \(\implies\) \(X\) is regular.
+\(X\) is completely regular \(\implies\) \(X\) is regular.
 \end{proposition}
 
 \begin{remark}
@@ -31,21 +31,21 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}
-%     Take \(x_0 \in X\), \(A \subset X\) closed, \(x_0 \notin A\).
+% Take \(x_0 \in X\), \(A \subset X\) closed, \(x_0 \notin A\).
 
-%     Take \(f\) separating \(\{x_0\}\) and \(A\), that is, \(f: X \to [0, 1]\) with \(f(x_0) = 0, f(A) = 1\).
+% Take \(f\) separating \(\{x_0\}\) and \(A\), that is, \(f: X \to [0, 1]\) with \(f(x_0) = 0, f(A) = 1\).
 
-%     Let \(U = f^{-1}([0, \frac{1}{2})) \subset X\) and \(V = f^{-1}((\frac{1}{2}, 1]) \subset X\), both open.
-    
-%     Then \(x_0 \in U\) and \(A \subset V\).
-%     Also \(U \cap V = \emptyset\), so \(X\) is regular.
+% Let \(U = f^{-1}([0, \frac{1}{2})) \subset X\) and \(V = f^{-1}((\frac{1}{2}, 1]) \subset X\), both open.
+
+% Then \(x_0 \in U\) and \(A \subset V\).
+% Also \(U \cap V = \emptyset\), so \(X\) is regular.
 % \end{proof}
 
 \begin{theorem}
-    \begin{enumerate}
-        \item[(a)] Subspace of a CR space is CR.
-        \item[(b)] Product of CR spaces is CR.
-    \end{enumerate}
+\begin{enumerate}
+\item[(a)] Subspace of a CR space is CR.
+\item[(b)] Product of CR spaces is CR.
+\end{enumerate}
 \end{theorem}
 
 \begin{remark}
@@ -53,63 +53,67 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}
-%     \begin{enumerate}[(a)]
-%         \item
-%         Let \(X\) be CR, \(X \supset Y \ni x_0\). Let \(A \subset Y\) be closed in \(Y\) (with \(x_0 \notin A\)).
+% \begin{enumerate}[(a)]
+% \item
+% Let \(X\) be CR, \(X \supset Y \ni x_0\). Let \(A \subset Y\) be closed in \(Y\) (with \(x_0 \notin A\)).
 
-%         Let \(\overline{A}\) be the closure of \(A\) in \(X\).
-%         Then we can find \(f: X \to [0, 1]\) continuous on \(X\) such that \(f(x_0) = 0\) and \(f(\overline{A}) = 1\).
-%         Thus, \(f|_Y\) is the required function.
+% Let \(\overline{A}\) be the closure of \(A\) in \(X\).
+% Then we can find \(f: X \to [0, 1]\) continuous on \(X\) such that \(f(x_0) = 0\) and \(f(\overline{A}) = 1\).
+% Thus, \(f|_Y\) is the required function.
 
-%         \item
-%         Take \(A \subset \prod_{\alpha \in J} X_\alpha\) closed, \(b \notin A\), \(b = (b_\alpha)_{\alpha \in J}\).
-%         \(X_\alpha\) CR \(\implies\) regular; \(\prod X_\alpha\) is regular.
+% \item
+% Take \(A \subset \prod_{\alpha \in J} X_\alpha\) closed, \(b \notin A\), \(b = (b_\alpha)_{\alpha \in J}\).
+% \(X_\alpha\) CR \(\implies\) regular; \(\prod X_\alpha\) is regular.
 
-%         Take \(U = \prod U_\alpha \ni b\) (open basis element) such that \(U \cap A = \emptyset\).
-%         \(U_\alpha = X_\alpha\) if \(\alpha \neq \alpha_1, \cdots, \alpha_n\).
-        
-%         For each \(i=1, \cdots, n\), take \(f_i: X_{\alpha_i} \to [0, 1]\) such that \(f_i(b_{\alpha_i}) = 1\) and \(f_i(X_{\alpha_i} \setminus U_{\alpha_i}) = 0\).
-        
-%         Let \(\varphi_i(x) = f_i(\pi_{\alpha_i}(x))\) for \(x \in \prod X_\alpha\).
-%         Define \(f = \varphi_1(x) \cdots \varphi_n(x) = \prod_{i=1}^n f_i(\pi_{\alpha_i}(x))\).
-        
-%         Then \(f(x) = 0 \ \forall x \in X \setminus U\).
-%         So \(f(A) \equiv 0\), \(f(b) = \prod \varphi_i(b) = \prod f_i(b_{\alpha_i}) = 1\).
-        
-%         This \(f\) separates \(A\) and \(\{b\}\).
-%     \end{enumerate}
+% Take \(U = \prod U_\alpha \ni b\) (open basis element) such that \(U \cap A = \emptyset\).
+% \(U_\alpha = X_\alpha\) if \(\alpha \neq \alpha_1, \cdots, \alpha_n\).
+
+% For each \(i=1, \cdots, n\), take \(f_i: X_{\alpha_i} \to [0, 1]\) such that \(f_i(b_{\alpha_i}) = 1\) and \(f_i(X_{\alpha_i} \setminus U_{\alpha_i}) = 0\).
+
+% Let \(\varphi_i(x) = f_i(\pi_{\alpha_i}(x))\) for \(x \in \prod X_\alpha\).
+% Define \(f = \varphi_1(x) \cdots \varphi_n(x) = \prod_{i=1}^n f_i(\pi_{\alpha_i}(x))\).
+
+% Then \(f(x) = 0 \ \forall x \in X \setminus U\).
+% So \(f(A) \equiv 0\), \(f(b) = \prod \varphi_i(b) = \prod f_i(b_{\alpha_i}) = 1\).
+
+% This \(f\) separates \(A\) and \(\{b\}\).
+% \end{enumerate}
 % \end{proof}
 
 \begin{remark}
-    \begin{itemize}
-        \item
-        \((T_{3\frac{1}{2}}) \not\implies (T4)\). 
-        Example: \(\mathbb{R}_l^2\) (Sorgenfrey plane).
+\begin{itemize}
+\item
+\((T_{3\frac{1}{2}}) \not\implies (T4)\). 
+Example: \(\mathbb{R}_l^2\) (Sorgenfrey plane).
         
-        Reason: \(\mathbb{R}_l\) is normal \(\implies\) CR. Product of CR spaces is CR \(\implies \mathbb{R}_l^2\) is CR.
+Reason: \(\mathbb{R}_l\) is normal \(\implies\) CR. Product of CR spaces is CR \(\implies \mathbb{R}_l^2\) is CR.
         
-        But \(\mathbb{R}_l^2\) is \textbf{not} normal.
+But \(\mathbb{R}_l^2\) is \textbf{not} normal.
         
-        \item
-        Fact: There exist regular spaces that are not completely regular. (No proof given.)
-    \end{itemize}
+\item
+Fact: There exist regular spaces that are not completely regular. (No proof given.)
+\end{itemize}
 \end{remark}
 
-\begin{proof}[Proof of Urysohn's Lemma for metric spaces]
-    Let \((X, d)\) be a metric space and \(A, B \subset X\) be closed, \(A \cap B = \emptyset\).
-    Define \(d_A(x) = \text{dist}(x, A) = \inf_{a \in A} d(x, a)\), which is continuous and
-    \[d_A(x) = 0 \iff x \in \overline{A} = A.\]
+\begin{remark}
+Proof of Urysohn's Lemma for metric spaces is commented out!
+\end{remark}
 
-    Similarly define \(d_B(x) = \text{dist}(x, B)\) and \(f(x) = \frac{d_A(x)}{d_A(x) + d_B(x)}\) (continuous).
-    
-    Since \(A \cap B = \emptyset\), for any \(x\), \(d_A(x)\) and \(d_B(x)\) cannot be both 0, so the denominator is non-zero.
-    
-    If \(x \in A\), \(d_A(x) = 0 \implies f(x) = 0\); If \(x \in B\), \(d_B(x) = 0 \implies f(x) = \frac{d_A(x)}{d_A(x)} = 1\).
-\end{proof}
+% \begin{proof}[Proof of Urysohn's Lemma for metric spaces]
+% Let \((X, d)\) be a metric space and \(A, B \subset X\) be closed, \(A \cap B = \emptyset\).
+% Define \(d_A(x) = \text{dist}(x, A) = \inf_{a \in A} d(x, a)\), which is continuous and
+% \[d_A(x) = 0 \iff x \in \overline{A} = A.\]
+
+% Similarly define \(d_B(x) = \text{dist}(x, B)\) and \(f(x) = \frac{d_A(x)}{d_A(x) + d_B(x)}\) (continuous).
+
+% Since \(A \cap B = \emptyset\), for any \(x\), \(d_A(x)\) and \(d_B(x)\) cannot be both 0, so the denominator is non-zero.
+
+% If \(x \in A\), \(d_A(x) = 0 \implies f(x) = 0\); If \(x \in B\), \(d_B(x) = 0 \implies f(x) = \frac{d_A(x)}{d_A(x)} = 1\).
+% \end{proof}
 
 \subsection{Urysohn's Metrization Theorem}
 \begin{theorem}[Urysohn's Metrization Theorem]
-    Every regular space \(X\) with a countable basis is metrizable.
+Every regular space \(X\) with a countable basis is metrizable.
 \end{theorem}
 
 \begin{remark}
@@ -117,47 +121,47 @@ Proof is commented out!
 \end{remark}
 
 % \begin{proof}
-%     Idea: Embed \(X\) into \(Y = [0, 1]^\omega \subset \mathbb{R}^\omega\).
-%     \([0, 1]^\omega\) is called \textbf{Tychonoff cube}.
+% Idea: Embed \(X\) into \(Y = [0, 1]^\omega \subset \mathbb{R}^\omega\).
+% \([0, 1]^\omega\) is called \textbf{Tychonoff cube}.
 
-%     This can be \(\mathbb{R}^\omega\) with product topology (\textbf{coarser}) or \(\mathbb{R}^\omega\) with uniform metric topology (\textbf{finer}) defined by \(d(x, y) = \sup \bar{d}(x_i, y_i)\), where \(\bar{d}(a, b) = \min(|a-b|, 1)\).
-    
-%     \paragraph*{Step 1: Construct a family of functions}
-%     Let \(\{B_n\}\) be a countable basis for \(X\).
-%     Consider pairs \((m, n)\) such that \(\overline{B_n} \subset B_m\).
-    
-%     By regularity (and thus normality for second-countable spaces), there exists a continuous function \(g_{m, n}: X \to [0, 1]\) such that \(g_{m, n} = 1\) on \(\overline{B_n}\) and \(0\) outside \(B_m\).
-    
-%     This gives a countable family of functions \(\{f_n\}_{n \in \mathbb{N}}\) (reindexing the \(g_{m, n}\) via \(\mathbb{N} \times \mathbb{N} \to \mathbb{N}\)).
-    
-%     For any \(x_0 \in X\) and open \(U \ni x_0\), there exists \(B_m\) such that \(x_0 \in B_m \subset U\).
-%     By regularity, there exists \(B_n\) such that \(x_0 \in B_n \subset \overline{B_n} \subset B_m\).
-%     Then the function \(g_{m, n}\) satisfies \(g_{m, n}(x_0) = 1\) and vanishes outside \(U\).
+% This can be \(\mathbb{R}^\omega\) with product topology (\textbf{coarser}) or \(\mathbb{R}^\omega\) with uniform metric topology (\textbf{finer}) defined by \(d(x, y) = \sup \bar{d}(x_i, y_i)\), where \(\bar{d}(a, b) = \min(|a-b|, 1)\).
 
-%     \paragraph*{Step 2: Define the embedding}
-%     Define \(F: X \to [0, 1]^\omega\) by \(F(x) = (f_1(x), f_2(x), \cdots)\).
-%     \begin{enumerate}
-%         \item[(a)] \(F\) is continuous because each component \(f_n\) is continuous (product topology).
-%         \item[(b)] \(F\) is injective. If \(x \neq y\), since \(X\) is Hausdorff, there exists open \(U \ni x\) such that \(y \notin U\). By the separation property from Step 1, there exists some \(f_k\) such that \(f_k(x) > 0\) and \(f_k(y) = 0\). Thus \(F(x) \neq F(y)\).
-%     \end{enumerate}
-    
-%     \paragraph*{Step 3: \(F\) is an embedding}
-%     Let \(Z = F(X)\). \(F: X \to Z\) is a continuous bijection. We usually need to show \(F^{-1}\) is continuous, that is, \(F\) maps open sets to open sets in \(Z\).
-    
-%     Let \(U \subset X\) be open. Let \(z_0 \in F(U)\). Let \(x_0 = F^{-1}(z_0) \in U\).
-%     We need to find an open set \(W \subset Z\) such that \(z_0 \in W \subset F(U)\).
-    
-%     Choose index \(N\) such that the corresponding function \(f_N\) separates \(x_0\) and \(X \setminus U\) (specifically, \(f_N(x_0) > 0\) and \(f_N(X \setminus U) = 0\)).
-    
-%     Let \(V = \pi_N^{-1}((0, \infty)) \cap Z = \{ (z_1, z_2, \cdots) \in Z \mid z_N > 0 \}\).
-%     This is open in \(Z\).
-%     Clearly \(z_0 \in V\) because \(\pi_N(z_0) = f_N(x_0) > 0\).
-    
-%     If \(z \in V\), let \(x = F^{-1}(z)\). Then \(f_N(x) = \pi_N(z) > 0\).
-%     Since \(f_N\) vanishes on \(X \setminus U\), it must be that \(x \in U\).
-%     Thus \(z = F(x) \in F(U)\).
-%     So \(V \subset F(U)\), proving \(F(U)\) is open in \(Z\).
-    
-%     \paragraph*{Conclusion}
-%     \(X\) is homeomorphic to \(F(X) \subset [0, 1]^\omega\). Since \([0, 1]^\omega\) is metrizable, \(X\) is metrizable.
+% \paragraph*{Step 1: Construct a family of functions}
+% Let \(\{B_n\}\) be a countable basis for \(X\).
+% Consider pairs \((m, n)\) such that \(\overline{B_n} \subset B_m\).
+
+% By regularity (and thus normality for second-countable spaces), there exists a continuous function \(g_{m, n}: X \to [0, 1]\) such that \(g_{m, n} = 1\) on \(\overline{B_n}\) and \(0\) outside \(B_m\).
+
+% This gives a countable family of functions \(\{f_n\}_{n \in \mathbb{N}}\) (reindexing the \(g_{m, n}\) via \(\mathbb{N} \times \mathbb{N} \to \mathbb{N}\)).
+
+% For any \(x_0 \in X\) and open \(U \ni x_0\), there exists \(B_m\) such that \(x_0 \in B_m \subset U\).
+% By regularity, there exists \(B_n\) such that \(x_0 \in B_n \subset \overline{B_n} \subset B_m\).
+% Then the function \(g_{m, n}\) satisfies \(g_{m, n}(x_0) = 1\) and vanishes outside \(U\).
+
+% \paragraph*{Step 2: Define the embedding}
+% Define \(F: X \to [0, 1]^\omega\) by \(F(x) = (f_1(x), f_2(x), \cdots)\).
+% \begin{enumerate}
+% \item[(a)] \(F\) is continuous because each component \(f_n\) is continuous (product topology).
+% \item[(b)] \(F\) is injective. If \(x \neq y\), since \(X\) is Hausdorff, there exists open \(U \ni x\) such that \(y \notin U\). By the separation property from Step 1, there exists some \(f_k\) such that \(f_k(x) > 0\) and \(f_k(y) = 0\). Thus \(F(x) \neq F(y)\).
+% \end{enumerate}
+
+% \paragraph*{Step 3: \(F\) is an embedding}
+% Let \(Z = F(X)\). \(F: X \to Z\) is a continuous bijection. We usually need to show \(F^{-1}\) is continuous, that is, \(F\) maps open sets to open sets in \(Z\).
+
+% Let \(U \subset X\) be open. Let \(z_0 \in F(U)\). Let \(x_0 = F^{-1}(z_0) \in U\).
+% We need to find an open set \(W \subset Z\) such that \(z_0 \in W \subset F(U)\).
+
+% Choose index \(N\) such that the corresponding function \(f_N\) separates \(x_0\) and \(X \setminus U\) (specifically, \(f_N(x_0) > 0\) and \(f_N(X \setminus U) = 0\)).
+
+% Let \(V = \pi_N^{-1}((0, \infty)) \cap Z = \{ (z_1, z_2, \cdots) \in Z \mid z_N > 0 \}\).
+% This is open in \(Z\).
+% Clearly \(z_0 \in V\) because \(\pi_N(z_0) = f_N(x_0) > 0\).
+
+% If \(z \in V\), let \(x = F^{-1}(z)\). Then \(f_N(x) = \pi_N(z) > 0\).
+% Since \(f_N\) vanishes on \(X \setminus U\), it must be that \(x \in U\).
+% Thus \(z = F(x) \in F(U)\).
+% So \(V \subset F(U)\), proving \(F(U)\) is open in \(Z\).
+
+% \paragraph*{Conclusion}
+% \(X\) is homeomorphic to \(F(X) \subset [0, 1]^\omega\). Since \([0, 1]^\omega\) is metrizable, \(X\) is metrizable.
 % \end{proof}

@@ -1,0 +1,230 @@
+\section{Notes 24 - 01.05}
+
+\subsection{Stone-\v{C}ech Compactification}
+
+Complete regular space \(X \hookrightarrow Y\) (compact Hausdorff).
+
+``Maximality'': for every bounded continuous function on \(X\), it can be extended to a continuous function on \(Y\).
+
+Idea: take all bounded continuous \(f_\alpha: X \to [-M_\alpha, M_\alpha] = I_\alpha\),
+\[F: X \to \prod_{\alpha \in J} I_\alpha \ \text{compact (Tychonoff's thm)}, \ Y = \overline{F(X)}.\]
+
+\subsubsection{Uniqueness}
+
+\begin{lemma}
+Let \(A \subset X\), \(f: A \to Z\) continuous, \(Z\) Hausdorff. Then there is at most one extension \(g: \overline{A} \to Z\) such that \(g|_A = f\).
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Let \(g, g': \overline{A} \to Z\) and take \(x \in \overline{A} \setminus A\): \(g(x) \neq g'(x)\).
+
+% Let \(U, U'\) be neighborhoods of \(g(x), g'(x) \in Z\).
+% Take \(V \ni x\) open s.t. \(g(V) \subset U\), \(g'(V) \subset U'\).
+
+% Then \(V \cap A \neq \varnothing\). If \(y \in V \cap A\), then \(g(y) \in U\), \(g'(y) \in U'\).
+
+% But \(g(y) = g'(y)\) since \(y \in A\). But \(U \cap U' = \varnothing\), contradiction!
+% \end{proof}
+
+\begin{theorem}
+Let \(X\) be completely regular. \(Y\) compactification of \(X\). \(Y\) satisfies the Stone-\v{C}ech extension property. Then any continuous map \(f: X \to C\), \(C\) compact Hausdorff, uniquely extends to a continuous map \(Y \to C\).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Take \(C \hookrightarrow [0, 1]^J\). Then \(f = (f_\alpha)_{\alpha \in J}\), \(f_\alpha: X \to [0, 1]\).
+
+% Then \(f_\alpha\) extends to \(g_\alpha: Y \to [0, 1]\), \(g(y) = (g_\alpha(y))_{\alpha \in J}\) continuous, \(g: Y \to \overline{C} = C\):
+% \[g(Y) = g(\overline{X}) \subset \overline{g(X)} = \overline{f(X)} \subset \overline{C} = C.\]
+% \end{proof}
+
+\begin{theorem}
+Let \(Y_1, Y_2\) be compactifications of \(X\) satisfying the Stone-\v{C}ech condition, \(X\) is completely regular. Then \(Y_1 \cong Y_2\) are homeomorphic.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \(j_1: X \hookrightarrow Y_1\) maps into a compact set, extends to \(f_1: Y_2 \to Y_1\) so it satisfies the previous Thm.
+% \(j_2: X \hookrightarrow Y_2\) extends to \(f_2: Y_1 \to Y_2\).
+
+% \(f_1 \circ f_2: Y_1 \to Y_1\), \((f_1 \circ f_2)(x) = x\) continuous map.
+
+% \(f_1 \circ f_2\) is a cont. extension of \(Id_X\).
+% But \(Id_{Y_1}\) is another ext. of \(Id_X\).
+
+% So \(f_1 \circ f_2 = Id_{Y_1}\) acc. to Lemma.
+% Similarly \(f_2 \circ f_1 = Id_{Y_2}\). So \(f_1 = f_2^{-1}\).
+% \end{proof}
+
+\subsection{Complete Metric Spaces}
+
+\begin{definition}
+Let \((X, d)\) be a metric space. Then \((x_n)\) is a \underline{Cauchy sequence} if
+\[\forall \varepsilon > 0 \ \exists N \in \mathbb{N}: \forall n, m > N \ d(x_n, x_m) < \varepsilon.\]
+
+Convergent \(\implies\) Cauchy: if \(x_n \to x\), then
+\[\forall \varepsilon \exists N: \forall n > N \ d(x_n, x) < \frac{\varepsilon}{2}, \forall m > N \ d(x_m, x) < \frac{\varepsilon}{2} \implies d(x_n, x_m) < \varepsilon.\]
+\end{definition}
+
+\begin{definition}
+\((X, d)\) is \underline{complete} if every Cauchy seq. converges.
+\end{definition}
+
+\begin{example}
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 1.] \((0, 1)\) not complete: \(x_n = \frac{1}{n}\) is Cauchy, but not conv (in \((0, 1)\)).
+\item[\bfseries Ex 2.] \(\mathbb{Q}\) not complete: \(x_0 = 3, x_1 = 3.1, x_2 = 3.14, x_3 = 3.141, x_4 = 3.1415 \cdots\)
+\(x_n = \frac{\lfloor 10^n \pi \rfloor}{10^n}\).
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Rem 1.] If \(A \subset X\), \(A\) closed, \(X\) complete \(\implies A\) complete.
+\item[\bfseries Rem 2.] Take \(\tilde{d}(x, y) = \min(d(x, y), 1)\). If \(X\) is complete w.r.t. \(d\), it is complete w.r.t. \(\tilde{d}\).
+\end{enumerate}
+\end{remark}
+
+\begin{lemma}
+\(X\) is complete iff every Cauchy sequence has a convergent subsequence.
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+% \item[\(\Rightarrow\)] obvious.
+% \item[\(\Leftarrow\)]
+% \((x_n)\) Cauchy, suppose \(x_{n_k} \xrightarrow{n \to \infty} x\).
+% Need to show: \(x_n \to x\).
+
+% \(\forall \varepsilon > 0\), take \(N\): \(\forall n, m > N\), \(d(x_n, x_m) < \frac{\varepsilon}{2}\); \(\forall n_i\) from subseq., \(d(x_{n_i}, x) < \frac{\varepsilon}{2}\).
+
+% \(\forall n, n_i > N\), \(d(x_n, x) \leq d(x_n, x_{n_i}) + d(x_{n_i}, x) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\).
+% \end{itemize}
+% \end{proof}
+
+\begin{theorem}
+\(\mathbb{R}^k\) is complete in \(d_1, d_2, d_\infty\) (standard metrics).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Show this for \(d_\infty(x, y) = \max_{i=1 \cdots k} |x_i - y_i|\).
+% Take \(x_n\) Cauchy \(\implies\) bounded.
+
+% So all \(x_n\) lie in \([-M, M]^k\).
+% \([-M, M]^k\) compact \(\iff\) seq. compact (metric space!).
+
+% So \(x_n\) has a convergent subsequence \(\implies\) convergent by the previous Lemma.
+
+% All these metrics are equiv. \(\implies\) holds for \(d_1, d_2\).
+% \end{proof}
+
+\begin{theorem}
+There is a metric on \(\mathbb{R}^\omega\) s.t. \(\mathbb{R}^\omega\) is complete w.r.t. this metric.
+\end{theorem}
+
+\begin{lemma}
+Let \(X = \prod_{\alpha \in J} X_\alpha, x_n \in X\).
+Then
+\[x_n \xrightarrow{n \to \infty} x \iff \forall \alpha \in J \ \pi_\alpha(x_n) \xrightarrow{n \to \infty} \pi_\alpha(x).\]
+\end{lemma}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+% \item[\(\Rightarrow\)]
+% \(\pi_\alpha: X \to X_\alpha\) are continuous.
+
+% \item[\(\Leftarrow\)]
+% Suppose \(\pi_\alpha(x_n) \to \pi_\alpha(x) \forall \alpha \in J\).
+% Let \(U = \prod U_\alpha \ni x\) be a n'hood containing \(x\).
+
+% Then \(U_\alpha = X_\alpha\) unless \(\alpha \in \{\alpha_1, \cdots, \alpha_m\}\).
+% For \(\alpha \in \{\alpha_1, \cdots, \alpha_m\}\),
+% \[\exists N_\alpha: \pi_\alpha(x_n) \in U_\alpha, \ \forall n > N_\alpha.\]
+
+% Take \(N = \max(N_{\alpha_1}, \cdots, N_{\alpha_m})\), then \(\forall v > N\), \(\pi_\alpha(x_n) \in U_\alpha\).
+% So \(x_n \in U = \prod U_\alpha\).
+% \end{itemize}
+% \end{proof}
+
+\begin{remark}
+Proof of Thm is commented out!
+\end{remark}
+
+% \begin{proof}[Proof of Thm]
+% \(\tilde{d}(a, b) = \min(1, |a - b|)\).
+% Take \(D(x, y) = \sup_{i \in \mathbb{N}} \left( \frac{\tilde{d}(x_i, y_i)}{i} \right)\).
+
+% Show that \((\mathbb{R}^\omega, D)\) is complete.
+% Let \((x_n) \in \mathbb{R}^\omega\) be Cauchy,
+% \[\tilde{d}(\pi_i(x_n), \pi_i(y_n)) \leq i D(x, y).\]
+
+% For a fixed \(i\), \(\pi_i(x_n)\) is Cauchy in \(\mathbb{R}\), so \(\pi_i(x_n) \to a_i\).
+
+% Then \(x_n \to (a_1, a_2 \cdots) \in \mathbb{R}^\omega\) by Lemma.
+% \end{proof}
+
+\subsection{Uniform Metric}
+\begin{definition}
+Let \((Y, d)\) be a metric space. \(\tilde{d} = \min(|x - y|, 1)\).
+Take functions \(J \to Y\), \(J\) set: this is \(Y^J\).
+There is a metric \(\bar{\rho}\) on \(Y^J\) defined by:
+if \(x = (x_\alpha)_{\alpha \in J}, y = (y_\alpha)_{\alpha \in J}\), then
+\[\bar{\rho}(x, y) = \sup_{\alpha \in J} \{ \tilde{d}(x_\alpha, y_\alpha) \}.\]
+
+This is a metric (Exercise).
+It is called \underline{uniform metric} on \(Y^J = \text{Fun}(J, Y)\).
+
+Ex: \(J = [0, 1], Y = \mathbb{R}\). \(Y^J = \{ \text{functions } [0, 1] \to \mathbb{R} \}\).
+\(d(f, g) = \sup (\min(|f(x) - g(x)|, 1))\).
+\end{definition}
+
+\begin{theorem}
+If \(Y\) is complete w.r.t. \(d\), then \((Y^J, \bar{\rho})\) is complete w.r.t.
+\[\bar{\rho} = \sup_{\alpha \in J} \{ \tilde{d}(x_\alpha, y_\alpha) \}.\]
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \((Y, d)\) complete \(\implies (Y, \tilde{d})\) complete.
+
+% Take \(f_n: J \to Y\), \(f_n\) Cauchy seq. w.r.t. \(\bar{\rho}\).
+% \(\forall \varepsilon > 0, \ \exists N: \forall m, n > N \ \bar{\rho}(f_n, f_m) < \varepsilon\).
+
+% \(\tilde{d}(f_n(\alpha), f_m(\alpha)) \leq \bar{\rho}(f_n, f_m) < \varepsilon \implies f_n(\alpha)\) is Cauchy.
+
+% Suppose \(f_n(\alpha) \xrightarrow{n \to \infty} y_{\alpha}\), \(y = (y_\alpha)_{\alpha \in J} \in Y^J\).
+% Claim: \(f_n \to y\) in \(\bar{\rho}\).
+
+% For \(\varepsilon > 0\): choose \(N\) s.t. \(\bar{\rho}(f_n, f_m) < \frac{\varepsilon}{2}\) \(\forall n, m > N\).
+
+% Fix \(n\), fix \(\alpha\), take \(m\) large: \(\tilde{d}(f_n(\alpha), y_\alpha) < \frac{\varepsilon}{2}\).
+
+% This holds for \(\forall \alpha \in J\) if \(n > N\). So \(\bar{\rho}(f_n, y) \leq \frac{\varepsilon}{2} < \varepsilon\).
+% \end{proof}

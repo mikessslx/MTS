@@ -13,15 +13,15 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     The projection maps \(\pi_1, \pi_2\) are continuous:
+% \item[\(\Rightarrow\)]
+% The projection maps \(\pi_1, \pi_2\) are continuous:
 
-%     Let \(U \subset X\) be open: \(\pi_1^{-1}(U) = U \times Y\); same about \(\pi_2\).
+% Let \(U \subset X\) be open: \(\pi_1^{-1}(U) = U \times Y\); same about \(\pi_2\).
 
-%     Then \(f_1 = \pi_1 \circ f\), \(f_2 = \pi_2 \circ f\) are continuous as compositions.
+% Then \(f_1 = \pi_1 \circ f\), \(f_2 = \pi_2 \circ f\) are continuous as compositions.
 
-%     \item[\(\Leftarrow\)]
-%     Take \(U \times V \subset X \times Y\) open. \(f^{-1}(U \times V) = f_1^{-1}(U) \cap f_2^{-1}(V)\) is open.
+% \item[\(\Leftarrow\)]
+% Take \(U \times V \subset X \times Y\) open. \(f^{-1}(U \times V) = f_1^{-1}(U) \cap f_2^{-1}(V)\) is open.
 % \end{itemize}
 % \end{proof}
 
@@ -83,11 +83,11 @@ Topology: all unions of these finite intersections.
 \end{note}
 
 \begin{example}
-    \leavevmode
-    \begin{itemize}
-        \item \(\mathcal{S} = \{X\}\) (trivial).
-        \item \(\mathcal{S} = \{ \text{horizontal strips}, \text{vertical strips} \}\). Basis \(\mathcal{B} = \{ \text{rectangles} \}\).
-    \end{itemize}
+\leavevmode
+\begin{itemize}
+\item \(\mathcal{S} = \{X\}\) (trivial).
+\item \(\mathcal{S} = \{ \text{horizontal strips}, \text{vertical strips} \}\). Basis \(\mathcal{B} = \{ \text{rectangles} \}\).
+\end{itemize}
 \end{example}
 
 \begin{definition}[Product Topology]
@@ -114,8 +114,8 @@ If \(J\) is infinite, \textbf{Box topology} is \textbf{finer} than \textbf{Produ
 Let \(A_\alpha \subset X_\alpha\) be subspaces.
 Then \(\prod A_\alpha \subset \prod X_\alpha\) is a subspace:
 \begin{itemize}
-    \item in box topology.
-    \item in product topology.
+\item in box topology.
+\item in product topology.
 \end{itemize}
 \end{theorem}
 
@@ -134,22 +134,22 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Leftarrow\)]
-%     Take \((x_\alpha) = x \in \prod \overline{A_\alpha}\); show that \(x \in \overline{\prod A_\alpha}\).
+% \item[\(\Leftarrow\)]
+% Take \((x_\alpha) = x \in \prod \overline{A_\alpha}\); show that \(x \in \overline{\prod A_\alpha}\).
 
-%     Let \(\prod U_\alpha \ni x\) (basis element), then
-%     \[x_\alpha \in \overline{A_\alpha} \implies \exists y_\alpha \in A_\alpha \cap U_\alpha.\]
+% Let \(\prod U_\alpha \ni x\) (basis element), then
+% \[x_\alpha \in \overline{A_\alpha} \implies \exists y_\alpha \in A_\alpha \cap U_\alpha.\]
 
-%     So \(y = (y_\alpha) \in \prod A_\alpha\) and \(y \in U = \prod U_\alpha\).
+% So \(y = (y_\alpha) \in \prod A_\alpha\) and \(y \in U = \prod U_\alpha\).
 
-%     So \(x \in \overline{\prod A_\alpha}\).
+% So \(x \in \overline{\prod A_\alpha}\).
 
-%     \item[\(\Rightarrow\)]
-%     Take \(x = (x_\alpha) \in \overline{\prod A_\alpha}\); show that \(\forall \beta, x_\beta \in \overline{A_\beta}\).
+% \item[\(\Rightarrow\)]
+% Take \(x = (x_\alpha) \in \overline{\prod A_\alpha}\); show that \(\forall \beta, x_\beta \in \overline{A_\beta}\).
 
-%     Take \(V_\beta \ni x_\beta\) open in \(X_\beta\); its preimage \(\pi_\beta^{-1}(V_\beta)\) is open in \(\prod X_\alpha\).
+% Take \(V_\beta \ni x_\beta\) open in \(X_\beta\); its preimage \(\pi_\beta^{-1}(V_\beta)\) is open in \(\prod X_\alpha\).
 
-%     So \(\exists y = (y_\alpha) \in \prod A_\alpha \cap \pi_\beta^{-1}(V_\beta)\), \(y_\beta \in V_\beta \cap A_\beta \implies x_\beta \in \overline{A_\beta}\).
+% So \(\exists y = (y_\alpha) \in \prod A_\alpha \cap \pi_\beta^{-1}(V_\beta)\), \(y_\beta \in V_\beta \cap A_\beta \implies x_\beta \in \overline{A_\beta}\).
 % \end{itemize}
 % \end{proof}
 
@@ -166,16 +166,16 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     \(f\) continuous. \(\pi_\alpha\) is continuous \(\implies f_\alpha: A \to X_\alpha\), \(f_\alpha = \pi_\alpha \circ f\) is continuous.
+% \item[\(\Rightarrow\)]
+% \(f\) continuous. \(\pi_\alpha\) is continuous \(\implies f_\alpha: A \to X_\alpha\), \(f_\alpha = \pi_\alpha \circ f\) is continuous.
 
-%     \item[\(\Leftarrow\)]
-%     Let all \(f_\alpha\) be continuous.
+% \item[\(\Leftarrow\)]
+% Let all \(f_\alpha\) be continuous.
 
-%     Enough to prove: \(f^{-1}(B)\) is open for each element \(B\) of \textbf{subbasis}.
+% Enough to prove: \(f^{-1}(B)\) is open for each element \(B\) of \textbf{subbasis}.
 
-%     But if \(B = \pi_\beta^{-1}(U_\beta)\), \(U_\beta \subset X_\beta\) open.
-%     \(f^{-1}(B) = f^{-1}(\pi_\beta^{-1}(U_\beta)) = f_\beta^{-1}(U_\beta)\) is open in \(A\) (since \(f_\beta\) is continuous).
+% But if \(B = \pi_\beta^{-1}(U_\beta)\), \(U_\beta \subset X_\beta\) open.
+% \(f^{-1}(B) = f^{-1}(\pi_\beta^{-1}(U_\beta)) = f_\beta^{-1}(U_\beta)\) is open in \(A\) (since \(f_\beta\) is continuous).
 % \end{itemize}
 % \end{proof}
 

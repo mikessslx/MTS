@@ -5,51 +5,51 @@
 \begin{definition}[Metric Space]
 A metric space is a set \(X\) with a function \(d: X \times X \to \mathbb{R}_{\geq 0}\) (called a \textit{metric} or \textit{distance function}) satisfying the following axioms:
 \begin{enumerate}
-    \item \textbf{Non-negativity}: \(d(x, y) \geq 0\), and \(d(x, y) = 0 \iff x = y\).
-    \item \textbf{Symmetry}: \(d(x, y) = d(y, x)\) for all \(x, y \in X\).
-    \item \textbf{Triangle Inequality}: \(d(x, y) + d(y, z) \geq d(x, z)\) for all \(x, y, z \in X\).
+\item \textbf{Non-negativity}: \(d(x, y) \geq 0\), and \(d(x, y) = 0 \iff x = y\).
+\item \textbf{Symmetry}: \(d(x, y) = d(y, x)\) for all \(x, y \in X\).
+\item \textbf{Triangle Inequality}: \(d(x, y) + d(y, z) \geq d(x, z)\) for all \(x, y, z \in X\).
 \end{enumerate}
 \end{definition}
 
 \begin{example}[Metric Space Examples]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 0.]
-        \(X = \mathbb{R}\), \(d(x, y) = |x - y|\) (standard absolute value distance).
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 0.]
+\(X = \mathbb{R}\), \(d(x, y) = |x - y|\) (standard absolute value distance).
         
-        \item[\bfseries Ex 1a.]
-        \(X\) is finite, \(d(x, y) = \begin{cases} 0 & x = y \\ 1 & x \neq y \end{cases}\) (discrete metric).
+\item[\bfseries Ex 1a.]
+\(X\) is finite, \(d(x, y) = \begin{cases} 0 & x = y \\ 1 & x \neq y \end{cases}\) (discrete metric).
         
-        \item[\bfseries Ex 1b.]
-        \(X\) is finite, \(d(x, y) = \min\{\text{weight of a path } x \leftrightarrow y\}\) (generalization of the discrete metric, e.g., via a weighted graph).
+\item[\bfseries Ex 1b.]
+\(X\) is finite, \(d(x, y) = \min\{\text{weight of a path } x \leftrightarrow y\}\) (generalization of the discrete metric, e.g., via a weighted graph).
         
-        \item[\bfseries Ex 2a.]
-        Euclidean metric in \(\mathbb{R}^n\): for \(x = (x_1, \cdots, x_n)\), \(y = (y_1, \cdots, y_n)\),
-        \[d(x, y) = \sqrt{(x_1 - y_1)^2 + \cdots + (x_n - y_n)^2}\]
+\item[\bfseries Ex 2a.]
+Euclidean metric in \(\mathbb{R}^n\): for \(x = (x_1, \cdots, x_n)\), \(y = (y_1, \cdots, y_n)\),
+\[d(x, y) = \sqrt{(x_1 - y_1)^2 + \cdots + (x_n - y_n)^2}\]
 
-        \item[\bfseries Ex 2b.]
-        Manhattan metric in \(\mathbb{R}^n\):
-        \[d(x, y) = |x_1 - y_1| + \cdots + |x_n - y_n|\]
+\item[\bfseries Ex 2b.]
+Manhattan metric in \(\mathbb{R}^n\):
+\[d(x, y) = |x_1 - y_1| + \cdots + |x_n - y_n|\]
 
-        \item[\bfseries Ex 2c.]
-        \[d_\infty(x, y) = \max_{i=1, \cdots, n} |x_i - y_i|\]
+\item[\bfseries Ex 2c.]
+\[d_\infty(x, y) = \max_{i=1, \cdots, n} |x_i - y_i|\]
 
-        \item[\bfseries Ex 3.]
-        \textbf{(Amazon Basin Metric).}
-        Let \(X = \mathbb{R}^2\), \(p = (x, y)\), \(p' = (x', y')\), then
-        \[d(p, p') = \begin{cases}
-            |x - x'| + |y| + |y'| & x \neq x' \\
-            |y - y'| & x = x'
-        \end{cases}\]
+\item[\bfseries Ex 3.]
+\textbf{(Amazon Basin Metric).}
+Let \(X = \mathbb{R}^2\), \(p = (x, y)\), \(p' = (x', y')\), then
+\[d(p, p') = \begin{cases}
+|x - x'| + |y| + |y'| & x \neq x' \\
+|y - y'| & x = x'
+\end{cases}\]
 
-        \item[\bfseries Ex 4a.]
-        Let \(X = C[0, 1]\) (continuous functions on \([0, 1]\)). The metric is
-        \[d(f, g) = \max_{x \in [0, 1]} |f(x) - g(x)|\]
+\item[\bfseries Ex 4a.]
+Let \(X = C[0, 1]\) (continuous functions on \([0, 1]\)). The metric is
+\[d(f, g) = \max_{x \in [0, 1]} |f(x) - g(x)|\]
 
-        \item[\bfseries Ex 4b.]
-        Let \(X = C[0, 1]\). The metric is
-        \[d(f, g) = \int_0^1 |f(x) - g(x)| dx\]
-    \end{enumerate}
+\item[\bfseries Ex 4b.]
+Let \(X = C[0, 1]\). The metric is
+\[d(f, g) = \int_0^1 |f(x) - g(x)| dx\]
+\end{enumerate}
 \end{example}
 
 \subsection{Normed Space}
@@ -57,59 +57,59 @@ A metric space is a set \(X\) with a function \(d: X \times X \to \mathbb{R}_{\g
 \begin{definition}[Normed Space]
 Let \(V\) be a vector space over \(\mathbb{R}\). A function \(\|\cdot\|: V \to \mathbb{R}_{\geq 0}\) is a norm if it satisfies:
 \begin{enumerate}
-    \item \(\|v\| = 0 \iff v = 0\)
-    \item \(\|\lambda v\| = |\lambda| \|v\|\) for all \(v \in V\), \(\lambda \in \mathbb{R}\)
-    \item \(\|v + w\| \leq \|v\| + \|w\|\) (triangle inequality)
+\item \(\|v\| = 0 \iff v = 0\)
+\item \(\|\lambda v\| = |\lambda| \|v\|\) for all \(v \in V\), \(\lambda \in \mathbb{R}\)
+\item \(\|v + w\| \leq \|v\| + \|w\|\) (triangle inequality)
 \end{enumerate}
 \end{definition}
 
 A norm defines a metric on \(V\) by \(d(x, y) \stackrel{\text{def}}{=} \|x - y\|\).
 
 \begin{example}[Norm Examples]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 2a.] \textbf{(Euclidean Norm)}
-        For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
-        \[\|v\| = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\]
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 2a.] \textbf{(Euclidean Norm)}
+For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
+\[\|v\| = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\]
         
-        \item[\bfseries Ex 2b.] \textbf{(Manhattan Norm)}
-        For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
-        \[\|v\| = |x_1| + |x_2| + \cdots + |x_n|\]
+\item[\bfseries Ex 2b.] \textbf{(Manhattan Norm)}
+For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
+\[\|v\| = |x_1| + |x_2| + \cdots + |x_n|\]
         
-        \item[\bfseries Ex 2c.] \textbf{(Max Norm)}
-        For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
-        \[\|v\| = \max_{i=1, \cdots, n} |x_i|\]
+\item[\bfseries Ex 2c.] \textbf{(Max Norm)}
+For \(v = (x_1, \cdots, x_n) \in \mathbb{R}^n\):
+\[\|v\| = \max_{i=1, \cdots, n} |x_i|\]
         
-        \item[\bfseries Ex 4a.] \textbf{(Supremum Norm)}
-        For \(f \in C[0, 1]\):
-        \[\|f\| = \max_{x \in [0, 1]} |f(x)|\]
+\item[\bfseries Ex 4a.] \textbf{(Supremum Norm)}
+For \(f \in C[0, 1]\):
+\[\|f\| = \max_{x \in [0, 1]} |f(x)|\]
         
-        \item[\bfseries Ex 4b.] \textbf{(L¹ Norm)}
-        For \(f \in C[0, 1]\):
-        \[\|f\| = \int_0^1 |f(x)| dx\]
-    \end{enumerate}
+\item[\bfseries Ex 4b.] \textbf{(L¹ Norm)}
+For \(f \in C[0, 1]\):
+\[\|f\| = \int_0^1 |f(x)| dx\]
+\end{enumerate}
 \end{example}
 
 \subsubsection{\(l_p\)-Spaces (Sequences, \(1 \leq p \leq \infty\))}
 \begin{itemize}
-    \item \textbf{a) \(l_\infty\)}: Space of bounded sequences. The norm is:
-    \[\|x\|_\infty = \sup_i |x_i|\]
+\item \textbf{a) \(l_\infty\)}: Space of bounded sequences. The norm is:
+\[\|x\|_\infty = \sup_i |x_i|\]
 
-    \item \textbf{b) \(l_1\)}: Sequences satisfying \(\sum_{i=1}^\infty |x_i| < \infty\). The norm is:
-    \[\|x\|_1 = \sum_{i=1}^\infty |x_i|\]
+\item \textbf{b) \(l_1\)}: Sequences satisfying \(\sum_{i=1}^\infty |x_i| < \infty\). The norm is:
+\[\|x\|_1 = \sum_{i=1}^\infty |x_i|\]
 
-    \item \textbf{c) \(l_2\)}: Sequences satisfying \(\sum_{i=1}^\infty x_i^2 < \infty\). The norm is:
-    \[\|x\|_2 = \sqrt{\sum_{i=1}^\infty x_i^2}\]
+\item \textbf{c) \(l_2\)}: Sequences satisfying \(\sum_{i=1}^\infty x_i^2 < \infty\). The norm is:
+\[\|x\|_2 = \sqrt{\sum_{i=1}^\infty x_i^2}\]
 
-    \item \textbf{d) \(l_p, 1 < p < \infty\)}: The norm is:
-    \[\|x\|_p = \left( \sum_{i=1}^\infty |x_i|^p \right)^{\frac{1}{p}}\]
+\item \textbf{d) \(l_p, 1 < p < \infty\)}: The norm is:
+\[\|x\|_p = \left( \sum_{i=1}^\infty |x_i|^p \right)^{\frac{1}{p}}\]
 \end{itemize}
 
 \paragraph*{Inclusion Property}
 \(l_p \subset l_q\) if \(p < q\). For instance, \(x_n = \frac{1}{n}\) satisfies \(\sum \frac{1}{n} = \infty\) (not in \(l_1\)) but \(\sum \frac{1}{n^2} < \infty\) (in \(l_2\)).
 
 \begin{theorem}
-    \(l_p\) spaces are normed spaces (satisfy the triangle inequality).
+\(l_p\) spaces are normed spaces (satisfy the triangle inequality).
 \end{theorem}
 
 \subsection{Inner Product Space (Euclidean Space)}
@@ -117,9 +117,9 @@ A norm defines a metric on \(V\) by \(d(x, y) \stackrel{\text{def}}{=} \|x - y\|
 \begin{definition}[Inner Product Space (Euclidean Space)]
 A vector space \(V\) with an inner product \(\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}\) satisfying
 \begin{enumerate}
-    \item \textbf{Symmetry}: \(\langle v, w \rangle = \langle w, v \rangle\).
-    \item \textbf{Linearity}: \(\langle \lambda v, w \rangle = \lambda \langle v, w \rangle\), \(\langle v + w, u \rangle = \langle v, u \rangle + \langle w, u \rangle\).
-    \item \textbf{Positive Definiteness}: \(\langle v, v \rangle \geq 0\) and \(\langle v, v \rangle = 0 \iff v = 0\).
+\item \textbf{Symmetry}: \(\langle v, w \rangle = \langle w, v \rangle\).
+\item \textbf{Linearity}: \(\langle \lambda v, w \rangle = \lambda \langle v, w \rangle\), \(\langle v + w, u \rangle = \langle v, u \rangle + \langle w, u \rangle\).
+\item \textbf{Positive Definiteness}: \(\langle v, v \rangle \geq 0\) and \(\langle v, v \rangle = 0 \iff v = 0\).
 \end{enumerate}
 \end{definition}
 
@@ -150,14 +150,14 @@ Proof is commented out!
 % \end{proof}
 
 \begin{corollary}
-    \begin{enumerate}
-        \item For \(\|v\| = \sqrt{\langle v, v \rangle}\), the triangle inequality holds:
-        \[\|v + w\| \leq \|v\| + \|w\|\]
+\begin{enumerate}
+\item For \(\|v\| = \sqrt{\langle v, v \rangle}\), the triangle inequality holds:
+\[\|v + w\| \leq \|v\| + \|w\|\]
     
-        \item The \(l_2\)-norm satisfies the triangle inequality. \(l_2\) is a Euclidean space with inner product \(\langle x, y \rangle = \sum_{i=1}^\infty x_i y_i\) and norm \(\|x\|_2 = \sqrt{\langle x, x \rangle}\).
-    \end{enumerate}
+\item The \(l_2\)-norm satisfies the triangle inequality. \(l_2\) is a Euclidean space with inner product \(\langle x, y \rangle = \sum_{i=1}^\infty x_i y_i\) and norm \(\|x\|_2 = \sqrt{\langle x, x \rangle}\).
+\end{enumerate}
 \end{corollary}
 
 \begin{remark}
-    The \(l_p\)-norm \(\|x\|_p\) does not come from an inner product when \(p \neq 2\).
+The \(l_p\)-norm \(\|x\|_p\) does not come from an inner product when \(p \neq 2\).
 \end{remark}

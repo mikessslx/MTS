@@ -5,52 +5,52 @@
 \begin{definition}
 Let \((X, d)\) be a metric space, \(M \subset X\):
 \begin{itemize}
-    \item \textbf{Interior Point}: \(x \in M\) is an interior point if \(\exists \varepsilon > 0\) such that \(U_\varepsilon(x) \subset M\).
-    \item \textbf{Interior of \(M\)}: \(\text{Int } M = \{\text{interior points of } M\}\).
-    \item \textbf{Open Set (Alternative Definition)}: \(M\) is open if \(\text{Int } M = M\).
+\item \textbf{Interior Point}: \(x \in M\) is an interior point if \(\exists \varepsilon > 0\) such that \(U_\varepsilon(x) \subset M\).
+\item \textbf{Interior of \(M\)}: \(\text{Int } M = \{\text{interior points of } M\}\).
+\item \textbf{Open Set (Alternative Definition)}: \(M\) is open if \(\text{Int } M = M\).
 \end{itemize}
 \end{definition}
 
 \begin{proposition}[Properties of Open Sets]
 \begin{enumerate}
-    \item The intersection of finitely many open sets \(U_1 \cap \cdots \cap U_k\) is open.
-    \item The union of any collection of open sets \(\bigcup U_\alpha\) is open.
+\item The intersection of finitely many open sets \(U_1 \cap \cdots \cap U_k\) is open.
+\item The union of any collection of open sets \(\bigcup U_\alpha\) is open.
 \end{enumerate}
 \end{proposition}
 
 \begin{theorem}
 \(U \subset \mathbb{R}\) is open if and only if \(U = \bigcup (a_i, b_i)\), where:
 \begin{itemize}
-    \item The union is at most countable;
-    \item \(a_i \in \{-\infty\} \cup \mathbb{R}\), \(b_i \in \mathbb{R} \cup \{+\infty\}\);
-    \item \((a_i, b_i) \cap (a_j, b_j) = \varnothing\) for \(i \neq j\).
+\item The union is at most countable;
+\item \(a_i \in \{-\infty\} \cup \mathbb{R}\), \(b_i \in \mathbb{R} \cup \{+\infty\}\);
+\item \((a_i, b_i) \cap (a_j, b_j) = \varnothing\) for \(i \neq j\).
 \end{itemize}
 \end{theorem}
 
 \begin{example}[Discrete Metric]
 For \((X, d)\) with discrete metric \(d(x,y) = \begin{cases} 1 & x \neq y \\ 0 & x = y \end{cases}\):
 \begin{itemize}
-    \item \(\{x\}\) is open (since \(U_{1/2}(x) = \{x\} \subset \{x\}\));
-    \item Every subset of \(X\) is open.
+\item \(\{x\}\) is open (since \(U_{1/2}(x) = \{x\} \subset \{x\}\));
+\item Every subset of \(X\) is open.
 \end{itemize}
 \end{example}
 
 \begin{remark}[Remarks for \(\mathbb{R}^n\)]
-    \begin{itemize}
-        \item Sets defined by \textbf{strict inequalities} (e.g., \(\{x \in \mathbb{R}^n \mid x_i > 0\}\), \(\{ (x,y) \mid x^2 + y > 3x - 2 \}\)) are open.
-        \item Example: \(X = \mathbb{R}^n \cong \text{Mat}(n)\) (matrices). The set \(\{ A \in \text{Mat}(n) \mid \det A \neq 0 \}\) (non-degenerate matrices) is open. For \(A = (a_{ij})\), the neighborhood:
-        \[U_\varepsilon(A) = \left\{ B = (a_{ij} + \varepsilon_{ij}) \mid |\varepsilon_{ij}| < \varepsilon \right\} = \{ B \mid d(A, B) < \varepsilon \}\]
+\begin{itemize}
+\item Sets defined by \textbf{strict inequalities} (e.g., \(\{x \in \mathbb{R}^n \mid x_i > 0\}\), \(\{ (x,y) \mid x^2 + y > 3x - 2 \}\)) are open.
+\item Example: \(X = \mathbb{R}^n \cong \text{Mat}(n)\) (matrices). The set \(\{ A \in \text{Mat}(n) \mid \det A \neq 0 \}\) (non-degenerate matrices) is open. For \(A = (a_{ij})\), the neighborhood:
+\[U_\varepsilon(A) = \left\{ B = (a_{ij} + \varepsilon_{ij}) \mid |\varepsilon_{ij}| < \varepsilon \right\} = \{ B \mid d(A, B) < \varepsilon \}\]
 
-        Choosing \(\varepsilon < \|\det A\|\) ensures \(\det B \neq 0\) (via expansion of \(\det B\)).
-    \end{itemize}
+Choosing \(\varepsilon < \|\det A\|\) ensures \(\det B \neq 0\) (via expansion of \(\det B\)).
+\end{itemize}
 \end{remark}
 
 \begin{note}[Estimate for Determinant Difference]
 For \(A \in \text{Mat}(n)\) (\(\det A \neq 0\)) and \(B = A + E\) (\(\|E\| < \varepsilon\)):
 \begin{itemize}
-    \item The determinant difference satisfies:
-    \[|\det B - \det A| < (2^n - 1) n! \|A\|^{n-1} \varepsilon\]
-    \item Choose \(\varepsilon < \frac{|\det A|}{(2^n - 1) n! \|A\|^{n-1}}\): this ensures \(\det B \neq 0\), so \(\{ A \mid \det A \neq 0 \}\) is open.
+\item The determinant difference satisfies:
+\[|\det B - \det A| < (2^n - 1) n! \|A\|^{n-1} \varepsilon\]
+\item Choose \(\varepsilon < \frac{|\det A|}{(2^n - 1) n! \|A\|^{n-1}}\): this ensures \(\det B \neq 0\), so \(\{ A \mid \det A \neq 0 \}\) is open.
 \end{itemize}
 \end{note}
 
@@ -59,12 +59,12 @@ For \(A \in \text{Mat}(n)\) (\(\det A \neq 0\)) and \(B = A + E\) (\(\|E\| < \va
 \begin{definition}
 Let \((X, d)\) be a metric space, \(M \subset X\):
 \begin{itemize}
-    \item \textbf{Limit Point}: \(x \in X\) is a limit point of \(M\) if \(\forall \varepsilon > 0\), \(\cdot{U}_\varepsilon(x) \cap M \neq \varnothing\) (\(\cdot{U}_\varepsilon(x) = U_\varepsilon(x) \setminus \{x\}\)). Equivalently, \(U_\varepsilon(x)\) contains infinitely many points of \(M\).
-    \item \textbf{Isolated Point}: \(x \in M\) is isolated if \(\exists \varepsilon > 0\) such that \(U_\varepsilon(x) \cap M = \{x\}\).
-    \item \textbf{Closure}: \(\overline{M} = M \cup \{\text{limit points of } M\}\) (union of \(M\) and its limit points).
-    \item \textbf{Closed Set}: \(M\) is \textbf{closed} if \(\overline{M} = M\) (contains all its limit points).
-    \item \textbf{Property}: \(M\) is closed \(\iff X \setminus M\) is open (open sets have closed complements, and vice versa).
-    \item \textbf{Example}: Prove \(\overline{\overline{M}} = \overline{M}\) (closure of closure is closure).
+\item \textbf{Limit Point}: \(x \in X\) is a limit point of \(M\) if \(\forall \varepsilon > 0\), \(\cdot{U}_\varepsilon(x) \cap M \neq \varnothing\) (\(\cdot{U}_\varepsilon(x) = U_\varepsilon(x) \setminus \{x\}\)). Equivalently, \(U_\varepsilon(x)\) contains infinitely many points of \(M\).
+\item \textbf{Isolated Point}: \(x \in M\) is isolated if \(\exists \varepsilon > 0\) such that \(U_\varepsilon(x) \cap M = \{x\}\).
+\item \textbf{Closure}: \(\overline{M} = M \cup \{\text{limit points of } M\}\) (union of \(M\) and its limit points).
+\item \textbf{Closed Set}: \(M\) is \textbf{closed} if \(\overline{M} = M\) (contains all its limit points).
+\item \textbf{Property}: \(M\) is closed \(\iff X \setminus M\) is open (open sets have closed complements, and vice versa).
+\item \textbf{Example}: Prove \(\overline{\overline{M}} = \overline{M}\) (closure of closure is closure).
 \end{itemize}
 \end{definition}
 
@@ -80,13 +80,13 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     Suppose \(M\) is closed. If \(y \in X \setminus M\) cannot be separated from \(M\), \(\forall \varepsilon > 0, U_\varepsilon(y) \cap M \neq \varnothing\), so \(y\) is a limit point of \(M\). Thus, \(y \in \overline{M} = M\) (contradiction).
+% \item[\(\Rightarrow\)]
+% Suppose \(M\) is closed. If \(y \in X \setminus M\) cannot be separated from \(M\), \(\forall \varepsilon > 0, U_\varepsilon(y) \cap M \neq \varnothing\), so \(y\) is a limit point of \(M\). Thus, \(y \in \overline{M} = M\) (contradiction).
 
-%     \item[\(\Leftarrow\)]
-%     Suppose every \(y \in X \setminus M\) can be separated from \(M\). Let \(x\) be a limit point of \(M\): if \(x \notin M\), \(\exists \varepsilon > 0\) with \(U_\varepsilon(x) \cap M = \varnothing\) (contradicts \(x\) being a limit point).
-    
-%     Thus, \(x \in M\), so \(M\) is closed.
+% \item[\(\Leftarrow\)]
+% Suppose every \(y \in X \setminus M\) can be separated from \(M\). Let \(x\) be a limit point of \(M\): if \(x \notin M\), \(\exists \varepsilon > 0\) with \(U_\varepsilon(x) \cap M = \varnothing\) (contradicts \(x\) being a limit point).
+
+% Thus, \(x \in M\), so \(M\) is closed.
 % \end{itemize}
 % \end{proof}
 
@@ -95,9 +95,9 @@ Proof is commented out!
 \begin{definition}[Continuous Maps]
 Let \(f: (X_1, d_1) \to (X_2, d_2)\) be a function.
 \begin{itemize}
-    \item \textbf{Definition 1}: \(f\) is \textbf{continuous} if
-    \[\forall x \in X_1, \forall \varepsilon > 0, \exists \delta > 0 \text{ such that } \forall x' \in X_1, d_1(x, x') < \delta \implies d_2(f(x), f(x')) < \varepsilon\]
-    \item \textbf{Definition 2}: \(f\) is \textbf{continuous} if for every open set \(U \subset X_2\), its preimage \(f^{-1}(U) = \{ x \in X_1 \mid f(x) \in U \}\) is open in \(X_1\).
+\item \textbf{Definition 1}: \(f\) is \textbf{continuous} if
+\[\forall x \in X_1, \forall \varepsilon > 0, \exists \delta > 0 \text{ such that } \forall x' \in X_1, d_1(x, x') < \delta \implies d_2(f(x), f(x')) < \varepsilon\]
+\item \textbf{Definition 2}: \(f\) is \textbf{continuous} if for every open set \(U \subset X_2\), its preimage \(f^{-1}(U) = \{ x \in X_1 \mid f(x) \in U \}\) is open in \(X_1\).
 \end{itemize}
 \end{definition}
 
@@ -119,49 +119,49 @@ Proof is commented out!
 % \noindent \textbf{\(\Rightarrow\)}
 % To show \(f^{-1}(U)\) is open (for open \(U \subset X_2\)):
 % \begin{enumerate}
-%     \item Take \(x \in f^{-1}(U)\), so \(f(x) = y \in U\).
-%     \item Since \(U\) is open, \(\exists \varepsilon > 0\) with \(U_\varepsilon(y) \subset U\).
-%     \item By Definition 1, \(\exists \delta > 0\) such that \(d_1(x, x') < \delta \implies d_2(f(x'), f(x)) < \varepsilon\).
-%     \item Thus \(U_\delta(x) \subset f^{-1}(U_\varepsilon(y)) \subset f^{-1}(U)\), so \(x\) is an interior point of \(f^{-1}(U)\).
-%     \item This holds for all \(x \in f^{-1}(U)\), so \(f^{-1}(U)\) is open.
+% \item Take \(x \in f^{-1}(U)\), so \(f(x) = y \in U\).
+% \item Since \(U\) is open, \(\exists \varepsilon > 0\) with \(U_\varepsilon(y) \subset U\).
+% \item By Definition 1, \(\exists \delta > 0\) such that \(d_1(x, x') < \delta \implies d_2(f(x'), f(x)) < \varepsilon\).
+% \item Thus \(U_\delta(x) \subset f^{-1}(U_\varepsilon(y)) \subset f^{-1}(U)\), so \(x\) is an interior point of \(f^{-1}(U)\).
+% \item This holds for all \(x \in f^{-1}(U)\), so \(f^{-1}(U)\) is open.
 % \end{enumerate}
 
 % \noindent \textbf{\(\Leftarrow\)}
 % To show the \(\varepsilon\)-\(\delta\) condition:
 % \begin{enumerate}
-%     \item Take \(x \in X_1\), \(y = f(x)\), fix \(\varepsilon > 0\).
-%     \item \(U_\varepsilon(y) \subset X_2\) is open, so \(f^{-1}(U_\varepsilon(y))\) is open (by Definition 2).
-%     \item Since \(x \in f^{-1}(U_\varepsilon(y))\), \(\exists \delta > 0\) with \(U_\delta(x) \subset f^{-1}(U_\varepsilon(y))\).
-%     \item Thus \(d_1(x, x') < \delta \implies f(x') \in U_\varepsilon(y) \implies d_2(f(x'), f(x)) < \varepsilon\).
+% \item Take \(x \in X_1\), \(y = f(x)\), fix \(\varepsilon > 0\).
+% \item \(U_\varepsilon(y) \subset X_2\) is open, so \(f^{-1}(U_\varepsilon(y))\) is open (by Definition 2).
+% \item Since \(x \in f^{-1}(U_\varepsilon(y))\), \(\exists \delta > 0\) with \(U_\delta(x) \subset f^{-1}(U_\varepsilon(y))\).
+% \item Thus \(d_1(x, x') < \delta \implies f(x') \in U_\varepsilon(y) \implies d_2(f(x'), f(x)) < \varepsilon\).
 % \end{enumerate}
 % \end{proof}
 
 \begin{example}[Inverse of Continuous Bijection Need Not Be Continuous]
 Let \(f: X \to Y\) be continuous and bijective. \(f^{-1}: Y \to X\) is not necessarily continuous:
 \begin{enumerate}
-    \item[\bfseries Ex 1.]
-    \begin{itemize}
-        \item \(X = [0, 1]\) (discrete metric: \(d(x,x') = \begin{cases} 0 & x=x' \\ 1 & x \neq x' \end{cases}\)).
-        \item \(Y = [0, 1]\) (standard Euclidean metric).
-        \item \(f: X \to Y\), \(f(x) = x\):
-        \begin{itemize}
-            \item \(f\) is continuous (all subsets of \(X\) are open, so preimages of open sets in \(Y\) are open).
-            \item \(f^{-1}: Y \to X\), \(f^{-1}(y) = y\):
-            \begin{itemize}
-                \item \(\{ \frac{1}{2} \} \subset X\) is open, but \((f^{-1})^{-1}(\{ \frac{1}{2} \}) = \{ \frac{1}{2} \} \subset Y\) is not open (Euclidean metric). Thus \(f^{-1}\) is discontinuous.
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
+\item[\bfseries Ex 1.]
+\begin{itemize}
+\item \(X = [0, 1]\) (discrete metric: \(d(x,x') = \begin{cases} 0 & x=x' \\ 1 & x \neq x' \end{cases}\)).
+\item \(Y = [0, 1]\) (standard Euclidean metric).
+\item \(f: X \to Y\), \(f(x) = x\):
+\begin{itemize}
+\item \(f\) is continuous (all subsets of \(X\) are open, so preimages of open sets in \(Y\) are open).
+\item \(f^{-1}: Y \to X\), \(f^{-1}(y) = y\):
+\begin{itemize}
+\item \(\{ \frac{1}{2} \} \subset X\) is open, but \((f^{-1})^{-1}(\{ \frac{1}{2} \}) = \{ \frac{1}{2} \} \subset Y\) is not open (Euclidean metric). Thus \(f^{-1}\) is discontinuous.
+\end{itemize}
+\end{itemize}
+\end{itemize}
 
-    \item[\bfseries Ex 2.]
-    \begin{itemize}
-        \item \(X = \{0\} \cup (1, 2]\).
-        \item \(Y = [0, 1]\).
-        \item \(f: X \to Y\): \(f(0) = 0\), \(f(x) = x-1\) for \(x > 0\):
-        \begin{itemize}
-            \item \(f\) is continuous and bijective.
-            \item \(f^{-1}(0) = \{0\} \subset X\) is open, but \((f^{-1})^{-1}(\{0\}) = \{0\} \subset Y\) is not open (Euclidean metric). Thus \(f^{-1}\) is discontinuous.
-        \end{itemize}
-    \end{itemize}
+\item[\bfseries Ex 2.]
+\begin{itemize}
+\item \(X = \{0\} \cup (1, 2]\).
+\item \(Y = [0, 1]\).
+\item \(f: X \to Y\): \(f(0) = 0\), \(f(x) = x-1\) for \(x > 0\):
+\begin{itemize}
+\item \(f\) is continuous and bijective.
+\item \(f^{-1}(0) = \{0\} \subset X\) is open, but \((f^{-1})^{-1}(\{0\}) = \{0\} \subset Y\) is not open (Euclidean metric). Thus \(f^{-1}\) is discontinuous.
+\end{itemize}
+\end{itemize}
 \end{enumerate}
 \end{example}

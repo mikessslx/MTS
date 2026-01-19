@@ -73,8 +73,8 @@ Proof is commented out!
 Let \(\mathbb{R} = X\) with standard order \(<\). Let \(Y = [0, 1) \cup \{2\}\).
 Basis of topology on \(Y\) inherited from \(\mathbb{R}\) (subspace): \(\{(a, b) \cap Y\}\).
 \begin{itemize}
-    \item \(\{2\}\) is open in subspace topology: \(\{2\} = Y \cap (1.9, 2.1)\).
-    \item \(\{2\}\) is \textbf{not} open in the order topology on \(Y\).
+\item \(\{2\}\) is open in subspace topology: \(\{2\} = Y \cap (1.9, 2.1)\).
+\item \(\{2\}\) is \textbf{not} open in the order topology on \(Y\).
 \end{itemize}
 
 \textbf{Exercise}: Show that for the order topology, \([0, 1) \cup \{2\}\) is connected.
@@ -91,8 +91,8 @@ The product of order topology is the \textbf{standard topology} on \(\mathbb{R}^
 \(X \times Y = \{(x, y)\}\). Take the \textbf{lexicographic order}:
 \((x, y) < (x', y')\) if
 \begin{itemize}
-    \item either \(x < x'\);
-    \item or \(x = x', y < y'\).
+\item either \(x < x'\);
+\item or \(x = x', y < y'\).
 \end{itemize}
 Order topology on \((X \times Y, <)\)?
 
@@ -134,9 +134,9 @@ Proof is commented out!
 
 \begin{proposition}
 \begin{enumerate}
-    \item \(\emptyset, X\) closed.
-    \item \(A_\alpha\) closed \(\implies \bigcap A_\alpha\) closed.
-    \item \(A_1, \cdots, A_n\) closed \(\implies \bigcup_{i=1}^n A_i\) closed.
+\item \(\emptyset, X\) closed.
+\item \(A_\alpha\) closed \(\implies \bigcap A_\alpha\) closed.
+\item \(A_1, \cdots, A_n\) closed \(\implies \bigcup_{i=1}^n A_i\) closed.
 \end{enumerate}
 \end{proposition}
 
@@ -151,43 +151,43 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     Let \(A \subset Y\) be closed in \(Y\), then \(Y \setminus A\) is open in \(Y\).
+% \item[\(\Rightarrow\)]
+% Let \(A \subset Y\) be closed in \(Y\), then \(Y \setminus A\) is open in \(Y\).
 
-%     So \(Y \setminus A = Y \cap U\), where \(U\) is open in \(X\).
+% So \(Y \setminus A = Y \cap U\), where \(U\) is open in \(X\).
 
-%     \(X \setminus U\) is closed in \(X\).
+% \(X \setminus U\) is closed in \(X\).
 
-%     \((X \setminus U) \cap Y = Y \setminus (U \cap Y) = Y \setminus (Y \setminus A) = A\). (Let \(\tilde{A} = X \setminus U\).)
+% \((X \setminus U) \cap Y = Y \setminus (U \cap Y) = Y \setminus (Y \setminus A) = A\). (Let \(\tilde{A} = X \setminus U\).)
 
-%     \item[\(\Leftarrow\)]
-%     Let \(A = Y \cap C\), where \(C\) is closed in \(X\).
+% \item[\(\Leftarrow\)]
+% Let \(A = Y \cap C\), where \(C\) is closed in \(X\).
 
-%     Then \(X \setminus C\) is open in \(X\), \((X \setminus C) \cap Y\) is open in \(Y\).
+% Then \(X \setminus C\) is open in \(X\), \((X \setminus C) \cap Y\) is open in \(Y\).
 
-%     But \((X \setminus C) \cap Y = (X \cap Y) \setminus (C \cap Y) = Y \setminus A\).
+% But \((X \setminus C) \cap Y = (X \cap Y) \setminus (C \cap Y) = Y \setminus A\).
 
-%     So \(Y \setminus A\) is open in \(Y \implies A\) is closed in \(Y\).
+% So \(Y \setminus A\) is open in \(Y \implies A\) is closed in \(Y\).
 % \end{itemize}
 % \end{proof}
 
 \begin{definition}[Neighborhood, Interior, Closure]
 \begin{itemize}
-    \item If \(U \subset X\) open, \(x \in U\), then \(U\) is a \textbf{neighborhood} of \(x\).
-    \item \textbf{Interior} of \(A\): \(\text{Int } A = \bigcup \{ U \subset A, U \text{ open in } X \}\).
-    \item \textbf{Closure} of \(A\): \(\overline{A} = \bigcap \{ C \supset A, C \text{ closed in } X \}\).
+\item If \(U \subset X\) open, \(x \in U\), then \(U\) is a \textbf{neighborhood} of \(x\).
+\item \textbf{Interior} of \(A\): \(\text{Int } A = \bigcup \{ U \subset A, U \text{ open in } X \}\).
+\item \textbf{Closure} of \(A\): \(\overline{A} = \bigcap \{ C \supset A, C \text{ closed in } X \}\).
 \end{itemize}
 Note: \(\text{Int } A \subset A \subset \overline{A}\).
 \end{definition}
 
 \begin{remark}[Warning]
-    If \(A \subset Y \subset X\), then the closure of \(A\) in \(Y\) and \(X\) can be different.
+If \(A \subset Y \subset X\), then the closure of \(A\) in \(Y\) and \(X\) can be different.
 
-    Example: \(A = (0, 1) \subset Y = [0, 1) \subset X = \mathbb{R}\).
-    \begin{itemize}
-        \item \(\overline{A}\) in \(\mathbb{R}\) is \([0, 1]\).
-        \item \(\overline{A}\) in \(Y\) is \([0, 1) = (\overline{A} \text{ in } \mathbb{R}) \cap Y\).
-    \end{itemize}
+Example: \(A = (0, 1) \subset Y = [0, 1) \subset X = \mathbb{R}\).
+\begin{itemize}
+\item \(\overline{A}\) in \(\mathbb{R}\) is \([0, 1]\).
+\item \(\overline{A}\) in \(Y\) is \([0, 1) = (\overline{A} \text{ in } \mathbb{R}) \cap Y\).
+\end{itemize}
 \end{remark}
 
 \begin{theorem}

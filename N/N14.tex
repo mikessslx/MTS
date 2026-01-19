@@ -5,8 +5,8 @@
 \begin{recap}[The Sequence Lemma]
 Let \(X\) be a topological space, \(A \subset X\).
 \begin{itemize}
-    \item If there exists a sequence \(x_n \in A\) such that \(\lim_{n \to \infty} x_n = x\), then \(x \in \overline{A}\).
-    \item The converse is true if \(X\) is \textbf{metrizable} (or first-countable).
+\item If there exists a sequence \(x_n \in A\) such that \(\lim_{n \to \infty} x_n = x\), then \(x \in \overline{A}\).
+\item The converse is true if \(X\) is \textbf{metrizable} (or first-countable).
 \end{itemize}
 \end{recap}
 
@@ -16,16 +16,16 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     Take \(U \ni x\) open. Then \(x_n \in U\) for \(n \gg 0 \implies U \cap A \neq \emptyset \implies x \in \overline{A}\).
+% \item[\(\Rightarrow\)]
+% Take \(U \ni x\) open. Then \(x_n \in U\) for \(n \gg 0 \implies U \cap A \neq \emptyset \implies x \in \overline{A}\).
 
-%     \item[\(\Leftarrow\)] (Assuming first-countable/metrizable.) 
-    
-%     Take \(U_n = U_{1/n}(x)\) (in metric case), \(x_n \in U_{1/n}(x) \cap A\) (exists since \(x \in \overline{A}\)).
+% \item[\(\Leftarrow\)] (Assuming first-countable/metrizable.)
 
-%     If \(m > n\), \(U_{1/n}(x) \supset U_{1/m}(x)\), so \(x_m \in U_{1/n}(x)\) for each \(m > n\).
-    
-%     Any open set \(U\) contains \(U_\varepsilon = U_{1/n}\) for \(n\) large enough, so \(U \ni x_m\) for \(m > n\).
+% Take \(U_n = U_{1/n}(x)\) (in metric case), \(x_n \in U_{1/n}(x) \cap A\) (exists since \(x \in \overline{A}\)).
+
+% If \(m > n\), \(U_{1/n}(x) \supset U_{1/m}(x)\), so \(x_m \in U_{1/n}(x)\) for each \(m > n\).
+
+% Any open set \(U\) contains \(U_\varepsilon = U_{1/n}\) for \(n\) large enough, so \(U \ni x_m\) for \(m > n\).
 % \end{itemize}
 % \end{proof}
 
@@ -40,17 +40,17 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     Let \(f\) be continuous and take \(V \ni f(x)\), \(V \subset Y\) open \(\implies f^{-1}(V) \subset X\) open.
+% \item[\(\Rightarrow\)]
+% Let \(f\) be continuous and take \(V \ni f(x)\), \(V \subset Y\) open \(\implies f^{-1}(V) \subset X\) open.
 
-%     Then \(f^{-1}(V) \ni x_n\) for \(n \gg 0\). Thus, \(f(x_n) \in f(f^{-1}(V)) \subset V\).
-    
-%     \item[\(\Leftarrow\)]
-%     Recall that \(f\) is continuous \(\iff \forall A \subset X, f(\overline{A}) \subset \overline{f(A)}\).
+% Then \(f^{-1}(V) \ni x_n\) for \(n \gg 0\). Thus, \(f(x_n) \in f(f^{-1}(V)) \subset V\).
 
-%     Take \(A \subset X, x \in \overline{A}\). Then \(\exists x_n \in A, x_n \to x\) (since \(X\) metrizable/1st countable).
+% \item[\(\Leftarrow\)]
+% Recall that \(f\) is continuous \(\iff \forall A \subset X, f(\overline{A}) \subset \overline{f(A)}\).
 
-%     Then \(f(x_n) \to f(x)\), so \(f(x) \in \overline{f(A)} \implies f(\overline{A}) \subset \overline{f(A)}\).
+% Take \(A \subset X, x \in \overline{A}\). Then \(\exists x_n \in A, x_n \to x\) (since \(X\) metrizable/1st countable).
+
+% Then \(f(x_n) \to f(x)\), so \(f(x) \in \overline{f(A)} \implies f(\overline{A}) \subset \overline{f(A)}\).
 % \end{itemize}
 % \end{proof}
 
@@ -71,40 +71,40 @@ Given \(x\), there is a \textbf{countable} family of neighborhoods \(\mathcal{U}
 \subsection{Examples and Counterexamples}
 
 \begin{example}[Examples of Countability]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 1.] \textbf{\(\mathbb{R}^n\) is 2nd-Countable}
-        Has a countable basis \(\{U_\varepsilon(x) \mid x \in \mathbb{Q}^n, \varepsilon \in \mathbb{Q}_{>0}\}\).
-        It is also 1st-countable.
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 1.] \textbf{\(\mathbb{R}^n\) is 2nd-Countable}
+Has a countable basis \(\{U_\varepsilon(x) \mid x \in \mathbb{Q}^n, \varepsilon \in \mathbb{Q}_{>0}\}\).
+It is also 1st-countable.
 
-        \item[\bfseries Ex 2.] \textbf{Finite Complement Topology on \(\mathbb{R}\)}
-        Not 1st-countable.
-        \(x \in U\) open \(\implies U = \mathbb{R} \setminus \{y_1, \cdots, y_k\}\).
-        Suppose there exists a countable basis at \(x\): \(U_n = \mathbb{R} \setminus F_n\) (finite sets).
-        Consider \(U = \mathbb{R} \setminus \{y\}\) where \(y \notin \bigcup F_n\) and \(y \neq x\).
-        Then \(U\) is open neighborhood of \(x\), but \(U \not\supset U_n\) for any \(n\) (since \(y \in U_n\)).
+\item[\bfseries Ex 2.] \textbf{Finite Complement Topology on \(\mathbb{R}\)}
+Not 1st-countable.
+\(x \in U\) open \(\implies U = \mathbb{R} \setminus \{y_1, \cdots, y_k\}\).
+Suppose there exists a countable basis at \(x\): \(U_n = \mathbb{R} \setminus F_n\) (finite sets).
+Consider \(U = \mathbb{R} \setminus \{y\}\) where \(y \notin \bigcup F_n\) and \(y \neq x\).
+Then \(U\) is open neighborhood of \(x\), but \(U \not\supset U_n\) for any \(n\) (since \(y \in U_n\)).
 
-        \item[\bfseries Ex 3.] \textbf{Uncountable Discrete Space}
-        \(X\) uncountable with discrete topology.
-        Then \(\forall x \in X\), the set \(\{x\}\) is open. So any basis of \(X\) should contain \(\{\{x\}\}_{x \in X}\).
-        \(\implies X\) not 2nd-countable.
-        But \(X\) is metrizable (discrete metric) \(\implies\) 1st-countable.
+\item[\bfseries Ex 3.] \textbf{Uncountable Discrete Space}
+\(X\) uncountable with discrete topology.
+Then \(\forall x \in X\), the set \(\{x\}\) is open. So any basis of \(X\) should contain \(\{\{x\}\}_{x \in X}\).
+\(\implies X\) not 2nd-countable.
+But \(X\) is metrizable (discrete metric) \(\implies\) 1st-countable.
 
-        \item[\bfseries Ex 4.] \textbf{\(\mathbb{R}^2\) with ``Amazon River metric''}
-        \(d((x,y), (x',y')) = |y-y'|\) if \(x=x'\), else \(|y| + |x'-x| + |y'|\).
-        Basis elements at \((x,y_0)\) look like vertical segments \(\{ (x,y) \mid x=x_0, y \in (y_0-\varepsilon, y_0+\varepsilon) \}\).
-        \(\implies\) No countable basis (similar to discrete on the x-axis). Not 2nd-countable.
-        But metric \(\implies\) 1st-countable.
+\item[\bfseries Ex 4.] \textbf{\(\mathbb{R}^2\) with ``Amazon River metric''}
+\(d((x,y), (x',y')) = |y-y'|\) if \(x=x'\), else \(|y| + |x'-x| + |y'|\).
+Basis elements at \((x,y_0)\) look like vertical segments \(\{ (x,y) \mid x=x_0, y \in (y_0-\varepsilon, y_0+\varepsilon) \}\).
+\(\implies\) No countable basis (similar to discrete on the x-axis). Not 2nd-countable.
+But metric \(\implies\) 1st-countable.
 
-        \item[\bfseries Ex 5.] \textbf{\(\mathbb{R}_\ell\) (Lower Limit Topology)}
-        Basis \([a, b)\).
-        \textbf{Not 2nd-countable}: Let \(\{B_n\}\) be a countable basis.
-        \(x \in \mathbb{R}_\ell\). \(U = [x, \infty) \implies \exists n: x \in B_n \subset [x, \infty)\).
-        Then \(x = \min B_n\).
-        So \(\forall x \in \mathbb{R}_\ell, \exists B_n: x = \min B_n\).
-        But there are countably many \(B_n\), uncountably many \(x\). Contradiction.
-        \textbf{1st-countable}: \(x \in [x, x+1/n)\) is a countable local basis.
-    \end{enumerate}
+\item[\bfseries Ex 5.] \textbf{\(\mathbb{R}_\ell\) (Lower Limit Topology)}
+Basis \([a, b)\).
+\textbf{Not 2nd-countable}: Let \(\{B_n\}\) be a countable basis.
+\(x \in \mathbb{R}_\ell\). \(U = [x, \infty) \implies \exists n: x \in B_n \subset [x, \infty)\).
+Then \(x = \min B_n\).
+So \(\forall x \in \mathbb{R}_\ell, \exists B_n: x = \min B_n\).
+But there are countably many \(B_n\), uncountably many \(x\). Contradiction.
+\textbf{1st-countable}: \(x \in [x, x+1/n)\) is a countable local basis.
+\end{enumerate}
 \end{example}
 
 \subsection{Metrizability of Product Spaces}

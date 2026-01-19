@@ -8,9 +8,9 @@ Let \(A \subset X\). We defined \(\overline{A} = \bigcap C_\alpha\) where \(C_\a
 
 \begin{theorem}
 \begin{enumerate}
-    \item[(a)] \(x \in \overline{A} \iff\) every open set \(U \subset X\) such that \(x \in U\) intersects \(A\) (that is, \(U \cap A \neq \emptyset\)).
-    \item[(b)] For a basis \(\mathcal{B}\) of \(\mathcal{T}\), we have \(x \in \overline{A} \iff\) for every \(B \in \mathcal{B}\) with \(x \in B\), we have
-    \[B \cap A \neq \emptyset.\]
+\item[(a)] \(x \in \overline{A} \iff\) every open set \(U \subset X\) such that \(x \in U\) intersects \(A\) (that is, \(U \cap A \neq \emptyset\)).
+\item[(b)] For a basis \(\mathcal{B}\) of \(\mathcal{T}\), we have \(x \in \overline{A} \iff\) for every \(B \in \mathcal{B}\) with \(x \in B\), we have
+\[B \cap A \neq \emptyset.\]
 \end{enumerate}
 \end{theorem}
 
@@ -21,15 +21,15 @@ Proof is commented out!
 % \begin{proof}
 % (a) is same as: \(x \notin \overline{A} \iff \exists U\) open, \(x \in U\) such that \(U \cap A = \emptyset\).
 % \begin{itemize}
-%     \item[\(\Rightarrow\)]
-%     Take \(x \notin \overline{A}\), then \(U = X \setminus \overline{A}\) is open (since \(\overline{A}\) is closed) and contains \(x\).
+% \item[\(\Rightarrow\)]
+% Take \(x \notin \overline{A}\), then \(U = X \setminus \overline{A}\) is open (since \(\overline{A}\) is closed) and contains \(x\).
 
-%     Since \(\overline{A} \supset A\), \(U \cap A = \emptyset\).
+% Since \(\overline{A} \supset A\), \(U \cap A = \emptyset\).
 
-%     \item[\(\Leftarrow\)]
-%     Take \(U \ni x\), \(U \cap A = \emptyset\), \(U\) open. Then \(X \setminus U\) is closed and \(X \setminus U \supset A\).
+% \item[\(\Leftarrow\)]
+% Take \(U \ni x\), \(U \cap A = \emptyset\), \(U\) open. Then \(X \setminus U\) is closed and \(X \setminus U \supset A\).
 
-%     Since \(\overline{A}\) is the intersection of all closed sets containing \(A\), \(X \setminus U \supset \overline{A}\) and \(x \notin \overline{A}\).
+% Since \(\overline{A}\) is the intersection of all closed sets containing \(A\), \(X \setminus U \supset \overline{A}\) and \(x \notin \overline{A}\).
 % \end{itemize}
 
 % (b) Exercise.
@@ -51,8 +51,8 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item If \(x \in A'\), every neighborhood of \(x\) intersects \(A\). Then \(x \in \overline{A}\) by the previous theorem. Thus, \(A' \subset \overline{A}\), \(A \subset \overline{A} \implies A \cup A' \subset \overline{A}\).
-%     \item Reverse: take \(x \in \overline{A}\). Then \(x \in A \subset A \cup A'\). Otherwise, if \(x \notin A\), every open neighborhood of \(x\) intersects \(A\) (at some \(y\)). Since \(x \notin A\), \(y \neq x\), then \(x \in A'\).
+% \item If \(x \in A'\), every neighborhood of \(x\) intersects \(A\). Then \(x \in \overline{A}\) by the previous theorem. Thus, \(A' \subset \overline{A}\), \(A \subset \overline{A} \implies A \cup A' \subset \overline{A}\).
+% \item Reverse: take \(x \in \overline{A}\). Then \(x \in A \subset A \cup A'\). Otherwise, if \(x \notin A\), every open neighborhood of \(x\) intersects \(A\) (at some \(y\)). Since \(x \notin A\), \(y \neq x\), then \(x \in A'\).
 % \end{itemize}
 % \end{proof}
 
@@ -71,24 +71,24 @@ This is equivalent to: every neighborhood of \(a\) contains \textbf{ALMOST} all 
 \end{remark}
 
 \begin{example}[Examples of Convergence]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 1.] \textbf{Discrete Topology}
-        \(X\) arbitrary with discrete topology.
-        \(x_n \to a \iff x_n = a\) for all \(n > N\) (\(n \gg 0\), sufficiently large).
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 1.] \textbf{Discrete Topology}
+\(X\) arbitrary with discrete topology.
+\(x_n \to a \iff x_n = a\) for all \(n > N\) (\(n \gg 0\), sufficiently large).
 
-        \item[\bfseries Ex 2.] \textbf{Rationals}
-        \(X = \mathbb{Q}\), topology defined by usual metric.
-        Sequence \(3, 3.1, 3.14, 3.141, \cdots\) (approximating \(\pi\)). \textbf{DOES NOT converge!} (since \(\pi \notin \mathbb{Q}\)).
+\item[\bfseries Ex 2.] \textbf{Rationals}
+\(X = \mathbb{Q}\), topology defined by usual metric.
+Sequence \(3, 3.1, 3.14, 3.141, \cdots\) (approximating \(\pi\)). \textbf{DOES NOT converge!} (since \(\pi \notin \mathbb{Q}\)).
 
-        \item[\bfseries Ex 3.] \textbf{Lower Limit Topology (\(\mathbb{R}_\ell\))}
-        \(\mathbb{R}_\ell\) is \(\mathbb{R}\) with lower limit topology: \([a, b)\) are basis open sets. What sequences \(x_n \in \mathbb{R}\) are convergent?
+\item[\bfseries Ex 3.] \textbf{Lower Limit Topology (\(\mathbb{R}_\ell\))}
+\(\mathbb{R}_\ell\) is \(\mathbb{R}\) with lower limit topology: \([a, b)\) are basis open sets. What sequences \(x_n \in \mathbb{R}\) are convergent?
 
-        A sequence converges in \(\mathbb{R}_\ell \iff\) it converges in \(\mathbb{R}\) \textbf{AND} satisfies an extra condition:
-        \[x_n \ge a \ \text{for } n \gg 0\]
-        Example: \(\frac{(-1)^n}{n}\) is not convergent to 0 in \(\mathbb{R}_\ell\).
-        For every \(\varepsilon\), \([0, \varepsilon)\) does not satisfy the condition for limits (negative terms are outside).
-    \end{enumerate}
+A sequence converges in \(\mathbb{R}_\ell \iff\) it converges in \(\mathbb{R}\) \textbf{AND} satisfies an extra condition:
+\[x_n \ge a \ \text{for } n \gg 0\]
+Example: \(\frac{(-1)^n}{n}\) is not convergent to 0 in \(\mathbb{R}_\ell\).
+For every \(\varepsilon\), \([0, \varepsilon)\) does not satisfy the condition for limits (negative terms are outside).
+\end{enumerate}
 \end{example}
 
 \subsection{Comparing Topologies and Convergence}
@@ -105,13 +105,13 @@ Let \(\mathcal{T}, \mathcal{T}'\) be topologies on \(X\).
 \begin{example}[\(\mathbb{R}_\ell\) vs \(\mathbb{R}\)]
 We know \(\mathbb{R}_\ell\) is finer than \(\mathbb{R}\).
 \begin{itemize}
-    \item \(\mathbb{R}\) is \textbf{NOT} finer than \(\mathbb{R}_\ell\):
+\item \(\mathbb{R}\) is \textbf{NOT} finer than \(\mathbb{R}_\ell\):
     
-    For \([a, b) \ni x\) (basis in \(\mathbb{R}_\ell\)), does there exist \((a', b') \ni x\) such that \((a', b') \subset [a, b)\)?
+For \([a, b) \ni x\) (basis in \(\mathbb{R}_\ell\)), does there exist \((a', b') \ni x\) such that \((a', b') \subset [a, b)\)?
 
-    If \(x=a\), then \((a', b')\) must contain points less than \(a\), which are not in \([a, b)\). Impossible.
+If \(x=a\), then \((a', b')\) must contain points less than \(a\), which are not in \([a, b)\). Impossible.
     
-    \item \(\mathbb{R}_\ell\) \textbf{IS} finer than \(\mathbb{R}\): For any \((a, b) \ni x\), \([x, b)\) is a basis element in \(\mathbb{R}_\ell\) and \([x, b) \subset (a, b)\).
+\item \(\mathbb{R}_\ell\) \textbf{IS} finer than \(\mathbb{R}\): For any \((a, b) \ni x\), \([x, b)\) is a basis element in \(\mathbb{R}_\ell\) and \([x, b) \subset (a, b)\).
 \end{itemize}
 
 Implication: Convergence in \(\mathbb{R}_\ell \implies\) Convergence in \(\mathbb{R}\).
@@ -122,38 +122,38 @@ Implication: Convergence in \(\mathbb{R}_\ell \implies\) Convergence in \(\mathb
 \subsection{More Limit Examples}
 
 \begin{example}[More Limit Examples]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 4.] \textbf{Non-Hausdorff Space (\(X = \mathbb{N}\))}
-        Let \(U_m = \{0, 1, 2, \cdots, m\}\).
-        Topology \(\mathcal{T} = \{ U_m \mid m \in \mathbb{N} \} \cup \{ \mathbb{N}, \emptyset \}\).
-        Convergence \(x_n \to a\):
-        \begin{align*}
-            &\iff \forall U_m, m \ge a, x_n \in U_m \text{ for } n \gg 0 ;\\
-            &\iff \forall m \ge a: x_n \le m \text{ for } n \gg 0.
-        \end{align*}
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 4.] \textbf{Non-Hausdorff Space (\(X = \mathbb{N}\))}
+Let \(U_m = \{0, 1, 2, \cdots, m\}\).
+Topology \(\mathcal{T} = \{ U_m \mid m \in \mathbb{N} \} \cup \{ \mathbb{N}, \emptyset \}\).
+Convergence \(x_n \to a\):
+\begin{align*}
+&\iff \forall U_m, m \ge a, x_n \in U_m \text{ for } n \gg 0 ;\\
+&\iff \forall m \ge a: x_n \le m \text{ for } n \gg 0.
+\end{align*}
 
-        Equivalently: \(x_n \le a\) for almost all \(n\). Thus, \(a\) is an \textbf{essential upper bound} of \(x_n\).
-        \begin{itemize}
-            \item Convergent \(\iff\) Bounded.
-            \item \textbf{Limit is not unique!} If \(x_n \to a\), then \(x_n \to b\) for any \(b \ge a\).
-        \end{itemize}
+Equivalently: \(x_n \le a\) for almost all \(n\). Thus, \(a\) is an \textbf{essential upper bound} of \(x_n\).
+\begin{itemize}
+\item Convergent \(\iff\) Bounded.
+\item \textbf{Limit is not unique!} If \(x_n \to a\), then \(x_n \to b\) for any \(b \ge a\).
+\end{itemize}
 
-        \item[\bfseries Ex 5.] \textbf{Finite Complement Topology on \(\mathbb{R}\)}
-        \(\mathcal{T} = \{ \emptyset, \mathbb{R} \} \cup \{ \mathbb{R} \setminus \{p_1, \cdots, p_k\} \}\).
-        \begin{enumerate}
-            \item
-            If \(x_n = a\) for \(n \gg 0\): \(x_n \to a\).
+\item[\bfseries Ex 5.] \textbf{Finite Complement Topology on \(\mathbb{R}\)}
+\(\mathcal{T} = \{ \emptyset, \mathbb{R} \} \cup \{ \mathbb{R} \setminus \{p_1, \cdots, p_k\} \}\).
+\begin{enumerate}
+\item
+If \(x_n = a\) for \(n \gg 0\): \(x_n \to a\).
 
-            \item
-            If \(x_n\) assumes two values infinitely many times (e.g., \(x_n = (-1)^n\)): \textbf{NO LIMIT}.
+\item
+If \(x_n\) assumes two values infinitely many times (e.g., \(x_n = (-1)^n\)): \textbf{NO LIMIT}.
 
-            (Any open set excluding one value will fail to contain the tail).
+(Any open set excluding one value will fail to contain the tail).
             
-            \item
-            If \(x_n\) assumes every value finitely many times (all terms distinct): \(x_n \to a, \forall a \in \mathbb{R}\).
+\item
+If \(x_n\) assumes every value finitely many times (all terms distinct): \(x_n \to a, \forall a \in \mathbb{R}\).
 
-            (Proof: Take any \(a\). Any open \(U \ni a\) is \(\mathbb{R} \setminus F\) where \(F\) is finite. Since \(x_n\) takes values in \(F\) only finitely many times, eventually \(x_n \notin F\), so \(x_n \in U\).)
-        \end{enumerate}
-    \end{enumerate}
+(Proof: Take any \(a\). Any open \(U \ni a\) is \(\mathbb{R} \setminus F\) where \(F\) is finite. Since \(x_n\) takes values in \(F\) only finitely many times, eventually \(x_n \notin F\), so \(x_n \in U\).)
+\end{enumerate}
+\end{enumerate}
 \end{example}

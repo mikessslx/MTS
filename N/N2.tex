@@ -5,9 +5,9 @@
 \begin{recap}[Norm]
 A norm \(\|\cdot\|: V \to \mathbb{R}\) satisfies:
 \begin{enumerate}
-    \item \(\|x\| \geq 0\), and \(\|x\| = 0 \iff x = 0\)
-    \item \(\|\lambda x\| = |\lambda| \cdot \|x\|\) for all \(\lambda \in \mathbb{R}, x \in V\)
-    \item \(\|x + y\| \leq \|x\| + \|y\|\) (triangle inequality)
+\item \(\|x\| \geq 0\), and \(\|x\| = 0 \iff x = 0\)
+\item \(\|\lambda x\| = |\lambda| \cdot \|x\|\) for all \(\lambda \in \mathbb{R}, x \in V\)
+\item \(\|x + y\| \leq \|x\| + \|y\|\) (triangle inequality)
 \end{enumerate}
 \end{recap}
 
@@ -20,11 +20,11 @@ A positive-definite inner product \(\langle \cdot, \cdot \rangle\) defines a nor
 
 \begin{definition}[\(l_p\)-Spaces (Revisited)]
 \begin{itemize}
-    \item \(l_p = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \sum_{i=1}^\infty |x_i|^p \text{ converges} \right\}\) for \(1 \leq p < \infty\)
-    \item \(l_\infty = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \text{ bounded} \right\}\)
-    \item Norms:
-    \[\|x\|_p = \left( \sum_{i=1}^\infty |x_i|^p \right)^{1/p} \ (1 \leq p < \infty), \ \|x\|_\infty = \max_i |x_i|\]
-    \item \(l_2\) is an inner product space with \(\langle x, y \rangle = \sum_{i=1}^\infty x_i y_i\) and \(\|x\|_2 = \sqrt{\langle x, x \rangle}\), satisfying the triangle inequality.
+\item \(l_p = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \sum_{i=1}^\infty |x_i|^p \text{ converges} \right\}\) for \(1 \leq p < \infty\)
+\item \(l_\infty = \left\{ (x_1, x_2, \cdots) \mid x_i \in \mathbb{R}, \text{ bounded} \right\}\)
+\item Norms:
+\[\|x\|_p = \left( \sum_{i=1}^\infty |x_i|^p \right)^{1/p} \ (1 \leq p < \infty), \ \|x\|_\infty = \max_i |x_i|\]
+\item \(l_2\) is an inner product space with \(\langle x, y \rangle = \sum_{i=1}^\infty x_i y_i\) and \(\|x\|_2 = \sqrt{\langle x, x \rangle}\), satisfying the triangle inequality.
 \end{itemize}
 \end{definition}
 
@@ -55,10 +55,10 @@ Proof is commented out!
 
 % \paragraph*{Step 2: Apply Hölder's Inequality to each term}
 % \begin{itemize}
-%     \item For \(\sum |x_k + y_k|^{p-1} |x_k|\): Let \(a_k = |x_k|\), \(b_k = |x_k + y_k|^{p-1}\), \(q = \frac{p}{p-1}\) (so \(\frac{1}{p} + \frac{1}{q} = 1\)). Then
-%     \[\sum |x_k + y_k|^{p-1} |x_k| \leq \left( \sum |x_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
-%     \item For \(\sum |x_k + y_k|^{p-1} |y_k|\): Similarly,
-%     \[\sum |x_k + y_k|^{p-1} |y_k| \leq \left( \sum |y_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
+% \item For \(\sum |x_k + y_k|^{p-1} |x_k|\): Let \(a_k = |x_k|\), \(b_k = |x_k + y_k|^{p-1}\), \(q = \frac{p}{p-1}\) (so \(\frac{1}{p} + \frac{1}{q} = 1\)). Then
+% \[\sum |x_k + y_k|^{p-1} |x_k| \leq \left( \sum |x_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
+% \item For \(\sum |x_k + y_k|^{p-1} |y_k|\): Similarly,
+% \[\sum |x_k + y_k|^{p-1} |y_k| \leq \left( \sum |y_k|^p \right)^{\frac{1}{p}} \left( \sum |x_k + y_k|^p \right)^{\frac{1}{q}}\]
 % \end{itemize}
 
 % \paragraph*{Step 3: Combine the inequalities}
@@ -121,8 +121,8 @@ A subset \(M \subset X\) is open if \(\forall x \in M\), \(\exists \varepsilon >
 
 \begin{theorem}[Theorems on Open Sets]
 \begin{enumerate}
-    \item The intersection of finitely many open sets \(U_1 \cap \cdots \cap U_k\) is open.
-    \item The union of any collection of open sets \(\bigcup U_\alpha\) is open.
+\item The intersection of finitely many open sets \(U_1 \cap \cdots \cap U_k\) is open.
+\item The union of any collection of open sets \(\bigcup U_\alpha\) is open.
 \end{enumerate}
 \end{theorem}
 
@@ -132,38 +132,38 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{enumerate}
-%     \item
-%     Let \(V = \bigcap_{i=1}^k U_i\). If \(V = \emptyset\), it is open.
-    
-%     Otherwise, let \(x \in V\), then \(x \in U_i\) for all \(i = 1, \cdots, k\).
-    
-%     Since each \(U_i\) is open, there exists \(\varepsilon_i > 0\) such that \(U_{\varepsilon_i}(x) \subset U_i\).
-    
-%     Take \(\varepsilon = \min\{\varepsilon_1, \cdots, \varepsilon_k\} > 0\), then \(U_\varepsilon(x) \subset U_{\varepsilon_i}(x) \subset U_i\) for all \(i\).
-    
-%     Thus, \(U_\varepsilon(x) \subset V \implies V\) is open.
-    
-%     \item
-%     Let \(U = \bigcup_\alpha U_\alpha\). For any \(x \in U\), there exists some \(\alpha\) such that \(x \in U_\alpha\).
-    
-%     Since \(U_\alpha\) is open, there exists \(\varepsilon > 0\) such that \(U_\varepsilon(x) \subset U_\alpha\).
-    
-%     Since \(U_\alpha \subset U\), then \(U_\varepsilon(x) \subset U \implies U\) is open.
+% \item
+% Let \(V = \bigcap_{i=1}^k U_i\). If \(V = \emptyset\), it is open.
+
+% Otherwise, let \(x \in V\), then \(x \in U_i\) for all \(i = 1, \cdots, k\).
+
+% Since each \(U_i\) is open, there exists \(\varepsilon_i > 0\) such that \(U_{\varepsilon_i}(x) \subset U_i\).
+
+% Take \(\varepsilon = \min\{\varepsilon_1, \cdots, \varepsilon_k\} > 0\), then \(U_\varepsilon(x) \subset U_{\varepsilon_i}(x) \subset U_i\) for all \(i\).
+
+% Thus, \(U_\varepsilon(x) \subset V \implies V\) is open.
+
+% \item
+% Let \(U = \bigcup_\alpha U_\alpha\). For any \(x \in U\), there exists some \(\alpha\) such that \(x \in U_\alpha\).
+
+% Since \(U_\alpha\) is open, there exists \(\varepsilon > 0\) such that \(U_\varepsilon(x) \subset U_\alpha\).
+
+% Since \(U_\alpha \subset U\), then \(U_\varepsilon(x) \subset U \implies U\) is open.
 % \end{enumerate}
 % \end{proof}
 
 \begin{example}[Questions and Examples]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Qu 1.] Is \(U_R(y) \subset U_r(x)\) possible for \(r < R\)?
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Qu 1.] Is \(U_R(y) \subset U_r(x)\) possible for \(r < R\)?
     
-        Example: Let \(X\) be a disk of radius 1 (\(U_1(0) = X\)), then \(B_{\frac{3}{2}}\left( \frac{3}{4} \right) \subset B_1(0)\), so yes.
+Example: Let \(X\) be a disk of radius 1 (\(U_1(0) = X\)), then \(B_{\frac{3}{2}}\left( \frac{3}{4} \right) \subset B_1(0)\), so yes.
 
-        \item[\bfseries Qu 2.] Draw balls centered at 0 in \(\mathbb{R}^2\) for norms \(\|\cdot\|_1\), \(\|\cdot\|_2\), \(\|\cdot\|_\infty\).
+\item[\bfseries Qu 2.] Draw balls centered at 0 in \(\mathbb{R}^2\) for norms \(\|\cdot\|_1\), \(\|\cdot\|_2\), \(\|\cdot\|_\infty\).
 
-        \item[\bfseries Qu 3.] For the ``Amazon metric'' on \(\mathbb{R}^2\):
-        \[d((x_1,y_1),(x_2,y_2)) = \begin{cases} |y_1 - y_2| & x_1 = x_2 \\ |y_1| + |x_1 - x_2| + |y_2| & x_1 \neq x_2 \end{cases}\]
+\item[\bfseries Qu 3.] For the ``Amazon metric'' on \(\mathbb{R}^2\):
+\[d((x_1,y_1),(x_2,y_2)) = \begin{cases} |y_1 - y_2| & x_1 = x_2 \\ |y_1| + |x_1 - x_2| + |y_2| & x_1 \neq x_2 \end{cases}\]
 
-        Describe balls centered at (0,0) and (0,1).
-    \end{enumerate}
+Describe balls centered at (0,0) and (0,1).
+\end{enumerate}
 \end{example}

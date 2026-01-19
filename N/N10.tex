@@ -69,17 +69,17 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Leftarrow\)] Obvious.
-%     \item[\(\Rightarrow\)]
-%     Suppose \(x \in A'\). Then for any open \(U \ni x\), we have \(U \cap (A \setminus \{x\}) \neq \varnothing\).
+% \item[\(\Leftarrow\)] Obvious.
+% \item[\(\Rightarrow\)]
+% Suppose \(x \in A'\). Then for any open \(U \ni x\), we have \(U \cap (A \setminus \{x\}) \neq \varnothing\).
 
-%     Suppose for contradiction that \(U \cap A\) is finite, say \(U \cap A = \{y_1, \cdots, y_n\}\).
+% Suppose for contradiction that \(U \cap A\) is finite, say \(U \cap A = \{y_1, \cdots, y_n\}\).
 
-%     Then \(V = U \setminus \{y_1, \cdots, y_n\}\) is open (finite sets are closed in \(T_1\)).
+% Then \(V = U \setminus \{y_1, \cdots, y_n\}\) is open (finite sets are closed in \(T_1\)).
 
-%     Also \(x \in V\) (assuming \(x\) was not one of \(y_i\), or taking \(V = U \setminus (\{y_1, \cdots, y_n\} \setminus \{x\})\)).
+% Also \(x \in V\) (assuming \(x\) was not one of \(y_i\), or taking \(V = U \setminus (\{y_1, \cdots, y_n\} \setminus \{x\})\)).
 
-%     Then \((V \setminus \{x\}) \cap A = \emptyset\), which implies \(x\) is not a limit point. Contradiction!
+% Then \((V \setminus \{x\}) \cap A = \emptyset\), which implies \(x\) is not a limit point. Contradiction!
 % \end{itemize}
 % \end{proof}
 
@@ -101,9 +101,9 @@ Proof is commented out!
 
 \begin{theorem}[Properties of Hausdorff Spaces]
 \begin{enumerate}
-    \item[(i)] \((X, <)\) with the order topology is Hausdorff.
-    \item[(ii)] If \(X\) is Hausdorff, \(Y \subset X\) with subspace topology \(\implies Y\) Hausdorff.
-    \item[(iii)] If \(X_1, X_2\) Hausdorff, then \(X_1 \times X_2\) with product topology is Hausdorff.
+\item[(i)] \((X, <)\) with the order topology is Hausdorff.
+\item[(ii)] If \(X\) is Hausdorff, \(Y \subset X\) with subspace topology \(\implies Y\) Hausdorff.
+\item[(iii)] If \(X_1, X_2\) Hausdorff, then \(X_1 \times X_2\) with product topology is Hausdorff.
 \end{enumerate}
 \end{theorem}
 
@@ -121,25 +121,25 @@ If topology on \(Y\) is given by basis \(\mathcal{B}\), \(f\) continuous \(\iff 
 \(\mathbb{R}_{st} \leftrightarrow \mathbb{R}_{\ell}\).
 \(f(x)=x\) (Id as maps of sets).
 \begin{itemize}
-    \item \(\mathbb{R}_{st} \xrightarrow{f} \mathbb{R}_{\ell}\): not continuous. \(f^{-1}([0, 1)) = [0, 1)\) not open in \(\mathbb{R}_{st}\).
-    \item \(\mathbb{R}_{\ell} \xrightarrow{g} \mathbb{R}_{st}\): continuous. For \(\mathbb{R}_{st}\), \((a, b)\) is open. \(g^{-1}((a, b)) = (a, b)\) is open in \(\mathbb{R}_{\ell}\) (since \([x, b) \subset (a, b)\) type sets form basis, or simply \(\mathbb{R}_{\ell}\) finer).
+\item \(\mathbb{R}_{st} \xrightarrow{f} \mathbb{R}_{\ell}\): not continuous. \(f^{-1}([0, 1)) = [0, 1)\) not open in \(\mathbb{R}_{st}\).
+\item \(\mathbb{R}_{\ell} \xrightarrow{g} \mathbb{R}_{st}\): continuous. For \(\mathbb{R}_{st}\), \((a, b)\) is open. \(g^{-1}((a, b)) = (a, b)\) is open in \(\mathbb{R}_{\ell}\) (since \([x, b) \subset (a, b)\) type sets form basis, or simply \(\mathbb{R}_{\ell}\) finer).
 \end{itemize}
 \end{example}
 
 \begin{remark}[Observation]
-    If \(\mathcal{T}, \mathcal{T}'\) topologies on \(X\) and \(\mathcal{T} \subsetneq \mathcal{T}'\), then
-    \begin{itemize}
-        \item \(f = Id: (X, \mathcal{T}) \to (X, \mathcal{T}')\) is \textbf{not} continuous.
-        \item \(g = Id: (X, \mathcal{T}') \to (X, \mathcal{T})\) is continuous.
-    \end{itemize}
+If \(\mathcal{T}, \mathcal{T}'\) topologies on \(X\) and \(\mathcal{T} \subsetneq \mathcal{T}'\), then
+\begin{itemize}
+\item \(f = Id: (X, \mathcal{T}) \to (X, \mathcal{T}')\) is \textbf{not} continuous.
+\item \(g = Id: (X, \mathcal{T}') \to (X, \mathcal{T})\) is continuous.
+\end{itemize}
 \end{remark}
 
 \begin{theorem}[TFAE]
 \begin{enumerate}
-    \item \(f: X \to Y\) continuous.
-    \item \(\forall A \subset X\), \(f(\overline{A}) \subset \overline{f(A)}\).
-    \item For every closed \(C \subset Y\), \(f^{-1}(C)\) closed in \(X\).
-    \item \(\forall x \in X\), \(\forall V \ni f(x), \exists U \ni x: f(U) \subset V\).
+\item \(f: X \to Y\) continuous.
+\item \(\forall A \subset X\), \(f(\overline{A}) \subset \overline{f(A)}\).
+\item For every closed \(C \subset Y\), \(f^{-1}(C)\) closed in \(X\).
+\item \(\forall x \in X\), \(\forall V \ni f(x), \exists U \ni x: f(U) \subset V\).
 \end{enumerate}
 \[(1) \implies (2) \implies (3) \implies (1), \ (1) \iff (4)\]
 \end{theorem}
@@ -150,12 +150,12 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item \((1) \implies (2)\): \(f: X \to Y, A \subset X\). Let \(x \in \overline{A}\); need to show \(f(x) \in \overline{f(A)}\). Take \(V \ni f(x)\) open. \(x \in f^{-1}(V)\) open in \(X\). So \(\exists y \in A \cap f^{-1}(V)\). Then \(f(y) \in f(A) \cap V\). So \(V \cap f(A) \neq \varnothing\).
-%     \item \((2) \implies (3)\): Let \(C \subset Y\) closed, \(A = f^{-1}(C)\). Need to show \(A = \overline{A}\).
-%     \(f(A) = f(f^{-1}(C)) \subset C\). So if \(x \in \overline{A}\), \(f(x) \in f(\overline{A}) \subset \overline{f(A)} \subset \overline{C} = C\). So \(x \in f^{-1}(C)\).
-%     \item \((3) \implies (1)\): Obvious (take complement).
-%     \item \((1) \implies (4)\): Take \(f^{-1}(V) =: U\) open.
-%     \item \((4) \implies (1)\): Let \(V \subset Y\) open. Need: \(f^{-1}(V)\) open. \(x \in f^{-1}(V) \implies f(x) \in V\). So \(\exists U_x \subset X\) s.t. \(f(U_x) \subset V\). Take \(U = \bigcup U_x\) open. \(f^{-1}(V) \subset U \implies f^{-1}(V) = U\).
+% \item \((1) \implies (2)\): \(f: X \to Y, A \subset X\). Let \(x \in \overline{A}\); need to show \(f(x) \in \overline{f(A)}\). Take \(V \ni f(x)\) open. \(x \in f^{-1}(V)\) open in \(X\). So \(\exists y \in A \cap f^{-1}(V)\). Then \(f(y) \in f(A) \cap V\). So \(V \cap f(A) \neq \varnothing\).
+% \item \((2) \implies (3)\): Let \(C \subset Y\) closed, \(A = f^{-1}(C)\). Need to show \(A = \overline{A}\).
+% \(f(A) = f(f^{-1}(C)) \subset C\). So if \(x \in \overline{A}\), \(f(x) \in f(\overline{A}) \subset \overline{f(A)} \subset \overline{C} = C\). So \(x \in f^{-1}(C)\).
+% \item \((3) \implies (1)\): Obvious (take complement).
+% \item \((1) \implies (4)\): Take \(f^{-1}(V) =: U\) open.
+% \item \((4) \implies (1)\): Let \(V \subset Y\) open. Need: \(f^{-1}(V)\) open. \(x \in f^{-1}(V) \implies f(x) \in V\). So \(\exists U_x \subset X\) s.t. \(f(U_x) \subset V\). Take \(U = \bigcup U_x\) open. \(f^{-1}(V) \subset U \implies f^{-1}(V) = U\).
 % \end{itemize}
 % \end{proof}
 
@@ -164,13 +164,13 @@ Proof is commented out!
 \begin{theorem}[Constructing Continuous Functions]
 \(X, Y, Z\) topological spaces.
 \begin{enumerate}
-    \item[(a)] \(f: X \to Y, f(x) = y \in Y\) is continuous (constant).
-    \item[(b)] \(A \subset X, j: A \hookrightarrow X\) continuous (subspace embedding).
-    \item[(c)] \(f: X \to Y, g: Y \to Z\) cont \(\implies gf: X \to Z\) cont.
-    \item[(d)] Restriction of domain: \(f: X \to Y\) cont, \(A \subset X\), then \(f|_A: A \to Y\) cont.
-    \item[(e)] \(f: X \to Y, Z \subset Y, f(X) \subset Z\). Then \(f: X \to Z\) continuous (restriction of range).
-    \item[(f)] \(f: X \to Y, Y \subset Z\), then \(f: X \to Z\) continuous.
-    \item[(g)] \(f: X \to Y\) is cont if \(X = \bigcup U_\alpha\), \(f|_{U_\alpha} \to Y\) cont. (Locality).
+\item[(a)] \(f: X \to Y, f(x) = y \in Y\) is continuous (constant).
+\item[(b)] \(A \subset X, j: A \hookrightarrow X\) continuous (subspace embedding).
+\item[(c)] \(f: X \to Y, g: Y \to Z\) cont \(\implies gf: X \to Z\) cont.
+\item[(d)] Restriction of domain: \(f: X \to Y\) cont, \(A \subset X\), then \(f|_A: A \to Y\) cont.
+\item[(e)] \(f: X \to Y, Z \subset Y, f(X) \subset Z\). Then \(f: X \to Z\) continuous (restriction of range).
+\item[(f)] \(f: X \to Y, Y \subset Z\), then \(f: X \to Z\) continuous.
+\item[(g)] \(f: X \to Y\) is cont if \(X = \bigcup U_\alpha\), \(f|_{U_\alpha} \to Y\) cont. (Locality).
 \end{enumerate}
 \end{theorem}
 

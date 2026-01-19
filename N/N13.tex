@@ -22,33 +22,33 @@ It is called an \textbf{open covering} if all these sets are \textbf{open}.
 \end{definition}
 
 \begin{example}[Examples of Compactness]
-    \leavevmode
-    \begin{enumerate}
-        \item \(X = (0, 1)\). \(U_n = (\frac{1}{n}, 1)\), \(n \in \mathbb{N}\). \(\bigcup U_n = X\).
-        We cannot choose a finite subcovering. (Any finite union is \((\frac{1}{N}, 1) \neq X\)).
-        \(\implies (0, 1) \subset \mathbb{R}\) is \textbf{not} compact in standard topology.
+\leavevmode
+\begin{enumerate}
+\item \(X = (0, 1)\). \(U_n = (\frac{1}{n}, 1)\), \(n \in \mathbb{N}\). \(\bigcup U_n = X\).
+We cannot choose a finite subcovering. (Any finite union is \((\frac{1}{N}, 1) \neq X\)).
+\(\implies (0, 1) \subset \mathbb{R}\) is \textbf{not} compact in standard topology.
 
-        \item \(\mathbb{R}\) with standard topology is \textbf{not compact}.
-        \(U_n = (n, n+2)\), \(n \in \mathbb{Z}\). \(\bigcup U_n = \mathbb{R}\).
-        Cannot choose a finite subcovering.
+\item \(\mathbb{R}\) with standard topology is \textbf{not compact}.
+\(U_n = (n, n+2)\), \(n \in \mathbb{Z}\). \(\bigcup U_n = \mathbb{R}\).
+Cannot choose a finite subcovering.
 
-        \item \(Y = (0, 1]\) not compact.
-        \(U_n = (\frac{1}{n}, 1]\). \(\bigcup U_n = Y\).
-        Cannot choose a finite subcovering.
+\item \(Y = (0, 1]\) not compact.
+\(U_n = (\frac{1}{n}, 1]\). \(\bigcup U_n = Y\).
+Cannot choose a finite subcovering.
 
-        \item \(\{0\} \cup \{1/n \mid n \in \mathbb{N}\} \subset \mathbb{R}\) \textbf{is compact}.
-        The interval containing \(0\) (in the cover) contains all \(1/n\) for \(n\) big enough.
+\item \(\{0\} \cup \{1/n \mid n \in \mathbb{N}\} \subset \mathbb{R}\) \textbf{is compact}.
+The interval containing \(0\) (in the cover) contains all \(1/n\) for \(n\) big enough.
 
-        \item \(\bigcup \{1/n \mid n \in \mathbb{N}\}\) is \textbf{not compact}.
-    \end{enumerate}
+\item \(\bigcup \{1/n \mid n \in \mathbb{N}\}\) is \textbf{not compact}.
+\end{enumerate}
 \end{example}
 
 \begin{remark}[Topologies and Compactness]
-    \begin{itemize}
-        \item In \textbf{discrete topology}, infinite sets are \textbf{not compact}.
-        \item In \textbf{anti-discrete topology} (trivial topology), all sets are compact.
-        \item \textbf{Finite spaces} are always compact.
-    \end{itemize}
+\begin{itemize}
+\item In \textbf{discrete topology}, infinite sets are \textbf{not compact}.
+\item In \textbf{anti-discrete topology} (trivial topology), all sets are compact.
+\item \textbf{Finite spaces} are always compact.
+\end{itemize}
 \end{remark}
 
 \subsection{Compact Subspaces}
@@ -69,23 +69,23 @@ Proof is commented out!
 % Topology on \(Y\): \(U \subset Y\) open in \(Y\) if \(\exists V \subset X\) open in \(X\) s.t. \(U = V \cap Y\).
 
 % \begin{itemize}
-%     \item[\(\Leftarrow\)]
-%     Consider any family \(U_i\) of open sets in \(Y\), with \(\bigcup U_i = Y\).
+% \item[\(\Leftarrow\)]
+% Consider any family \(U_i\) of open sets in \(Y\), with \(\bigcup U_i = Y\).
 
-%     \(\forall U_i, \exists V_i\) open in \(X\) s.t. \(U_i = V_i \cap Y\).
+% \(\forall U_i, \exists V_i\) open in \(X\) s.t. \(U_i = V_i \cap Y\).
 
-%     \(\implies \{V_i\}_{i \in I}\) is a covering of \(Y\) in \(X\) by open sets.
-    
-%     \(\implies\) One can choose a finite subcovering in \(X\), \(Y \subset V_{i_1} \cup \cdots \cup V_{i_k}\).
-    
-%     \(\implies Y = (V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = U_{i_1} \cup \cdots \cup U_{i_k}\).
+% \(\implies \{V_i\}_{i \in I}\) is a covering of \(Y\) in \(X\) by open sets.
 
-%     \item[\(\Rightarrow\)]
-%     Consider any covering \(Y \subset \bigcup_{i \in I} V_i\), \(V_i \subset X\) open in \(X\).
-    
-%     \(Y = \bigcup_{i \in I} (V_i \cap Y)\). Note \((V_i \cap Y)\) is open in \(Y\).
+% \(\implies\) One can choose a finite subcovering in \(X\), \(Y \subset V_{i_1} \cup \cdots \cup V_{i_k}\).
 
-%     Choose a finite subcovering \((V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = Y\), then \(Y \subset \bigcup_{j=1}^k V_{i_j}\).
+% \(\implies Y = (V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = U_{i_1} \cup \cdots \cup U_{i_k}\).
+
+% \item[\(\Rightarrow\)]
+% Consider any covering \(Y \subset \bigcup_{i \in I} V_i\), \(V_i \subset X\) open in \(X\).
+
+% \(Y = \bigcup_{i \in I} (V_i \cap Y)\). Note \((V_i \cap Y)\) is open in \(Y\).
+
+% Choose a finite subcovering \((V_{i_1} \cap Y) \cup \cdots \cup (V_{i_k} \cap Y) = Y\), then \(Y \subset \bigcup_{j=1}^k V_{i_j}\).
 % \end{itemize}
 % \end{proof}
 
@@ -247,9 +247,9 @@ Proof is commented out!
 % \begin{proof}
 % Let \(\mathcal{A}\) be a collection of open sets and \(\mathcal{C} = \{X \setminus A \mid A \in \mathcal{A}\}\) be the collection of complements (closed sets).
 % \begin{enumerate}
-%     \item \(\mathcal{A}\) open sets \(\iff \mathcal{C}\) collection of closed sets.
-%     \item \(\mathcal{A}\) covers \(X \iff \bigcap_{C_i \in \mathcal{C}} C_i = \varnothing\).
-%     \item A finite \(A_1, \cdots, A_n \in \mathcal{A}\) covers \(X \iff \bigcap_{i=1}^n (X \setminus A_i) = \varnothing\).
+% \item \(\mathcal{A}\) open sets \(\iff \mathcal{C}\) collection of closed sets.
+% \item \(\mathcal{A}\) covers \(X \iff \bigcap_{C_i \in \mathcal{C}} C_i = \varnothing\).
+% \item A finite \(A_1, \cdots, A_n \in \mathcal{A}\) covers \(X \iff \bigcap_{i=1}^n (X \setminus A_i) = \varnothing\).
 % \end{enumerate}
 
 % Now, the Theorem follows.

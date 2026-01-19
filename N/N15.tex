@@ -4,8 +4,8 @@
 
 \begin{recap}
 \begin{enumerate}
-    \item \(\mathbb{R}^\omega\) is \textbf{not} metrizable in the \textbf{box topology}.
-    \item If \(J\) is uncountable, \(\mathbb{R}^J\) is \textbf{not} metrizable in the \textbf{product topology}.
+\item \(\mathbb{R}^\omega\) is \textbf{not} metrizable in the \textbf{box topology}.
+\item If \(J\) is uncountable, \(\mathbb{R}^J\) is \textbf{not} metrizable in the \textbf{product topology}.
 \end{enumerate}
 \end{recap}
 
@@ -24,23 +24,23 @@ Proof is commented out!
 
 % \paragraph*{(1) This is a metric}
 % \begin{itemize}
-%     \item Positive, zero iff equal, symmetric: clear.
-%     \item Triangle inequality: \(D(x, z) \le D(x, y) + D(y, z)\).
-%     \[\frac{\bar{d}(x_i, z_i)}{i} \le \frac{\bar{d}(x_i, y_i) + \bar{d}(y_i, z_i)}{i} \le D(x, y) + D(y, z).\]
-%     Taking sup over \(i\), we get \(D(x, z) \le D(x, y) + D(y, z)\).
+% \item Positive, zero iff equal, symmetric: clear.
+% \item Triangle inequality: \(D(x, z) \le D(x, y) + D(y, z)\).
+% \[\frac{\bar{d}(x_i, z_i)}{i} \le \frac{\bar{d}(x_i, y_i) + \bar{d}(y_i, z_i)}{i} \le D(x, y) + D(y, z).\]
+% Taking sup over \(i\), we get \(D(x, z) \le D(x, y) + D(y, z)\).
 % \end{itemize}
 
 % \paragraph*{(2) It defines the product topology}
 % We need to show the topologies strictly match.
 % \begin{itemize}
-%     \item[(a)] \textbf{Metric \(\implies\) Product}:
-%     For any \(U\) open in metric topology, show it is open in product topology. \(\forall x \in U, \exists \varepsilon > 0\) such that \(U_D(x, \varepsilon) \subset U\). We find a basic open set \(V\) in product topology s.t. \(x \in V \subset U_D(x, \varepsilon)\). Take \(N\) such that \(\frac{1}{N} < \varepsilon\). Let \(V = (x_1 - \varepsilon, x_1 + \varepsilon) \times \cdots \times (x_N - \varepsilon, x_N + \varepsilon) \times \mathbb{R} \times \mathbb{R} \times \cdots\), then \(V \subset U_D(x, \varepsilon)\).
+% \item[(a)] \textbf{Metric \(\implies\) Product}:
+% For any \(U\) open in metric topology, show it is open in product topology. \(\forall x \in U, \exists \varepsilon > 0\) such that \(U_D(x, \varepsilon) \subset U\). We find a basic open set \(V\) in product topology s.t. \(x \in V \subset U_D(x, \varepsilon)\). Take \(N\) such that \(\frac{1}{N} < \varepsilon\). Let \(V = (x_1 - \varepsilon, x_1 + \varepsilon) \times \cdots \times (x_N - \varepsilon, x_N + \varepsilon) \times \mathbb{R} \times \mathbb{R} \times \cdots\), then \(V \subset U_D(x, \varepsilon)\).
 
-%     (Check: let \(y \in V\). If \(i \le N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{\varepsilon}{1} = \varepsilon\). If \(i > N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{1}{i} < \frac{1}{N} < \varepsilon\). Thus, \(D(x, y) \le \max(\cdots) < \varepsilon\)).
+% (Check: let \(y \in V\). If \(i \le N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{\varepsilon}{1} = \varepsilon\). If \(i > N\), \(\frac{\bar{d}(x_i, y_i)}{i} \le \frac{1}{i} < \frac{1}{N} < \varepsilon\). Thus, \(D(x, y) \le \max(\cdots) < \varepsilon\)).
 
-%     \item[(b)] \textbf{Product \(\implies\) Metric}:
-%     Let \(U = \prod U_i\) be basic open in product topology (\(U_i = \mathbb{R}\) for \(i > n\)). Let \(x \in U\). Need: \(U_D(x, \varepsilon) \subset U\). Since \(U_i\) is open in \(\mathbb{R}\), \(\exists \varepsilon_i > 0\) s.t. \((x_i - \varepsilon_i, x_i + \varepsilon_i) \subset U_i\) (for \(i = 1 \cdots n\)). Let \(\varepsilon = \min_{i=1 \cdots n} \{ \frac{\varepsilon_i}{i} \}\). Claim: \(U_D(x, \varepsilon) \subset U\). Let \(y \in U_D(x, \varepsilon)\), then
-%     \[\frac{\bar{d}(x_i, y_i)}{i} \le D(x, y) < \varepsilon \le \frac{\varepsilon_i}{i} \implies \bar{d}(x_i, y_i) < \varepsilon_i \implies |x_i - y_i| < \varepsilon_i \implies y_i \in U_i.\]
+% \item[(b)] \textbf{Product \(\implies\) Metric}:
+% Let \(U = \prod U_i\) be basic open in product topology (\(U_i = \mathbb{R}\) for \(i > n\)). Let \(x \in U\). Need: \(U_D(x, \varepsilon) \subset U\). Since \(U_i\) is open in \(\mathbb{R}\), \(\exists \varepsilon_i > 0\) s.t. \((x_i - \varepsilon_i, x_i + \varepsilon_i) \subset U_i\) (for \(i = 1 \cdots n\)). Let \(\varepsilon = \min_{i=1 \cdots n} \{ \frac{\varepsilon_i}{i} \}\). Claim: \(U_D(x, \varepsilon) \subset U\). Let \(y \in U_D(x, \varepsilon)\), then
+% \[\frac{\bar{d}(x_i, y_i)}{i} \le D(x, y) < \varepsilon \le \frac{\varepsilon_i}{i} \implies \bar{d}(x_i, y_i) < \varepsilon_i \implies |x_i - y_i| < \varepsilon_i \implies y_i \in U_i.\]
 % \end{itemize}
 % \end{proof}
 
@@ -72,8 +72,8 @@ Proof is commented out!
 
 % \textbf{Step 1}: For all \(x \in [a, b], x \neq b\), there exists \(y > x\) such that \([x, y]\) is covered by at most two intervals from \(\mathcal{A}\).
 % \begin{itemize}
-%     \item If \(x\) has an immediate successor \(y \in X\), take it. Then \([x, y] = \{x, y\}\), which can be covered by 2 sets from \(\mathcal{A}\).
-%     \item If not: Take \(A \in \mathcal{A}\) such that \(x \in A\). Since \(A\) is open, there exists \(z > x\) such that \([x, z) \subset A\). Take any \(y\) such that \(x < y < z\). Then \([x, y] \subset A\) is covered by \(A\).
+% \item If \(x\) has an immediate successor \(y \in X\), take it. Then \([x, y] = \{x, y\}\), which can be covered by 2 sets from \(\mathcal{A}\).
+% \item If not: Take \(A \in \mathcal{A}\) such that \(x \in A\). Since \(A\) is open, there exists \(z > x\) such that \([x, z) \subset A\). Take any \(y\) such that \(x < y < z\). Then \([x, y] \subset A\) is covered by \(A\).
 % \end{itemize}
 
 % \textbf{Step 2}: Let \(C\) be the set of points \(y > a\) such that \([a, y]\) has a finite subcover. By Step 1 applied to \(a\), \(C \neq \emptyset\). Also \(C\) is bounded by \(b\). Let \(c = \sup C \le b\).
@@ -106,14 +106,14 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{itemize}
-%     \item[\(\Rightarrow\)] \(A\) compact \(\implies A\) closed (subset of Hausdorff \(\mathbb{R}^n\)).
-    
-%     Take covering by balls \(U_N(0)\) of radii \(1, 2, \cdots\). They cover \(A \implies\) there is a finite subcover \(U_{N_1}, \cdots, U_{N_k}\).
-%     Then \(A \subset U_N\) where \(N = \max(N_i)\). Thus, \(A\) is bounded.
+% \item[\(\Rightarrow\)] \(A\) compact \(\implies A\) closed (subset of Hausdorff \(\mathbb{R}^n\)).
 
-%     \item[\(\Leftarrow\)] \(A\) bounded \(\implies A \subset [-M, M]^n\) (large box).
-    
-%     The box is compact (product of closed intervals). \(A\) is a closed subset of a compact set \(\implies A\) is compact.
+% Take covering by balls \(U_N(0)\) of radii \(1, 2, \cdots\). They cover \(A \implies\) there is a finite subcover \(U_{N_1}, \cdots, U_{N_k}\).
+% Then \(A \subset U_N\) where \(N = \max(N_i)\). Thus, \(A\) is bounded.
+
+% \item[\(\Leftarrow\)] \(A\) bounded \(\implies A \subset [-M, M]^n\) (large box).
+
+% The box is compact (product of closed intervals). \(A\) is a closed subset of a compact set \(\implies A\) is compact.
 % \end{itemize}
 % \end{proof}
 

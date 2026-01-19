@@ -1,0 +1,117 @@
+\section{Notes 26 - 01.13}
+
+\subsection{One More Description of Compact Metric Spaces}
+
+Let \(X\) be a metric space, \(C(X) = C(X, \mathbb{R})\) real-valued continuous functions on \(X\).
+
+\begin{definition}
+\(C(X)\) is a ring. \(I \subset C(X)\) is an \underline{ideal} if:
+\begin{enumerate}[(i)]
+\item \(\forall f, g \in I\) we have \(f \pm g \in I\) (in particular, \(0 \in I\)).
+\item \(\forall f \in I, \forall h \in C(X) \implies fh \in I\).
+\item \(I \neq C(X)\).
+\end{enumerate}
+
+\(I\) is called a \underline{maximal ideal} if for any ideal \(J \supseteq I\), we have \(J = I\).
+\end{definition}
+
+\begin{remark}
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Rem 1.] \(1 \notin I\): otherwise \(1 \cdot h \in I \ \forall h \in C(X)\).
+\item[\bfseries Rem 2.] \(\forall f \in I \ \exists x \in X: f(x) = 0\). Otherwise \(1/f \in C(X) \implies 1 = f \cdot (1/f) \in I\).
+\end{enumerate}
+\end{remark}
+
+\begin{xca}
+For \(Y \subset X\), \(I_Y = \{ f \in C(X) \mid f(y) = 0 \ \forall y \in Y \}\) is an ideal.
+If \(Z \subset Y \subset X\), then \(I_Y \subset I_Z\).
+\end{xca}
+
+\begin{proposition}
+\(I_y = \{ f \in C(X) \mid f(y) = 0 \}\) is a maximal ideal in \(C(X)\).
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Suppose \(I_y \subsetneq J\). Then \(J \ni g: g(y) \neq 0\).
+
+% Take \(h \in I_y\) to be a function with just one zero at \(y\) (say, \(h(x) = \text{dist}(x, y)\)).
+
+% Then \(g^2 + h^2 \in J\), but \(g^2 + h^2\) does not have zeroes \(\implies \frac{1}{g^2 + h^2} \in C(X), \ 1 \in J, \ J = C(X)\), contradiction!
+% \end{proof}
+
+\textbf{Fact.}
+The set of max. ideals in \(C(X)\) can be identified with the Stone-\v{C}ech compactification of \(X\).
+
+\begin{theorem}
+Every max. ideal in \(C(X)\) has the form \(I_y, y \in X \iff X\) compact.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% \begin{itemize}
+% \item[\(\Leftarrow\)]
+% Suppose \(\exists I: I \not\subset I_y\) for any \(y \in X\).
+
+% Then \(\forall y \in X \ \exists f_y \in I: f_y(y) \neq 0\).
+% Then \(\exists U_y \ni y: f_y(x) \neq 0 \ \forall x \in U_y\).
+
+% \(U_y\) cover \(X\), and \(X\) compact \(\implies \exists y_1, \cdots, y_n : \bigcup_{i=1}^n U_{y_i} = X\).
+
+% \(f_{y_i}(x) \neq 0 \ \forall x \in \bigcup U_{y_i} \implies f_{y_1}^2 + \cdots + f_{y_n}^2 \in I > 0\) on \(X\).
+
+% \item[\(\Rightarrow\)]
+% Let \(X\) be non-compact.
+% Let \(Y = X \cup \{z\}\) be the one-point compactification of \(X\).
+
+% Take a sequence \(x_1, x_2, \cdots \in X \subset Y\), \(\lim_{n \to \infty} x_n = z\). Fix \(\varepsilon > 0\):
+% \[I_z^\varepsilon = \{ f \mid f(x) = 0 \ \forall x \in U_\varepsilon(z) \cap X \}.\]
+
+% If \(\varepsilon_1 > \varepsilon_2\), then \(I_z^{\varepsilon_1} \subset I_z^{\varepsilon_2}\).
+% \(\bigcup_{\varepsilon > 0} I_z^\varepsilon = I\). But \(1 \notin I_z^\varepsilon \ \forall \varepsilon > 0\), so \(1 \notin \bigcup I_z^\varepsilon = I\).
+
+% (Show that \(I \not\subset I_y\) for any \(y \in X\):
+
+% Suppose the countrary, take \(\varepsilon > 0\) such that \(y \notin U_\varepsilon(z)\).
+
+% Consider \(f(x) = \max(\text{dist}(x, z) - \varepsilon, 0) = \text{dist}(y, \overline{U_\varepsilon(z)})\) (restricted to \(X\)).
+
+% Note that \(f(y) > 0\), so \(f \notin I_y\).
+
+% However, \(f(x) = 0\) for all \(x \in U_\varepsilon(z) \cap X\), implying \(f \in I_z^\varepsilon \subset I\).
+% Thus, \(I \not\subset I_y\).)
+% \end{itemize}
+% \end{proof}
+
+\subsection{Stone-Weierstrass Theorem}
+
+\begin{theorem}[Weierstrass]
+Every continuous function on \([0, 1]\) can be approximated by a polynomial: \(\forall f \in C[0, 1], \ \forall \varepsilon > 0 \ \exists \varphi(x) = a_n x^n + \cdots + a_1 x + a_0\) such that
+\[\sup_{x \in [0, 1]} |f(x) - \varphi(x)| < \varepsilon.\]
+\end{theorem}
+
+Same holds for functions on \(S^1\): \(f: [0, 2\pi] \to \mathbb{R}, f(0) = f(2\pi)\) continuous and \(\varphi(x) = \sum_{k=1}^n a_k \sin(kx) + b_k \cos(kx) + a_0\).
+
+\begin{definition}
+Let \(X\) be a compact Hausdorff space, \(C(X)\) is a metric space and \(\rho(f, g) = \sup_{x \in X} |f(x) - g(x)|\).
+    
+\(A \subset C(X)\) is a \underline{subalgebra} if \(\forall f, g \in A\) we have \(f+g \in A, \ fg \in A, \ \lambda f \in A \ \forall \lambda \in \mathbb{R}, \ 1 \in A\).
+\(A \subset C(X)\) \underline{separates points} if \(\forall x, y \in X\) \(\exists f \in A: f(x) \neq f(y)\).
+\end{definition}
+
+\begin{theorem}[Stone-Weierstrass]
+Let \(X\) be compact Hausdorff. Any subalgebra \(A \subset C(X)\) separating points is dense in \(C(X)\): \(\overline{A} = C(X)\).
+    
+In other words, \(\forall f \in C(X) \ \exists h \in A: \rho(f, h) < \varepsilon\) (\(\forall \varepsilon > 0\)).
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}

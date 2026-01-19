@@ -39,10 +39,10 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{enumerate}
-%     \item Let \(U \subset Z\) be open.
-%     \item Since \(g\) is continuous, \(g^{-1}(U) \subset Y\) is open.
-%     \item Since \(f\) is continuous, \(f^{-1}(g^{-1}(U)) = (g \circ f)^{-1}(U) \subset X\) is open.
-%     \item Thus \(g \circ f\) is continuous (open preimage definition).
+% \item Let \(U \subset Z\) be open.
+% \item Since \(g\) is continuous, \(g^{-1}(U) \subset Y\) is open.
+% \item Since \(f\) is continuous, \(f^{-1}(g^{-1}(U)) = (g \circ f)^{-1}(U) \subset X\) is open.
+% \item Thus \(g \circ f\) is continuous (open preimage definition).
 % \end{enumerate}
 % \end{proof}
 
@@ -61,9 +61,9 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{enumerate}
-%     \item \textbf{Reflexive}: \(X \cong X\) (identity map \(\text{Id}_X: X \to X\) is a homeomorphism).
-%     \item \textbf{Symmetric}: If \(X \cong Y\) (via homeomorphism \(f: X \to Y\)), then \(Y \cong X\) (via \(f^{-1}: Y \to X\), a homeomorphism).
-%     \item \textbf{Transitive}: If \(X \cong Y\) (via \(f\)) and \(Y \cong Z\) (via \(g\)), then \(X \cong Z\) (via \(g \circ f\), a homeomorphism: bijective, continuous, inverse \(f^{-1} \circ g^{-1}\) is continuous).
+% \item \textbf{Reflexive}: \(X \cong X\) (identity map \(\text{Id}_X: X \to X\) is a homeomorphism).
+% \item \textbf{Symmetric}: If \(X \cong Y\) (via homeomorphism \(f: X \to Y\)), then \(Y \cong X\) (via \(f^{-1}: Y \to X\), a homeomorphism).
+% \item \textbf{Transitive}: If \(X \cong Y\) (via \(f\)) and \(Y \cong Z\) (via \(g\)), then \(X \cong Z\) (via \(g \circ f\), a homeomorphism: bijective, continuous, inverse \(f^{-1} \circ g^{-1}\) is continuous).
 % \end{enumerate}
 % \end{proof}
 
@@ -105,10 +105,10 @@ Proof is commented out!
 
 % \begin{proof}
 % \begin{enumerate}
-%     \item Since \(X\) is path-connected, \(\exists\) continuous \(\gamma: [0,1] \to X\) with \(\gamma(0) = x_1\), \(\gamma(1) = x_2\).
-%     \item \(f \circ \gamma: [0,1] \to \mathbb{R}\) is continuous (composition of continuous maps).
-%     \item By IVT (for \([0,1]\)), \(\forall y_3 \in [y_1, y_2]\), \(\exists t_0 \in [0,1]\) with \((f \circ \gamma)(t_0) = y_3\).
-%     \item Let \(x_3 = \gamma(t_0) \in X\): then \(f(x_3) = y_3\).
+% \item Since \(X\) is path-connected, \(\exists\) continuous \(\gamma: [0,1] \to X\) with \(\gamma(0) = x_1\), \(\gamma(1) = x_2\).
+% \item \(f \circ \gamma: [0,1] \to \mathbb{R}\) is continuous (composition of continuous maps).
+% \item By IVT (for \([0,1]\)), \(\forall y_3 \in [y_1, y_2]\), \(\exists t_0 \in [0,1]\) with \((f \circ \gamma)(t_0) = y_3\).
+% \item Let \(x_3 = \gamma(t_0) \in X\): then \(f(x_3) = y_3\).
 % \end{enumerate}
 % \end{proof}
 
@@ -117,25 +117,25 @@ Proof is commented out!
 \begin{definition}[Connected Space]
 \(X\) is said to be \textbf{connected} if
 \begin{enumerate}
-    \item \(X\) cannot be represented as \(X = U_1 \cup U_2\) with \(U_1, U_2 \neq \varnothing\), \(U_1, U_2\) open, and \(U_1 \cap U_2 = \varnothing\).
-    \item \(X\) cannot be represented as \(X = V_1 \cup V_2\) with \(V_1, V_2 \neq \varnothing\), \(V_1, V_2\) closed, and \(V_1 \cap V_2 = \varnothing\).
-    \item There is no proper nonempty subset \(U \subset X\) which is both open and closed (clopen).
+\item \(X\) cannot be represented as \(X = U_1 \cup U_2\) with \(U_1, U_2 \neq \varnothing\), \(U_1, U_2\) open, and \(U_1 \cap U_2 = \varnothing\).
+\item \(X\) cannot be represented as \(X = V_1 \cup V_2\) with \(V_1, V_2 \neq \varnothing\), \(V_1, V_2\) closed, and \(V_1 \cap V_2 = \varnothing\).
+\item There is no proper nonempty subset \(U \subset X\) which is both open and closed (clopen).
 \end{enumerate}
 \end{definition}
 
 \begin{proposition}
 \(X\) is connected \(\iff\)
 \begin{itemize}
-    \item there is no continuous surjective map \(X \to \{0, 1\}\).
-    \item \(X\) satisfies the Intermediate Value Theorem (IVT).
+\item there is no continuous surjective map \(X \to \{0, 1\}\).
+\item \(X\) satisfies the Intermediate Value Theorem (IVT).
 \end{itemize}
 \end{proposition}
 
 \begin{remark}
-    \begin{itemize}
-        \item \(X\) path connected \(\implies X\) connected.
-        \item The converse is \textbf{not} true.
-    \end{itemize}
+\begin{itemize}
+\item \(X\) path connected \(\implies X\) connected.
+\item The converse is \textbf{not} true.
+\end{itemize}
 \end{remark}
 
 \begin{example}[Connected but Not Path-Connected Space]
@@ -143,7 +143,7 @@ Let \(X \subset \mathbb{R}^2\):
 \[X = \left\{ \left(x, \sin\frac{1}{x}\right) \mid x > 0 \right\} \cup \left( \{0\} \times [-1,1] \right)\]
 
 \begin{itemize}
-    \item \(X\) is \textbf{connected}: The curve accumulates on \(\{0\} \times [-1,1]\), so \(X\) cannot split into disjoint non-empty open sets.
-    \item \(X\) is \textbf{not path-connected}: No continuous path exists between \(\{0\} \times [-1,1]\) and \(\left(x, \sin\frac{1}{x}\right)\) (due to rapid oscillation of \(\sin\frac{1}{x}\)).
+\item \(X\) is \textbf{connected}: The curve accumulates on \(\{0\} \times [-1,1]\), so \(X\) cannot split into disjoint non-empty open sets.
+\item \(X\) is \textbf{not path-connected}: No continuous path exists between \(\{0\} \times [-1,1]\) and \(\left(x, \sin\frac{1}{x}\right)\) (due to rapid oscillation of \(\sin\frac{1}{x}\)).
 \end{itemize}
 \end{example}

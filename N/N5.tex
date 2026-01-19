@@ -9,14 +9,14 @@ A space \(X\) is path-connected if \(\forall x,y \in X\), \(\exists\) continuous
 \begin{theorem}[Def-Thm]
 The following are equivalent:
 \begin{enumerate}
-    \item \textbf{IVT}: \(\forall f: X \to \mathbb{R}\) continuous, s.t. \(f(x)=a, f(y)=b, a < b\), \(\forall c \in [a,b], \exists z \in X\) s.t. \(f(z)=c\).
-    \item There is no continuous map \(f: X \to \{0,1\}\), \(f(x)=0, f(y)=1\) for some \(x, y \in X\) (surjective).
-    \item 
-    \begin{enumerate}
-        \item[(3a)] \(X\) cannot be presented as a disjoint union of two open nonempty sets. \(X = U_1 \cup U_2, U_1, U_2 \text{ open}, U_1 \cap U_2 = \emptyset \implies U_1 = \emptyset \text{ or } U_2 = \emptyset\).
-        \item[(3b)] If \(X = V_1 \cup V_2\), \(V_1, V_2\) closed, \(V_1 \cap V_2 = \emptyset\), then \(V_1 = \emptyset\) or \(V_2 = \emptyset\).
-        \item[(3c)] If \(U \subset X\) is both \underline{open and closed}, then \(U = \emptyset\) or \(U = X\) (``clopen set'').
-    \end{enumerate}
+\item \textbf{IVT}: \(\forall f: X \to \mathbb{R}\) continuous, s.t. \(f(x)=a, f(y)=b, a < b\), \(\forall c \in [a,b], \exists z \in X\) s.t. \(f(z)=c\).
+\item There is no continuous map \(f: X \to \{0,1\}\), \(f(x)=0, f(y)=1\) for some \(x, y \in X\) (surjective).
+\item 
+\begin{enumerate}
+\item[(3a)] \(X\) cannot be presented as a disjoint union of two open nonempty sets. \(X = U_1 \cup U_2, U_1, U_2 \text{ open}, U_1 \cap U_2 = \emptyset \implies U_1 = \emptyset \text{ or } U_2 = \emptyset\).
+\item[(3b)] If \(X = V_1 \cup V_2\), \(V_1, V_2\) closed, \(V_1 \cap V_2 = \emptyset\), then \(V_1 = \emptyset\) or \(V_2 = \emptyset\).
+\item[(3c)] If \(U \subset X\) is both \underline{open and closed}, then \(U = \emptyset\) or \(U = X\) (``clopen set'').
+\end{enumerate}
 \end{enumerate}
 \end{theorem}
 
@@ -69,7 +69,7 @@ Proof is commented out!
 
 % Since \(A\) is connected, one of these sets must be empty.
 
-% Let \(A_1 = U_1 \cap A = \varnothing\), then \(U_1 \subset \overline{A} \setminus A\). However, \(U_1\) is a non-empty open subset of \(\overline{A}\). 
+% Let \(A_1 = U_1 \cap A = \varnothing\), then \(U_1 \subset \overline{A} \setminus A\). However, \(U_1\) is a non-empty open subset of \(\overline{A}\).
 
 % By definition, every non-empty open set in \(\overline{A}\) must intersect \(A\), which contradicts \(U_1 \cap A = \varnothing\)!
 % \end{proof}
@@ -82,14 +82,14 @@ if \(\exists \gamma: [0,1] \to X, \gamma(0)=x, \gamma(1)=y\).
 
 This is an \textbf{equivalence relation}:
 \begin{itemize}
-    \item \textbf{Reflexive}: \(x \sim x\) (\(\gamma(t)=x \forall t\)).
-    \item \textbf{Symmetric}: If \(x \sim y\), \(y \sim x\) (\(\tilde{\gamma}(t) = \gamma(1-t)\)).
-    \item \textbf{Transitive}: If \(x \sim y, y \sim z\), \(x \sim z\) (concatenate paths):
-    \[\gamma(t) = \begin{cases}
-        \gamma_1(2t) & t \leq \frac{1}{2} \\
-        \gamma_2(2t-1) & t \geq \frac{1}{2}
-    \end{cases}\]
-    (\(\gamma_1: x \to y\), \(\gamma_2: y \to z\)).
+\item \textbf{Reflexive}: \(x \sim x\) (\(\gamma(t)=x \forall t\)).
+\item \textbf{Symmetric}: If \(x \sim y\), \(y \sim x\) (\(\tilde{\gamma}(t) = \gamma(1-t)\)).
+\item \textbf{Transitive}: If \(x \sim y, y \sim z\), \(x \sim z\) (concatenate paths):
+\[\gamma(t) = \begin{cases}
+\gamma_1(2t) & t \leq \frac{1}{2} \\
+\gamma_2(2t-1) & t \geq \frac{1}{2}
+\end{cases}\]
+(\(\gamma_1: x \to y\), \(\gamma_2: y \to z\)).
 \end{itemize}
 
 The \textbf{connected components} (path-connected components) of \(X\) are the equivalence classes of \(\sim\).
@@ -104,16 +104,16 @@ The number of connected components is preserved under homeomorphisms (\(X \cong 
 \end{remark}
 
 \begin{example}[Examples of Components]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 1.] \((0,1) \cup (2,3) \not\cong (0,1)\)
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 1.] \((0,1) \cup (2,3) \not\cong (0,1)\)
 
-        \item[\bfseries Ex 2.] \([0,1] \not\cong [0,1] \times [0,1]\)
+\item[\bfseries Ex 2.] \([0,1] \not\cong [0,1] \times [0,1]\)
     
-        Removing a non-boundary point makes \([0,1]\) disconnected (\([0,1] \setminus \{pt\}\) is disconnected), but \([0,1] \times [0,1] \setminus \{pt\}\) is connected for any points.
+Removing a non-boundary point makes \([0,1]\) disconnected (\([0,1] \setminus \{pt\}\) is disconnected), but \([0,1] \times [0,1] \setminus \{pt\}\) is connected for any points.
     
-        \item[\bfseries Ex 3.] \([0,1] \not\cong (0,1) \not\cong [0,1)\)
-    \end{enumerate}
+\item[\bfseries Ex 3.] \([0,1] \not\cong (0,1) \not\cong [0,1)\)
+\end{enumerate}
 \end{example}
 
 \subsection{Equivalent Norms on \(\mathbb{R}^n\)}
@@ -143,9 +143,9 @@ Two norms \(\|\cdot\|_a\) and \(\|\cdot\|_b\) on a vector space \(V\) are \textb
 \begin{xca}[Exercises]
 \leavevmode
 \begin{enumerate}
-    \item[(1)] This is an equiv. relation.
-    \item[(2)] Equiv. norms define the same topology.
-    \item[(3)] \(\|\cdot\|_1, \|\cdot\|_2, \|\cdot\|_\infty\) on \(\mathbb{R}^2\) equivalent.
-    \item[(4*)] All norms on \(\mathbb{R}^n\) are equivalent.
+\item[(1)] This is an equiv. relation.
+\item[(2)] Equiv. norms define the same topology.
+\item[(3)] \(\|\cdot\|_1, \|\cdot\|_2, \|\cdot\|_\infty\) on \(\mathbb{R}^2\) equivalent.
+\item[(4*)] All norms on \(\mathbb{R}^n\) are equivalent.
 \end{enumerate}
 \end{xca}

@@ -5,29 +5,29 @@
 \begin{definition}[Topological Space]
 A \textbf{topological space} is a pair \((X, \mathcal{U})\), where \(\mathcal{U} \subseteq 2^X\) (all subsets of \(X\)) and
 \begin{enumerate}
-    \item \(\varnothing, X \in \mathcal{U}\)
-    \item If \(U_\alpha \in \mathcal{U}\), then \(\bigcup_\alpha U_\alpha \in \mathcal{U}\) (arbitrary union)
-    \item If \(U_1, \cdots, U_k \in \mathcal{U}\), then \(\bigcap_{i=1}^k U_i \in \mathcal{U}\) (finite intersection)
+\item \(\varnothing, X \in \mathcal{U}\)
+\item If \(U_\alpha \in \mathcal{U}\), then \(\bigcup_\alpha U_\alpha \in \mathcal{U}\) (arbitrary union)
+\item If \(U_1, \cdots, U_k \in \mathcal{U}\), then \(\bigcap_{i=1}^k U_i \in \mathcal{U}\) (finite intersection)
 \end{enumerate}
 \end{definition}
 
 \(\mathcal{U}\) is a \textbf{topology} on \(X\), and \(U \in \mathcal{U}\) are \textbf{open sets}.
 
 \begin{example}[Examples of Topologies]
-    \leavevmode
-    \begin{enumerate}
-        \item[\bfseries Ex 1.] \textbf{(Metric Spaces)}
-        Any metric space \((X, d)\) is a topological space, where \(\mathcal{U} = \{ U \mid \forall x \in U, \exists \varepsilon > 0, U_\varepsilon(x) \subset U \}\).
+\leavevmode
+\begin{enumerate}
+\item[\bfseries Ex 1.] \textbf{(Metric Spaces)}
+Any metric space \((X, d)\) is a topological space, where \(\mathcal{U} = \{ U \mid \forall x \in U, \exists \varepsilon > 0, U_\varepsilon(x) \subset U \}\).
 
-        \item[\bfseries Ex 2.] \textbf{(Discrete Topology)}
-        \(\mathcal{U} = 2^X\) (every subset of \(X\) is open).
+\item[\bfseries Ex 2.] \textbf{(Discrete Topology)}
+\(\mathcal{U} = 2^X\) (every subset of \(X\) is open).
 
-        \item[\bfseries Ex 3.] \textbf{(Antidiscrete Topology)}
-        \(\mathcal{U} = \{\varnothing, X\}\) (only \(\varnothing, X\) are open; not metric-induced).
+\item[\bfseries Ex 3.] \textbf{(Antidiscrete Topology)}
+\(\mathcal{U} = \{\varnothing, X\}\) (only \(\varnothing, X\) are open; not metric-induced).
 
-        \item[\bfseries Ex 4.] \textbf{(Finite Complement Topology)}
-        For infinite \(X\) (e.g., \(\mathbb{R}\)), \(\mathcal{U} = \{ U \mid X \setminus U \text{ is finite} \} \cup \{\varnothing\}\).
-    \end{enumerate}
+\item[\bfseries Ex 4.] \textbf{(Finite Complement Topology)}
+For infinite \(X\) (e.g., \(\mathbb{R}\)), \(\mathcal{U} = \{ U \mid X \setminus U \text{ is finite} \} \cup \{\varnothing\}\).
+\end{enumerate}
 \end{example}
 
 \subsection{Hausdorff Spaces}
@@ -57,9 +57,9 @@ Finite complement topology is \textit{not} Hausdorff: For \(U, V\) containing \(
 \begin{definition}[Topological Space by Closed Sets]
 A topology can be defined by satisfying closed sets: (\(Y \subset X\) is closed if \(X \setminus Y\) is open)
 \begin{enumerate}
-    \item \(\varnothing, X\) are closed;
-    \item Arbitrary intersections: If \(\{V_\alpha\}\) are closed, \(\bigcap V_\alpha\) is closed;
-    \item Finite unions: If \(V_1, \cdots, V_n\) are closed, \(\bigcup_{i=1}^n V_i\) is closed.
+\item \(\varnothing, X\) are closed;
+\item Arbitrary intersections: If \(\{V_\alpha\}\) are closed, \(\bigcap V_\alpha\) is closed;
+\item Finite unions: If \(V_1, \cdots, V_n\) are closed, \(\bigcup_{i=1}^n V_i\) is closed.
 \end{enumerate}
 \end{definition}
 
@@ -77,8 +77,8 @@ where \(f_\alpha\) are polynomials.
 
 \begin{example}[Zariski Closed Sets]
 \begin{itemize}
-    \item A single point \((a_1, \cdots, a_n) \in \mathbb{C}^n\) (closed: \(x_1=a_1, \cdots, x_n=a_n\)).
-    \item \(\{ (x,y) \mid x^2 + y^2 = 3 \}\), \(\{ (x,y) \mid xy = \frac{1}{4} \}\) (closed: single polynomial equations).
+\item A single point \((a_1, \cdots, a_n) \in \mathbb{C}^n\) (closed: \(x_1=a_1, \cdots, x_n=a_n\)).
+\item \(\{ (x,y) \mid x^2 + y^2 = 3 \}\), \(\{ (x,y) \mid xy = \frac{1}{4} \}\) (closed: single polynomial equations).
 \end{itemize}
 \end{example}
 
@@ -91,16 +91,16 @@ For \(X = \mathbb{C}^1\) (or \(\mathbb{R}^1\)), the Zariski topology \textit{equ
 \begin{definition}[Basis for a Topology]
 Let \((X, \mathcal{U})\) be a topological space. A subset \(\mathcal{B} \subseteq \mathcal{U}\) is a basis of \(\mathcal{U}\) if
 \begin{enumerate}
-    \item \(\forall x \in X, \exists U \in \mathcal{B}\) with \(x \in U\);
-    \item \(\forall x \in X, \forall U_1, U_2 \in \mathcal{B}\) (with \(x \in U_1, x \in U_2\)), \(\exists U_3 \in \mathcal{B}\) with \(x \in U_3 \subseteq U_1 \cap U_2\).
+\item \(\forall x \in X, \exists U \in \mathcal{B}\) with \(x \in U\);
+\item \(\forall x \in X, \forall U_1, U_2 \in \mathcal{B}\) (with \(x \in U_1, x \in U_2\)), \(\exists U_3 \in \mathcal{B}\) with \(x \in U_3 \subseteq U_1 \cap U_2\).
 \end{enumerate}
 \end{definition}
 
 \begin{example}[Basis for Metric Spaces]
 For a metric space (e.g., \(\mathbb{R}^n\)), the set of open balls \(\mathcal{B} = \{ U_\varepsilon(x) \mid x \in X, \varepsilon > 0 \}\) is a basis:
 \begin{enumerate}
-    \item Obvious (\(x \in U_\varepsilon(x)\) for any \(\varepsilon > 0\));
-    \item \(\forall x \in U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\), take \(\varepsilon = \min(\varepsilon_1, \varepsilon_2)\), \(U_\varepsilon(x) \subseteq U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\) and \(U_\varepsilon(x) \in \mathcal{B}\).
+\item Obvious (\(x \in U_\varepsilon(x)\) for any \(\varepsilon > 0\));
+\item \(\forall x \in U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\), take \(\varepsilon = \min(\varepsilon_1, \varepsilon_2)\), \(U_\varepsilon(x) \subseteq U_{\varepsilon_1}(x_1) \cap U_{\varepsilon_2}(x_2)\) and \(U_\varepsilon(x) \in \mathcal{B}\).
 \end{enumerate}
 \end{example}
 
@@ -119,8 +119,8 @@ Proof is commented out!
 
 \begin{example}
 \begin{enumerate}
-    \item Balls in \(d_1, d_2, d_\infty\)-metric in \(\mathbb{R}^n\) form a basis of the standard topology.
-    \item \(\{ U_\varepsilon(x) \mid \varepsilon \in \mathbb{Q}, \varepsilon > 0, x \in \mathbb{Q}^n \}\) is a countable set that is a basis of standard topology on \(\mathbb{R}^n\).
+\item Balls in \(d_1, d_2, d_\infty\)-metric in \(\mathbb{R}^n\) form a basis of the standard topology.
+\item \(\{ U_\varepsilon(x) \mid \varepsilon \in \mathbb{Q}, \varepsilon > 0, x \in \mathbb{Q}^n \}\) is a countable set that is a basis of standard topology on \(\mathbb{R}^n\).
 \end{enumerate}
 \end{example}
 

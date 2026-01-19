@@ -1,0 +1,186 @@
+\section{Notes 25 - 01.09}
+
+\subsection{Space of Continuous Functions}
+
+Let \(X\) be a topological space, \((Y, d)\) a metric space. We take \(\text{Fun}(J, Y) = \{ f: J \to Y \} = Y^J\).
+\begin{align*}
+\bar{d}(x, y) &= \min(d(x, y), 1) \leq 1 \\
+\bar{\rho} &= \sup_{\alpha \in J} \bar{d}(f(\alpha), g(\alpha)) \ \text{uniform metric}
+\end{align*}
+
+\begin{definition}
+\(C(X, Y) = \{ f: X \to Y \text{ continuous} \}\).
+Bounded functions:
+\[\mathcal{B}(X, Y) = \{ f: X \to Y \mid \text{diam } f(X) < \infty \}.\]
+\end{definition}
+
+\begin{theorem}
+If \(Y\) is complete w.r.t. \(d\) [and hence \(\bar{d}\)], then \(Y^J\) is complete w.r.t. \(\bar{\rho}\).
+\end{theorem}
+
+\begin{theorem}
+\(C(X, Y)\) and \(\mathcal{B}(X, Y)\) are closed in \(\text{Fun}(X, Y)\) w.r.t. uniform metric.
+If \(Y\) is complete, so are \(\mathcal{B}(X, Y), C(X, Y)\).
+\end{theorem}
+
+\begin{example}
+\(f_n(x) \to f(x)\) pointwise, but not uniformly.
+\[f_n(x) = x^n \text{ on } [0, 1].\]
+
+For each \(x\) fixed, there exists \(\lim_{n \to \infty} f_n(x) = \begin{cases} 0 & x \in [0, 1) \\ 1 & x = 1 \end{cases} = f(x)\), \(\bar{\rho}(f(x), f_n(x)) = 1\),
+\[\forall n \ \forall \varepsilon > 0 \ \exists x \in [0, 1) \implies 1 > |f(x) - f_n(x)| > 1 - \varepsilon.\]
+\end{example}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Need to show: if \(f_n \to f\) w.r.t. \(\bar{\rho}\), then \(f_n(x) \to f(x)\) converges uniformly w.r.t. \(\bar{d}\) on \(Y\).
+
+% Take \(\varepsilon > 0\), choose \(N\) s.t. \(\bar{\rho}(f, f_n) < \varepsilon \ \forall n > N\).
+% Then \(\forall x \in X, n \geq N\), we have
+% \[\bar{d}(f_n(x), f(x)) \leq \bar{\rho}(f_n, f) < \varepsilon.\]
+
+% This is uniform convergence \(f_n \to f\).
+
+% \begin{xca}
+% If \(f_n \to f\) uniformly, \(f_n\) are continuous \(\implies f\) is continuous.
+% \end{xca}
+
+% Let \(f \in \overline{C(X, Y)}\). Then \(\exists f_n \in C(X, Y)\):
+% \[f_n \to f \text{ w.r.t. } \bar{\rho} \implies f \text{ continuous } \implies C(X, Y) \text{ closed}.\]
+
+% Suppose \(f = \lim_{n \to \infty} f_n, \ f_n \in \mathcal{B}(X, Y)\).
+
+% \(\varepsilon = \frac{1}{2}\), \(\exists N: \bar{\rho}(f_N, f) < \frac{1}{2}\), so \(\forall x \in X \ \bar{d}(f_N(x), f(x)) < \frac{1}{2}\).
+% If \(\text{diam}(f_N(X)) = M\),
+% \[\text{diam}(f(X)) \leq M + \frac{1}{2} + \frac{1}{2} = M + 1.\]
+% \end{proof}
+
+\begin{definition}[Sup-metric]
+For \(\mathcal{B}(X, Y)\), take
+\[\rho(f, g) = \sup_{x \in X} (d(f(x), g(x))).\]
+
+\(\rho\) is called the \underline{sup-metric},
+\[\bar{\rho}(f, g) = \min(\rho(f, g), 1) \text{ same } \bar{\rho} \text{ as before}.\]
+
+If \(X\) is compact, then all continuous functions are bounded \(\implies \rho\) and \(\bar{\rho}\) are equiv. on
+\[C(X, Y) \subset \mathcal{B}(X, Y).\]
+
+If \(Y\) complete w.r.t. \(d\), then \(C(X, Y)\) is complete w.r.t. \(\bar{\rho} \implies\) w.r.t. \(\rho\).
+\end{definition}
+
+\subsection{Completion}
+
+\begin{theorem}
+Let \((X, d)\) be a metric space. Then \(\exists\) an isometric embedding \(X \hookrightarrow Y\), \(Y\) complete.
+\end{theorem}
+
+\begin{remark}
+Proof 1 is commented out!
+\end{remark}
+
+% \begin{proof}[Proof 1: Munkres' book, Exercises to Ch. 37?]
+% Idea: \((x_n)\) fund. sequence.
+
+% \((x_n) \sim (y_n)\) if \((z_n) = (x_1, y_1, x_2, y_2 \cdots)\) fundamental.
+
+% This is an equiv. relation. \(\underset{\text{introduce metric!}}{Y} = \) equiv. classes mod \(\sim\).
+% \(X \hookrightarrow Y, \ x \mapsto (x, x, \cdots)\),
+% \[\rho((x_n), (y_n)) = \lim_{n \to \infty} d(x_n, y_n).\]
+% \end{proof}
+
+\begin{remark}
+Proof 2 is commented out!
+\end{remark}
+
+% \begin{proof}[Proof 2]
+% Take \(\mathcal{B}(X, \mathbb{R})\) to be the space of bounded \(\mathbb{R}\)-valued functions on \(X\). \(x_0 \in X\).
+
+% Construct a family \(\varphi_a(x)\) of functions \(X \to \mathbb{R}\), dep. on \(a \in X\), as follows:
+
+% \(\varphi_a(x) = d(a, x) - d(x_0, x) \leftarrow \text{bounded}\):
+% \begin{align*}
+% &d(x, a) \leq d(x, b) + d(a, b) \\
+% &d(x, b) \leq d(x, a) + d(a, b) \\
+% &|d(x, a) - d(x, b)| \leq d(a, b).
+% \end{align*}
+
+% For \(b = x_0\), \(|\varphi_a(x)| \leq d(a, x_0) \ \forall x \in X\).
+
+% \(\Phi: X \to \mathcal{B}(X, \mathbb{R}), \ \Phi(a) = \varphi_a(x)\).
+% \(\Phi\) defines an \underline{isometric embedding} \(X \hookrightarrow \mathcal{B}(X, \mathbb{R})\).
+
+% Need to show: \(\rho(\varphi_a, \varphi_b) = d(a, b) \ \forall a, b \in X\).
+% \[\rho(\varphi_a, \varphi_b) = \sup_{x \in X} |\varphi_a(x) - \varphi_b(x)| = \sup_{x \in X} \{ |d(a, x) - d(b, x)| \} \leq d(a, b).\]
+
+% For \(x = b\), \(|\varphi_a(x) - \varphi_b(x)| = |d(a, b) - d(b, b)| = d(a, b) \leq \rho(\varphi_a, \varphi_b)\).
+% So \(\rho(\varphi_a, \varphi_b) = d(a, b)\).
+
+% \(a \mapsto \varphi_a\) defines an isometric embedding \(X \hookrightarrow \mathcal{B}(X, \mathbb{R})\).
+% \(\overline{\Phi(X)} \subset \mathcal{B}(X, \mathbb{R})\) (completion).
+% \end{proof}
+
+\textbf{Fact.}
+If \(X \xrightarrow{\phi_1} Y_1\), \(X \xrightarrow{\phi_2} Y_2\), \(Y_1, Y_2\) complete, \(Y_1 = \overline{\Phi_1(X)}\), \(Y_2 = \overline{\Phi_2(X)}\), then \(Y_1 \cong Y_2\) are isometric.
+
+\begin{xca}
+Prove this.
+\end{xca}
+
+\subsection{Compactness and Ideals of Functions}
+
+\(X\) metric space, \(C(X) = C(X, \mathbb{R})\) real-valued continuous functions.
+
+\(C(X)\) is a \underline{ring}: for \(f(x), g(x) \in C(X)\),
+\(f(x) \pm g(x) \in C(X)\), \(f \cdot g \in C(X)\), \(0, 1 \in C(X)\).
+
+\begin{definition}
+Let \(A\) be a ring. Then a subset \(I \subset A\) is an \underline{ideal} if:
+\begin{itemize}
+\item \(\forall f, g \in I \implies f \pm g \in I\) (\(0 \in I\)).
+\item \(\forall f \in I, h \in A \implies fh \in I\).
+\item \(I \neq A\).
+\end{itemize}
+\end{definition}
+
+\begin{example}
+Take any \(Y \subset X\).
+\(I_Y = \{ f(x) \mid f(y) = 0 \ \forall y \in Y \}\) is an ideal in \(C(X)\).
+\begin{align*}
+X \supset Y &\supset Z \\
+I_y &\subset I_Z
+\end{align*}
+\end{example}
+
+\begin{definition}
+\(I \subset C(X)\) is \underline{maximal} if there is no ideal \(J \supsetneq I\).
+\end{definition}
+
+\begin{proposition}
+\(I_y = \{ f(x) \mid f(y) = 0 \}\) \(\forall y \in X\) is a maximal ideal.
+\end{proposition}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% Suppose \(J \supset I_y\). Then \(J \ni f(x): f(y) \neq 0\).
+
+% Take \(g \in I\): \(g(x) = \text{dist}(x, y)\). \(g(x) = 0 \iff x = y\).
+
+% Let \(h = f^2 + g^2\). It has no zeros.
+
+% \(h \in I\), \(h^{-1} \in C(X)\) and \(h \cdot h^{-1} = 1 \in I \implies I = C(X)\), contradiction!
+% \end{proof}
+
+\begin{theorem}
+Every maximal ideal is of the form \(I_y, y \in X \iff X\) is compact.
+\end{theorem}
+
+\begin{xca}
+\(X = (a, b)\).
+\(\{ f(x) \mid \lim_{x \to a} f(x) = 0 \}\) is an ideal.
+\end{xca}
